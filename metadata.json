@@ -1,0 +1,6 @@
+{
+  "name": "NoLabel",
+  "description": "A premium digital agency specializing in high-performance website design, brand development, and digital presence solutions for growing businesses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
