@@ -107,16 +107,16 @@ export default function ProjectsView({ onNavigate, selectedProjectId, onClearSel
                 id={`project-grid-card-${project.id}`}
               >
                 {/* Beautiful custom responsive wireframe illustration based on project categories */}
-                <div className="w-full relative overflow-hidden bg-[#0B0F14]/65 p-2 rounded-xl border border-[#1A2433]">
+                <div className="w-full relative overflow-hidden">
                   {project.id === 'contractor-web' && <ImagePlaceholder type="desktop" title={project.title} />}
-                  {project.id === 'restaurant-brand' && <ImagePlaceholder type="branding-kit" title={project.title} />}
+                  {project.id === 'handyman-brand' && <ImagePlaceholder type="handyman-brand" title={project.title} />}
                   {project.id === 'premium-cards' && <ImagePlaceholder type="business-card" title={project.title} />}
                   {project.id === 'social-cohesion' && <ImagePlaceholder type="social-media" title={project.title} />}
                   {project.id === 'core-logo' && <ImagePlaceholder type="logo-showcase" title={project.title} />}
                   {project.id === 'landing-funnel' && <ImagePlaceholder type="desktop" title={project.title} />}
                   {project.id === 'seo-optimized-growth' && <ImagePlaceholder type="desktop" title={project.title} />}
                   {project.id !== 'contractor-web' && 
-                   project.id !== 'restaurant-brand' && 
+                   project.id !== 'handyman-brand' && 
                    project.id !== 'premium-cards' && 
                    project.id !== 'social-cohesion' && 
                    project.id !== 'core-logo' && 
@@ -218,14 +218,14 @@ export default function ProjectsView({ onNavigate, selectedProjectId, onClearSel
                     <span className="text-[9px] font-mono text-gray-500 block mb-2 uppercase">OUTPUT WORKPIECE BLUEPRINT</span>
                     
                     {activeModalProject.id === 'contractor-web' && <ImagePlaceholder type="desktop" title={activeModalProject.title} />}
-                    {activeModalProject.id === 'restaurant-brand' && <ImagePlaceholder type="branding-kit" title={activeModalProject.title} />}
+                    {activeModalProject.id === 'handyman-brand' && <ImagePlaceholder type="handyman-brand" title={activeModalProject.title} />}
                     {activeModalProject.id === 'premium-cards' && <ImagePlaceholder type="business-card" title={activeModalProject.title} />}
                     {activeModalProject.id === 'social-cohesion' && <ImagePlaceholder type="social-media" title={activeModalProject.title} />}
                     {activeModalProject.id === 'core-logo' && <ImagePlaceholder type="logo-showcase" title={activeModalProject.title} />}
                     {activeModalProject.id === 'landing-funnel' && <ImagePlaceholder type="desktop" title={activeModalProject.title} />}
                     {activeModalProject.id === 'seo-optimized-growth' && <ImagePlaceholder type="desktop" title={activeModalProject.title} />}
                     {activeModalProject.id !== 'contractor-web' && 
-                     activeModalProject.id !== 'restaurant-brand' && 
+                     activeModalProject.id !== 'handyman-brand' && 
                      activeModalProject.id !== 'premium-cards' && 
                      activeModalProject.id !== 'social-cohesion' && 
                      activeModalProject.id !== 'core-logo' && 
@@ -278,7 +278,7 @@ export default function ProjectsView({ onNavigate, selectedProjectId, onClearSel
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 mt-4 border-t border-[#1A2433]">
                   <div className="flex items-center gap-2 text-xs text-green-400 font-mono">
                     <CheckCircle2 className="w-4 h-4 text-green-400" />
-                    <span>Deployment live & locked to global servers.</span>
+                    <span>{activeModalProject.statusLine || "Deployment live & locked to global servers."}</span>
                   </div>
                   
                   <div className="flex gap-3 w-full sm:w-auto">

@@ -25,6 +25,7 @@ export interface Project {
   metrics: { label: string; value: string }[];
   accentColor: string; // hex color for gradient backgrounds
   tags: string[];
+  statusLine?: string;
 }
 
 export interface Testimonial {

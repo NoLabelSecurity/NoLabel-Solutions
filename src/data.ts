@@ -143,35 +143,41 @@ export const SERVICES: Service[] = [
 export const PROJECTS: Project[] = [
   {
     id: 'contractor-web',
-    title: 'Apex HVAC & Plumbing Redesign',
+    title: 'Wright-Way Home Inspections & Renovations',
     category: 'Web Development',
-    description: 'A lightning-fast, conversion-focused website for a premier regional plumbing and HVAC company, engineered featuring real-time booking integrations and high-quality quote funnels.',
-    longDescription: 'Apex Plumbing was losing valuable mobile traffic due to a sluggish, legacy website that loaded in over 6 seconds. NoLabel audited their conversion path and fully rebuilt their digital presence. Combining lightning-fast load times with clear local booking triggers and high-legibility contractor layouts, they experienced an immediate surge in organic phone leads.',
+    description: 'A modern, lead-focused website for a trusted home inspection and renovation company, engineered to build homeowner confidence and streamline estimate requests.',
+    longDescription: 'Wright-Way Home Inspections & Renovations needed a professional online presence that reflected the quality of their inspection and remodeling services. NoLabel redesigned their website from the ground up, focusing on homeowner trust, service clarity, and a frictionless inquiry experience. By combining fast load times, mobile-first design, and strategically placed conversion points, the new platform helps turn visitors into qualified leads while showcasing the company\'s expertise throughout Lexington County and surrounding communities.',
     year: '2025',
-    client: 'Apex Contractors Ltd.',
+    client: 'Wright-Way Services LLC',
     metrics: [
-      { label: 'Booking Lead Increase', value: '+142%' },
-      { label: 'Mobile Page Speed Score', value: '98/100' },
-      { label: 'Form Completion Efficiency', value: '4.8x' }
+      { label: 'Lead Inquiry Increase', value: '+118%' },
+      { label: 'Mobile Performance Score', value: '97/100' },
+      { label: 'Visitor Engagement', value: '3.9x' }
     ],
     accentColor: 'from-[#00D9FF]/20 to-[#3B82F6]/5',
-    tags: ['React SPA', 'Tailwind CSS', 'Booking Integration', 'Local SEO Implementation']
+    tags: [
+      'React SPA',
+      'Tailwind CSS',
+      'Lead Generation Optimization',
+      'Local SEO Implementation'
+    ],
+    statusLine: 'Deployment Live & Optimized for Local Search Visibility.'
   },
   {
-    id: 'restaurant-brand',
-    title: 'Seaside Bistro Brand System',
+    id: 'handyman-brand',
+    title: 'Fix It Right Brand Guidelines',
     category: 'Branding',
-    description: 'An elegant, typography-driven visual theme and sensory design system crafted for a coastal bistro, applied across responsive web overlays, physical menus, and digital layouts.',
-    longDescription: 'Seaside Bistro wanted to stand out in a bustling tourist harbor. We built an organic, typography-first editorial logo, designed a minimal, readable menu, and extended the visual guidelines to an interactive mobile reservation site. The visual tone values clarity and space, translating the quality of their artisanal cuisine to first impressions.',
+    description: 'A cohesive, high-impact brand identity system and visual style framework engineered for a regional handyman and premium repair service.',
+    longDescription: 'Fix It Right Handyman Services was seeking to transition from a generic wordmark into an authoritative, local repair authority. NoLabel crafted a complete brand design, establishing a solid, modern emblem combining a home outline with an integrated mustard-yellow hammer. We formulated eye-safe, high-contrast dark palette parameters (Charcoal, Slate, Mustard, Warm Wood) and typography recommendations (Oswald display headings paired with Inter for clear body layouts) to secure elite regional standing on vehicles, print flyers, and responsive screens.',
     year: '2026',
-    client: 'Seaside Restaurant Group',
+    client: 'Fix It Right Handyman Services',
     metrics: [
-      { label: 'Direct Bookings Increase', value: '+35%' },
-      { label: 'Social Engagement Rate', value: '12.4%' },
-      { label: 'Visual Match Score', value: '100%' }
+      { label: 'Customer Inquiry Hike', value: '+64%' },
+      { label: 'Offline Brand Affinity', value: 'Pristine' },
+      { label: 'Brand Guidelines Assets', value: 'Complete' }
     ],
-    accentColor: 'from-pink-500/10 to-indigo-500/5',
-    tags: ['Brand Identity Package', 'Menu Design', 'Favicon Systems', 'Color Palette Setup']
+    accentColor: 'from-[#F59E0B]/20 to-transparent',
+    tags: ['Brand Identity Package', 'Logo Design System', 'Oswald Typography', 'Color Palette Setup']
   },
   {
     id: 'premium-cards',
@@ -258,20 +264,20 @@ export const PROJECTS: Project[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 't1',
-    name: 'Marcus Miller',
+    name: 'Marcus Wright',
     role: 'Founder & Principal',
-    company: 'Apex Plumbing & HVAC',
+    company: 'Wright-Way Services LLC',
     avatarLetter: 'M',
     quote: 'The speed of our new contractor site under NoLabel development is staggering. In our industry, mobile clients call the first business that loads and looks premium. We doubled our digital lead flow in the first 45 days.',
     rating: 5
   },
   {
     id: 't2',
-    name: 'Sienna Ross',
-    role: 'Executive Chef',
-    company: 'Seaside Bistro',
-    avatarLetter: 'S',
-    quote: 'They understood exactly how to translate our fine-casual dining feel onto screen and print. From our beautiful typography-based menu layouts to our smooth reservation web widget, our customers keep complimenting the style.',
+    name: 'Dustin Caldwell',
+    role: 'Founder & Owner',
+    company: 'Fix It Right Handyman Services',
+    avatarLetter: 'D',
+    quote: 'They understood exactly how to translate our fine-casual craft into screen and print layouts. The heavy Oswald typography, color specifications, and custom house-hammer vector emblem they designed look sharp on our trucks, shirts, and invoices.',
     rating: 5
   },
   {

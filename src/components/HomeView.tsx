@@ -37,150 +37,297 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
   return (
     <div className="space-y-24 pb-20 overflow-hidden">
       {/* SECTION 1 — HERO */}
-      <section className="relative pt-10 pb-8 sm:pt-16 sm:pb-12 md:pt-24 md:pb-20">
+      <section className="relative pt-6 pb-12 sm:pt-12 sm:pb-16 md:pt-16 md:pb-24">
         {/* Subtle background glow element */}
-        <div className="absolute top-1/4 -left-36 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
-        <div className="absolute top-1/3 -right-36 w-96 h-96 rounded-full bg-cyan-700/10 blur-3xl pointer-events-none" />
+        <div className="absolute top-1/4 -left-36 w-96 h-96 rounded-full bg-blue-500/5 blur-3xl pointer-events-none" />
+        <div className="absolute top-1/3 -right-36 w-96 h-96 rounded-full bg-[#00D9FF]/5 blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left Texts */}
-            <div className="lg:col-span-6 space-y-8 text-left">
+            
+            {/* Left Texts & Brand badge */}
+            <div className="lg:col-span-6 space-y-6 text-left">
+              
+              {/* NoLabel Header Badge / Icon Row */}
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="inline-flex items-center gap-2 px-3 py-1 bg-[#121923] border border-[#1A2433] rounded-full text-xs font-mono text-[#00D9FF]"
-                id="hero-badge"
+                className="flex items-center gap-3.5"
+                id="hero-badge-brand"
               >
-                <span>●</span> DIGITAL ARCHITECTURE FOR SMALL BUSINESSES
+                {/* NL Icon brand box with bright cyan glow and dark background */}
+                <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-cyan-400/20" id="hero-brand-logo">
+                  <span className="text-xl font-display font-extrabold text-black tracking-tight select-none">NL</span>
+                </div>
+                <div>
+                  <h2 className="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight leading-none">NoLabel</h2>
+                  <span className="text-[10px] font-mono font-bold tracking-[0.15em] text-[#00D9FF] uppercase">Web Agency</span>
+                </div>
               </motion.div>
 
+              {/* Main Headline */}
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.15 }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-[1.1]"
+                className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-[1.08]"
                 id="hero-headline"
               >
-                Professional Websites & <br className="hidden sm:inline" />
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Digital Solutions</span> <br />
-                for Growing Businesses
+                Websites, Branding & <br />
+                <span className="text-[#00D9FF] selection:bg-cyan-500/30 selection:text-white">Digital Presence</span> <br />
+                Solutions
               </motion.h1>
 
+              {/* Thin cyan gradient line */}
+              <motion.div
+                initial={{ opacity: 0, width: 0 }}
+                animate={{ opacity: 1, width: 80 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="h-[3px] bg-gradient-to-r from-[#00D9FF] to-blue-600 rounded-full"
+              />
+
+              {/* Subheading */}
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-lg text-gray-400 max-w-xl font-sans font-light leading-relaxed"
+                className="text-lg sm:text-xl text-gray-300 max-w-xl font-sans font-light leading-relaxed"
                 id="hero-subheadline"
               >
-                Helping businesses build, launch, and grow through high-performance client websites, unified brand systems, and organic local online visibility.
+                Helping small businesses build, <br className="hidden sm:inline" />
+                launch, and <span className="text-[#00D9FF] font-medium">grow online</span>.
               </motion.p>
 
-              {/* CTAs */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
+              {/* Icon Row - 5 beautifully aligned items with separation lines */}
+              <motion.div
+                initial={{ opacity: 0, y: 25 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex flex-col sm:flex-row gap-4 pt-2"
-                id="hero-ctas"
+                className="grid grid-cols-2 sm:grid-cols-5 gap-y-6 md:gap-y-0 pt-8 border-t border-[#1A2433]"
+                id="hero-service-row"
               >
-                <button
-                  onClick={() => onNavigate('contact')}
-                  className="px-6 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-[#0B0F14] font-display font-medium rounded-lg shadow-lg hover:shadow-cyan-500/20 active:opacity-95 transition-all text-center cursor-pointer flex items-center justify-center gap-2 group"
-                  id="hero-btn-quote"
-                >
-                  Request a Free Quote <span>→</span>
-                </button>
-                <button
-                  onClick={() => onNavigate('projects')}
-                  className="px-6 py-3.5 bg-[#121923] hover:bg-[#1A2433] border border-[#1A2433] hover:border-gray-500 text-white font-display font-medium rounded-lg transition-all text-center cursor-pointer flex items-center justify-center gap-2"
-                  id="hero-btn-work"
-                >
-                  View Agency Portfolio
-                </button>
+                {/* Cell 1: Web Dev */}
+                <div className="flex flex-col items-center text-center space-y-2.5 border-r border-[#1A2433] px-2 last:border-0" id="feat-web-dev">
+                  <img 
+                    src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/icons/1.png"
+                    alt="Website Development"
+                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="text-[11px] font-mono text-gray-400 font-medium leading-tight">
+                    <span>Website</span> <br />
+                    <span>Development</span>
+                  </div>
+                </div>
+
+                {/* Cell 2: Branding */}
+                <div className="flex flex-col items-center text-center space-y-2.5 border-r border-[#1A2433] px-2 sm:px-3 last:border-0" id="feat-branding">
+                  <img 
+                    src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/icons/2.png"
+                    alt="Branding & Logo Design"
+                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="text-[11px] font-mono text-gray-400 font-medium leading-tight">
+                    <span>Branding &</span> <br />
+                    <span>Logo Design</span>
+                  </div>
+                </div>
+
+                {/* Cell 3: Graphic Design */}
+                <div className="flex flex-col items-center text-center space-y-2.5 border-r border-[#1A2433] px-2 sm:px-3 last:border-0" id="feat-graphic-design">
+                  <img 
+                    src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/icons/3.png"
+                    alt="Graphic Design"
+                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="text-[11px] font-mono text-gray-400 font-medium leading-tight">
+                    <span>Graphic</span> <br />
+                    <span>Design</span>
+                  </div>
+                </div>
+
+                {/* Cell 4: Social Media */}
+                <div className="flex flex-col items-center text-center space-y-2.5 sm:border-r border-[#1A2433] px-2 sm:px-3 last:border-0" id="feat-social-media">
+                  <img 
+                    src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/icons/4.png"
+                    alt="Social Media Management"
+                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="text-[11px] font-mono text-gray-400 font-medium leading-tight">
+                    <span>Social Media</span> <br />
+                    <span>Management</span>
+                  </div>
+                </div>
+
+                {/* Cell 5: SEO & Visibility */}
+                <div className="flex flex-col items-center text-center space-y-2.5 px-2 sm:pl-3 last:border-0" id="feat-seo">
+                  <img 
+                    src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/icons/5.png"
+                    alt="Local SEO & Visibility"
+                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="text-[11px] font-mono text-gray-400 font-medium leading-tight">
+                    <span>Local SEO &</span> <br />
+                    <span>Visibility</span>
+                  </div>
+                </div>
               </motion.div>
 
-              {/* Floating UI highlights tags */}
+              {/* Bottom pill container detailing region and coverage */}
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-[#1A2433]"
-                id="hero-highlights-badges"
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="inline-flex flex-wrap items-center gap-x-6 gap-y-2 px-5 py-3 bg-[#111923]/60 backdrop-blur border border-[#1A2433] rounded-full text-xs text-slate-300 font-mono shadow-xl relative mt-4"
+                id="hero-location-bar"
               >
-                {[
-                  { text: 'Custom Code', icon: <Cpu className="w-3.5 h-3.5 text-[#00D9FF]" /> },
-                  { text: 'No Templates', icon: <Palette className="w-3.5 h-3.5 text-[#00D9FF]" /> },
-                  { text: 'SEO Built-In', icon: <MapPin className="w-3.5 h-3.5 text-[#00D9FF]" /> },
-                  { text: 'Fast Hosting', icon: <Globe className="w-3.5 h-3.5 text-[#00D9FF]" /> }
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-2 p-2 bg-[#121923]/40 border border-[#1A2433]/50 rounded text-xs text-gray-300 font-mono">
-                    {item.icon}
-                    <span>{item.text}</span>
-                  </div>
-                ))}
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-[#00D9FF]" />
+                  <span>Proudly serving Oconee County and the Upstate of South Carolina</span>
+                </div>
+                <div className="hidden sm:block w-[1px] h-3.5 bg-[#1A2433]" />
+                <div className="flex items-center gap-2">
+                  <Globe className="w-4 h-4 text-[#00D9FF]" />
+                  <span>Remote services available nationwide</span>
+                </div>
               </motion.div>
             </div>
 
-            {/* Right mockup view */}
-            <div className="lg:col-span-6 relative w-full flex items-center justify-center pt-8 lg:pt-0">
+            {/* Right mockup view (High design visual collage matching physical mockups of the screenshot) */}
+            <div className="lg:col-span-6 relative w-full flex items-center justify-center pt-8 lg:pt-0" id="hero-montage-container">
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
-                className="w-full relative max-w-lg sm:max-w-xl md:max-w-2xl px-4"
+                className="w-full relative max-w-lg md:max-w-xl lg:max-w-2xl px-2 h-[420px] sm:h-[520px] flex items-start"
               >
-                {/* Simulated Floating widgets */}
-                <div className="absolute -top-6 -left-6 bg-[#121923]/95 border border-[#1A2433] p-3 rounded-lg flex items-center gap-3 shadow-2xl z-40 float-animation max-w-[210px]">
-                  <div className="w-8 h-8 rounded bg-[#00D9FF]/20 flex items-center justify-center text-[#00D9FF]">
-                    <Globe className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-display font-medium text-white block">Website Design</h4>
-                    <span className="text-[9px] font-mono text-cyan-400">100% Core Web Score</span>
-                  </div>
+                
+                {/* 1. Sleek MacBook mockup from repository */}
+                <div className="absolute top-4 left-0 w-[90%] sm:w-[94%] z-10" id="mockup-macbook">
+                  <img 
+                    src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/imgs/hero-pc.png"
+                    alt="NoLabel High-Fidelity PC Preview"
+                    className="w-full h-auto object-contain filter drop-shadow-[0_25px_25px_rgba(0,0,0,0.6)]"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
 
-                <div className="absolute -bottom-4 right-10 bg-[#121923]/95 border border-[#1A2433] p-3 rounded-lg flex items-center gap-3 shadow-2xl z-40 float-animation-delayed max-w-[190px]">
-                  <div className="w-8 h-8 rounded bg-yellow-500/10 flex items-center justify-center text-yellow-400">
-                    <Palette className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-display font-medium text-white block">Custom Branding</h4>
-                    <span className="text-[9px] font-mono text-gray-400">Vector Guidelines</span>
-                  </div>
+                {/* 2. Sleek iPhone Mockup standing up overlapping screen on right */}
+                <div className="absolute top-10 -right-2 w-[36%] sm:w-[40%] z-20" id="mockup-iphone">
+                  <img 
+                    src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/imgs/hero-phone.png"
+                    alt="NoLabel High-Fidelity Phone Preview"
+                    className="w-full h-auto object-contain filter drop-shadow-[0_25px_25px_rgba(0,0,0,0.6)]"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
 
-                {/* Main Interactive Grid representing the 3 requested Device Previews */}
-                <div className="grid grid-cols-12 gap-4 items-end relative">
-                  {/* Desktop Preview: Large 8 cols */}
-                  <div className="col-span-9 relative z-20">
-                    <ImagePlaceholder type="desktop" title="NoLabel Project Preview" className="shadow-2xl shadow-cyan-500/5 hover:-translate-y-1 transition-all duration-300" />
-                  </div>
+                {/* 3. Floating 3D Cards in the bottom region */}
+                <div className="absolute -bottom-2 sm:-bottom-6 left-2 sm:left-4 z-30 w-[94%] flex items-end gap-3 pointer-events-none" id="mockup-physical-cards">
+                  
+                  {/* Left: Black Business Card */}
+                  <motion.div 
+                    whileHover={{ y: -8, rotate: -2 }}
+                    className="w-[38%] bg-[#0B0F14] border border-[#1A2433] rounded-xl p-3 sm:p-4 shadow-2xl flex flex-col justify-between aspect-[1.58/1] shrink-0 rotate-[-4deg] pointer-events-auto"
+                    id="matte-card"
+                  >
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 bg-gradient-to-tr from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center text-[10px] text-black font-extrabold">NL</div>
+                      <div>
+                        <span className="text-xs font-display font-semibold text-white block leading-none">NoLabel</span>
+                        <span className="text-[5px] font-mono leading-none text-[#00D9FF] tracking-widest uppercase block mt-0.5">Web Agency</span>
+                      </div>
+                    </div>
+                    <span className="text-[7.5px] font-mono text-gray-500 text-left mt-auto">nolabel.agency</span>
+                  </motion.div>
 
-                  {/* Mobile Preview: Floated 3 cols */}
-                  <div className="col-span-3 relative z-30 -ml-8">
-                    <ImagePlaceholder type="mobile" title="Custom App" className="shadow-2xl shadow-blue-500/10 hover:-translate-y-1 transition-all duration-300" />
-                  </div>
+                  {/* Center: Premium White Business Card */}
+                  <motion.div 
+                    whileHover={{ y: -8, rotate: 1 }}
+                    className="w-[38%] bg-white border border-gray-200 rounded-xl p-2.5 sm:p-3.5 shadow-2xl flex flex-col justify-between aspect-[1.58/1] shrink-0 rotate-[-1deg] pointer-events-auto text-[#0B0F14]"
+                    id="white-card"
+                  >
+                    <div className="flex items-start justify-between">
+                      <div className="text-left">
+                        <span className="text-[11px] font-display font-bold block leading-none">NoLabel</span>
+                        <span className="text-[5px] font-mono text-[#0055ff] uppercase font-bold tracking-wider">Web Agency</span>
+                      </div>
+                      
+                      {/* Stylized custom SVG QR Code block */}
+                      <div className="w-5 h-5 flex-shrink-0 text-[#0B0F14]">
+                        <svg viewBox="0 0 100 100" fill="currentColor">
+                          <rect width="25" height="25" />
+                          <rect x="75" width="25" height="25" />
+                          <rect y="75" width="25" height="25" />
+                          <rect x="35" y="35" width="30" height="30" />
+                          <rect x="10" y="35" width="15" height="15" />
+                          <rect x="75" y="45" width="20" height="15" />
+                          <rect x="45" y="10" width="15" height="15" />
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div className="text-[5.5px] sm:text-[6.5px] font-mono text-slate-800 space-y-0.5 text-left mt-1.5 border-t border-slate-100 pt-1.5 flex flex-col">
+                      <span className="font-semibold text-slate-900 flex items-center gap-1">☏ 864-123-4567</span>
+                      <span className="flex items-center gap-1">✉ hello@nolabel.agency</span>
+                      <span className="font-semibold text-[#0055ff] flex items-center gap-1">🌐 nolabel.agency</span>
+                    </div>
+                  </motion.div>
+
+                  {/* Right: Instagram social mockup */}
+                  <motion.div 
+                    whileHover={{ y: -8, rotate: 3 }}
+                    className="w-[30%] bg-[#0B0F14] border border-[#1A2433] rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between aspect-[1/1.2] shrink-0 rotate-[3deg] pointer-events-auto text-white text-[6px]"
+                    id="instagram-card"
+                  >
+                    {/* Post Header */}
+                    <div className="p-1 px-2 border-b border-[#1A2433] bg-[#0B0F14]/80 flex items-center justify-between">
+                      <div className="flex items-center gap-1 leading-none text-left">
+                        <div className="w-3.5 h-3.5 bg-[#00D9FF] rounded-full flex items-center justify-center text-[5px] text-black font-extrabold scale-90">NL</div>
+                        <span className="font-mono font-bold text-[6px]">NoLabel</span>
+                      </div>
+                      <span className="text-[5px] text-gray-500 font-bold leading-none">•••</span>
+                    </div>
+
+                    {/* Post Picture content */}
+                    <div className="flex-grow bg-[#111923] relative flex flex-col justify-center items-center py-2 px-1 text-center overflow-hidden">
+                      {/* Decorative stock vector grid inside image mockup container */}
+                      <div className="absolute inset-x-0 bottom-0 top-1/4 opacity-15 pointer-events-none">
+                        <svg className="w-full h-full text-blue-500" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+                          <polyline points="5,95 25,60 45,75 75,30 95,5" strokeLinecap="round" strokeLinejoin="round" />
+                          <circle cx="75" cy="30" r="3" fill="currentColor" />
+                          <line x1="5" y1="95" x2="95" y2="95" />
+                        </svg>
+                      </div>
+
+                      <div className="relative z-10 text-center space-y-0.5">
+                        <p className="font-display font-medium text-[6px] text-gray-400 block tracking-wide">Your Brand.</p>
+                        <p className="font-display font-medium text-[6px] text-gray-400 block tracking-wide">Our Strategy.</p>
+                        <p className="font-display font-bold text-[7px] text-[#00D9FF] block tracking-wide uppercase">Real Results.</p>
+                      </div>
+                    </div>
+
+                    {/* Post footer action triggers */}
+                    <div className="p-1 border-t border-[#1A2433] flex items-center justify-between text-[5px] px-1.5 select-none bg-[#0B0F14]/75">
+                      <div className="flex gap-1.5">
+                        <span className="text-red-400 text-[6px]">❤</span>
+                        <span className="text-gray-400">💬</span>
+                        <span className="text-gray-300">✈</span>
+                      </div>
+                      <span className="text-gray-400">☖</span>
+                    </div>
+                  </motion.div>
+
                 </div>
 
-                {/* Sub-grid of tablet preview below to complete instructions */}
-                <div className="mt-4 grid grid-cols-12 gap-4 relative z-10">
-                  <div className="col-span-3" />
-                  <div className="col-span-6">
-                    <ImagePlaceholder type="tablet" title="Tablet Adaptive Design" className="opacity-80 hover:opacity-100 transition-opacity duration-300 shadow-xl" />
-                  </div>
-                  {/* Extra floating analytics card */}
-                  <div className="col-span-3 bg-[#121923]/80 border border-[#1A2433] p-3 rounded-xl flex flex-col justify-between font-mono text-left">
-                    <span className="text-[8px] text-gray-500 uppercase">LOCAL SEO TARGET</span>
-                    <span className="text-green-400 text-sm font-bold">+210% map views</span>
-                    <span className="text-[7px] text-gray-400">Apex Plumbing Case</span>
-                  </div>
-                </div>
               </motion.div>
             </div>
+
           </div>
         </div>
       </section>
@@ -378,12 +525,12 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
               id={`featured-project-${project.id}`}
             >
               {/* Dynamic image mockup depending on category */}
-              <div className="w-full relative overflow-hidden rounded-xl bg-[#0B0F14]/70 p-4 border border-[#1A2433]">
+              <div className="w-full relative overflow-hidden">
                 {project.id === 'contractor-web' && <ImagePlaceholder type="desktop" title={project.title} />}
-                {project.id === 'restaurant-brand' && <ImagePlaceholder type="branding-kit" title={project.title} />}
+                {project.id === 'handyman-brand' && <ImagePlaceholder type="handyman-brand" title={project.title} />}
                 {project.id === 'premium-cards' && <ImagePlaceholder type="business-card" title={project.title} />}
                 {project.id === 'social-cohesion' && <ImagePlaceholder type="social-media" title={project.title} />}
-                {project.id !== 'contractor-web' && project.id !== 'restaurant-brand' && project.id !== 'premium-cards' && project.id !== 'social-cohesion' && (
+                {project.id !== 'contractor-web' && project.id !== 'handyman-brand' && project.id !== 'premium-cards' && project.id !== 'social-cohesion' && (
                   <ImagePlaceholder type="default" title={project.title} />
                 )}
               </div>
