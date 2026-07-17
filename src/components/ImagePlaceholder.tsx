@@ -24,7 +24,34 @@ export default function ImagePlaceholder({
   const [activeTab, setActiveTab] = useState<'after' | 'before'>('after');
 
   if (type === 'desktop') {
-    const isApexHvac = title.toLowerCase().includes('apex') || title.toLowerCase().includes('hvac') || title.toLowerCase().includes('wright') || title.toLowerCase().includes('inspection');
+    const isWrightWay = title.toLowerCase().includes('wright') || title.toLowerCase().includes('inspection');
+    const isEasysWelding = title.toLowerCase().includes('welding') || title.toLowerCase().includes('easy');
+    const isFlashpoint = title.toLowerCase().includes('flashpoint');
+    const isSpecialProject = isWrightWay || isEasysWelding || isFlashpoint;
+
+    // Browser URL bar text
+    let browserUrl = `${title.toLowerCase().replace(/\s+/g, '-')}.com`;
+    let isSecure = true;
+
+    if (isWrightWay) {
+      browserUrl = activeTab === 'before' ? 'wright-way.netlify.app' : 'wright-way-services.netlify.app';
+      isSecure = activeTab === 'after';
+    } else if (isEasysWelding) {
+      browserUrl = 'easysweldingandfabrication.com';
+    } else if (isFlashpoint) {
+      browserUrl = 'flashpointsecurity.com';
+    }
+
+    // Determine target image source
+    let imageSrc = '';
+    if (isWrightWay) {
+      imageSrc = 'https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/wright-way_hero.gif?raw=true';
+    } else if (isEasysWelding) {
+      imageSrc = 'https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/Easys-Welding_hero.gif?raw=true';
+    } else if (isFlashpoint) {
+      imageSrc = 'https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/Flashpoint_hero.gif?raw=true';
+    }
+
     return (
       <div className={`relative w-full overflow-hidden rounded-xl border border-[#1A2433] bg-[#0B0F14]/40 flex flex-col ${className}`} style={{ aspectRatio: '16/10' }}>
         {/* Simulating OS Browser chrome */}
@@ -36,18 +63,13 @@ export default function ImagePlaceholder({
           </div>
           <div className="flex-1 mx-2 sm:mx-4 h-5 sm:h-6 rounded bg-[#0B0F14]/70 border border-[#1A2433] flex items-center justify-between px-2 text-[8px] sm:text-[10px] text-gray-500 font-mono select-none overflow-hidden">
             <span className="truncate">
-              {isApexHvac 
-                ? (activeTab === 'before' ? 'wright-way.netlify.app' : 'wright-way-services.netlify.app')
-                : `${title.toLowerCase().replace(/\s+/g, '-')}.com`
-              }
+              {browserUrl}
             </span>
-            {isApexHvac && (
-              <span className={`text-[7px] sm:text-[8px] shrink-0 ml-1 ${activeTab === 'before' ? 'text-amber-500' : 'text-emerald-500'}`}>
-                {activeTab === 'before' ? '⚠️ Unsecured' : '🔒 Secure'}
-              </span>
-            )}
+            <span className={`text-[7px] sm:text-[8px] shrink-0 ml-1 ${isSecure ? 'text-emerald-500' : 'text-amber-500'}`}>
+              {isSecure ? '🔒 Secure' : '⚠️ Unsecured'}
+            </span>
           </div>
-          {isApexHvac ? (
+          {isWrightWay ? (
             <div className="flex gap-1 bg-[#0B0F14]/60 border border-[#1A2433] rounded p-0.5 flex-shrink-0" onClick={(e) => e.stopPropagation()}>
               <button 
                 onClick={() => setActiveTab('before')}
@@ -75,70 +97,68 @@ export default function ImagePlaceholder({
           )}
         </div>
 
-        {isApexHvac ? (
-          activeTab === 'before' ? (
-            <div className="flex-1 w-full relative overflow-hidden bg-gray-50 flex flex-col font-sans text-gray-700">
-              {/* Top Banner */}
-              <div className="bg-amber-600 text-white text-[7px] sm:text-[8px] px-2 py-0.5 flex justify-between items-center font-mono">
-                <span>⚠️ Unsecured Connection (Missing SSL)</span>
-                <span>Lexington County: (803) 555-0143</span>
+        {isWrightWay && activeTab === 'before' ? (
+          <div className="flex-1 w-full relative overflow-hidden bg-gray-50 flex flex-col font-sans text-gray-700">
+            {/* Top Banner */}
+            <div className="bg-amber-600 text-white text-[7px] sm:text-[8px] px-2 py-0.5 flex justify-between items-center font-mono">
+              <span>⚠️ Unsecured Connection (Missing SSL)</span>
+              <span>Lexington County: (803) 555-0143</span>
+            </div>
+            {/* Header */}
+            <div className="border-b border-gray-200 px-3 py-1 flex justify-between items-center bg-white">
+              <span className="font-serif font-bold text-[9px] sm:text-[10px] text-gray-800 flex items-center gap-1">
+                🏠 Wright-Way Inspections
+              </span>
+              <span className="text-[7px] sm:text-[8px] text-blue-600 underline">Home | Gallery | Contact</span>
+            </div>
+            {/* Hero */}
+            <div className="flex-1 p-3 flex flex-col justify-center items-center text-center space-y-1 bg-gray-100">
+              <h1 className="text-[10px] sm:text-xs font-serif font-bold text-gray-900 leading-tight">
+                Done your way, the Wright Way — Every Time
+              </h1>
+              <p className="text-[7px] sm:text-[8px] text-gray-600 max-w-[200px] sm:max-w-[280px]">
+                Professional Home Inspection & Remodeling Services in Lexington, SC and surrounding areas.
+              </p>
+              <button className="bg-blue-600 text-white text-[7px] sm:text-[8px] px-2 py-0.5 rounded shadow cursor-not-allowed">
+                Submit Form
+              </button>
+            </div>
+            {/* Performance Indicator Overlay */}
+            <div className="absolute inset-0 bg-[#0B0F14]/95 flex flex-col items-center justify-center p-3 text-center space-y-1.5 backdrop-blur-[1px]">
+              <div className="bg-amber-500/10 text-amber-500 border border-amber-500/20 px-1.5 py-0.5 rounded text-[7px] sm:text-[8px] font-mono uppercase tracking-wider">
+                Legacy Site: wright-way.netlify.app
               </div>
-              {/* Header */}
-              <div className="border-b border-gray-200 px-3 py-1 flex justify-between items-center bg-white">
-                <span className="font-serif font-bold text-[9px] sm:text-[10px] text-gray-800 flex items-center gap-1">
-                  🏠 Wright-Way Inspections
+              <div className="text-xl sm:text-2xl font-mono font-bold text-red-500 tracking-tight">24/100</div>
+              <div className="text-[9px] sm:text-[10px] text-red-400 font-medium font-mono">
+                Sluggish Mobile Performance & Unoptimized
+              </div>
+              <p className="text-[7px] sm:text-[8px] text-gray-400 max-w-[240px] sm:max-w-[320px] leading-relaxed">
+                The original platform loaded slowly, lacked secure elements, and failed to guide users to structured lead generation.
+              </p>
+              <div className="flex gap-1.5 pt-1">
+                <span className="px-1.5 py-0.5 bg-[#121923] text-gray-400 rounded text-[7px] font-mono border border-[#1A2433]">
+                  6.2s load time
                 </span>
-                <span className="text-[7px] sm:text-[8px] text-blue-600 underline">Home | Gallery | Contact</span>
-              </div>
-              {/* Hero */}
-              <div className="flex-1 p-3 flex flex-col justify-center items-center text-center space-y-1 bg-gray-100">
-                <h1 className="text-[10px] sm:text-xs font-serif font-bold text-gray-900 leading-tight">
-                  Done your way, the Wright Way — Every Time
-                </h1>
-                <p className="text-[7px] sm:text-[8px] text-gray-600 max-w-[200px] sm:max-w-[280px]">
-                  Professional Home Inspection & Remodeling Services in Lexington, SC and surrounding areas.
-                </p>
-                <button className="bg-blue-600 text-white text-[7px] sm:text-[8px] px-2 py-0.5 rounded shadow cursor-not-allowed">
-                  Submit Form
-                </button>
-              </div>
-              {/* Performance Indicator Overlay */}
-              <div className="absolute inset-0 bg-[#0B0F14]/95 flex flex-col items-center justify-center p-3 text-center space-y-1.5 backdrop-blur-[1px]">
-                <div className="bg-amber-500/10 text-amber-500 border border-amber-500/20 px-1.5 py-0.5 rounded text-[7px] sm:text-[8px] font-mono uppercase tracking-wider">
-                  Legacy Site: wright-way.netlify.app
-                </div>
-                <div className="text-xl sm:text-2xl font-mono font-bold text-red-500 tracking-tight">24/100</div>
-                <div className="text-[9px] sm:text-[10px] text-red-400 font-medium font-mono">
-                  Sluggish Mobile Performance & Unoptimized
-                </div>
-                <p className="text-[7px] sm:text-[8px] text-gray-400 max-w-[240px] sm:max-w-[320px] leading-relaxed">
-                  The original platform loaded slowly, lacked secure elements, and failed to guide users to structured lead generation.
-                </p>
-                <div className="flex gap-1.5 pt-1">
-                  <span className="px-1.5 py-0.5 bg-[#121923] text-gray-400 rounded text-[7px] font-mono border border-[#1A2433]">
-                    6.2s load time
-                  </span>
-                  <span className="px-1.5 py-0.5 bg-[#121923] text-gray-400 rounded text-[7px] font-mono border border-[#1A2433]">
-                    0.4% conv. rate
-                  </span>
-                </div>
+                <span className="px-1.5 py-0.5 bg-[#121923] text-gray-400 rounded text-[7px] font-mono border border-[#1A2433]">
+                  0.4% conv. rate
+                </span>
               </div>
             </div>
-          ) : (
-            <div className="flex-1 w-full relative overflow-hidden bg-black flex flex-col justify-between">
-              <img 
-                src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/imgs/image.png"
-                alt={title}
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-              {/* Elegant "After" Overlay badge */}
-              <div className="absolute bottom-2 right-2 bg-[#0B0F14]/80 border border-green-500/30 text-green-400 px-2 py-0.5 rounded text-[7px] sm:text-[8px] font-mono uppercase tracking-wider flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                NoLabel Redesign Active
-              </div>
+          </div>
+        ) : isSpecialProject ? (
+          <div className="flex-1 w-full relative overflow-hidden bg-black flex flex-col justify-between">
+            <img 
+              src={imageSrc}
+              alt={title}
+              className="w-full h-full object-cover object-top"
+              referrerPolicy="no-referrer"
+            />
+            {/* Elegant "After" Overlay badge */}
+            <div className="absolute bottom-2 right-2 bg-[#0B0F14]/80 border border-green-500/30 text-green-400 px-2 py-0.5 rounded text-[7px] sm:text-[8px] font-mono uppercase tracking-wider flex items-center gap-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+              NoLabel Redesign Active
             </div>
-          )
+          </div>
         ) : (
           /* Dynamic Mockup Body */
           <div className="flex-1 w-full bg-[#0B0F14]/50 rounded-b-lg p-4 flex flex-col gap-3 relative overflow-hidden group">
@@ -181,7 +201,14 @@ export default function ImagePlaceholder({
           <div className="absolute top-2 left-1/2 -translate-x-1/2 w-12 h-1.5 rounded-full bg-gray-800" />
           
           <div className="flex items-center justify-between mt-2">
-            <div className="w-6 h-6 rounded-full bg-cyan-400/20 flex items-center justify-center font-bold text-[8px] text-cyan-400">NL</div>
+            <div className="w-6 h-6 rounded-full overflow-hidden flex items-center justify-center">
+              <img 
+                src="https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/NLS_Logo.png?raw=true" 
+                alt="No/Label Logo" 
+                className="w-full h-full object-contain"
+                referrerPolicy="no-referrer"
+              />
+            </div>
             <div className="h-1.5 w-12 bg-gray-800 rounded" />
           </div>
 
@@ -257,12 +284,17 @@ export default function ImagePlaceholder({
         <div className="relative w-full rounded-xl border border-[#1A2433] bg-gradient-to-br from-[#121923] to-[#0B0F14] p-6 overflow-hidden flex flex-col justify-between shadow-xl" style={{ aspectRatio: '1.75/1' }}>
           <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-cyan-500/10 blur-xl pointer-events-none" />
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-400 to-blue-500 flex items-center justify-center font-bold text-sm tracking-tighter text-[#0B0F14]">
-              NL
+            <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center">
+              <img 
+                src="https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/NLS_Logo.png?raw=true" 
+                alt="No/Label Logo" 
+                className="w-full h-full object-contain"
+                referrerPolicy="no-referrer"
+              />
             </div>
             <div>
-              <span className="font-display font-bold text-md tracking-tight text-white block">NoLabel</span>
-              <span className="text-[8px] font-mono tracking-widest text-[#00D9FF] -mt-1 block">WEB_AGENCY</span>
+              <span className="font-display font-bold text-md tracking-tight text-white block">No/Label</span>
+              <span className="text-[8px] font-mono tracking-widest text-[#00D9FF] -mt-1 block font-bold">SOLUTIONS</span>
             </div>
           </div>
           <div className="mt-auto">

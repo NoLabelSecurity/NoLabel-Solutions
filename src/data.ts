@@ -146,7 +146,7 @@ export const PROJECTS: Project[] = [
     title: 'Wright-Way Home Inspections & Renovations',
     category: 'Web Development',
     description: 'A modern, lead-focused website for a trusted home inspection and renovation company, engineered to build homeowner confidence and streamline estimate requests.',
-    longDescription: 'Wright-Way Home Inspections & Renovations needed a professional online presence that reflected the quality of their inspection and remodeling services. NoLabel redesigned their website from the ground up, focusing on homeowner trust, service clarity, and a frictionless inquiry experience. By combining fast load times, mobile-first design, and strategically placed conversion points, the new platform helps turn visitors into qualified leads while showcasing the company\'s expertise throughout Lexington County and surrounding communities.',
+    longDescription: 'Wright-Way Home Inspections & Renovations needed a professional online presence that reflected the quality of their inspection and remodeling services. No/Label Solutions redesigned their website from the ground up, focusing on homeowner trust, service clarity, and a frictionless inquiry experience. By combining fast load times, mobile-first design, and strategically placed conversion points, the new platform helps turn visitors into qualified leads while showcasing the company\'s expertise throughout Lexington County and surrounding communities.',
     year: '2025',
     client: 'Wright-Way Services LLC',
     metrics: [
@@ -164,27 +164,55 @@ export const PROJECTS: Project[] = [
     statusLine: 'Deployment Live & Optimized for Local Search Visibility.'
   },
   {
-    id: 'handyman-brand',
-    title: 'Fix It Right Brand Guidelines',
-    category: 'Branding',
-    description: 'A cohesive, high-impact brand identity system and visual style framework engineered for a regional handyman and premium repair service.',
-    longDescription: 'Fix It Right Handyman Services was seeking to transition from a generic wordmark into an authoritative, local repair authority. NoLabel crafted a complete brand design, establishing a solid, modern emblem combining a home outline with an integrated mustard-yellow hammer. We formulated eye-safe, high-contrast dark palette parameters (Charcoal, Slate, Mustard, Warm Wood) and typography recommendations (Oswald display headings paired with Inter for clear body layouts) to secure elite regional standing on vehicles, print flyers, and responsive screens.',
+    id: 'easys-welding',
+    title: 'Easy\'s Welding & Fabrication',
+    category: 'Web Development',
+    description: 'A rugged, high-impact web presence for a local metal fabrication and custom welding shop, engineered to drive local service requests and structural contract leads.',
+    longDescription: 'Easy\'s Welding & Fabrication needed a rugged yet professional digital showroom to display their industrial, commercial, and residential metal works. No/Label Solutions engineered a modern, speed-optimized showcase featuring high-definition project galleries, structural compliance details, and an interactive quote estimate engine. By focusing on mobile accessibility and local search relevance, the platform drives a steady stream of residential repair jobs and large-scale commercial welding bids directly to their inbox.',
     year: '2026',
-    client: 'Fix It Right Handyman Services',
+    client: 'Easy\'s Welding & Fabrication',
     metrics: [
-      { label: 'Customer Inquiry Hike', value: '+64%' },
-      { label: 'Offline Brand Affinity', value: 'Pristine' },
-      { label: 'Brand Guidelines Assets', value: 'Complete' }
+      { label: 'Commercial Bid Inbound', value: '+134%' },
+      { label: 'Mobile Response Speed', value: '0.28s' },
+      { label: 'Local Estimate Volume', value: '3.5x' }
     ],
-    accentColor: 'from-[#F59E0B]/20 to-transparent',
-    tags: ['Brand Identity Package', 'Logo Design System', 'Oswald Typography', 'Color Palette Setup']
+    accentColor: 'from-orange-500/20 to-transparent',
+    tags: [
+      'Custom React Gallery',
+      'Local Lead Routing',
+      'Mobile Quote Configurator',
+      'Industrial Brand Integration'
+    ],
+    statusLine: 'Deployment Live & Optimized for Commercial Search Queries.'
+  },
+  {
+    id: 'flashpoint-web',
+    title: 'Flashpoint Security Services',
+    category: 'Web Development',
+    description: 'An elite, high-security cyber defense and physical asset security consultation web portal designed to capture enterprise and municipal contracts.',
+    longDescription: 'Flashpoint Security Services delivers comprehensive, military-grade physical and cyber threat mitigation. They partnered with No/Label Solutions to architect a premium, high-trust digital portal that reflects their flawless operational integrity. The custom interface features zero-friction security consulting schedulers, automated threat intelligence resource downloads, and secure client intake channels. Engineered on a secure, lightweight stack, the site achieves pristine accessibility scores while projecting absolute corporate stability.',
+    year: '2025',
+    client: 'Flashpoint Protection Group',
+    metrics: [
+      { label: 'Enterprise RFPs Captured', value: '+85%' },
+      { label: 'Security Ingestion Load', value: 'Under 0.2s' },
+      { label: 'Qualified Consultations', value: '4.1x' }
+    ],
+    accentColor: 'from-red-500/20 to-transparent',
+    tags: [
+      'High-Trust UX Architecture',
+      'Secure Lead Intake',
+      'Performance Hardened',
+      'Compliance Optimized'
+    ],
+    statusLine: 'System Active & Structurally Hardened for High-Load Operational Demands.'
   },
   {
     id: 'premium-cards',
     title: 'Vanguard Realty Business Cards',
     category: 'Print Design',
     description: 'Ultra-premium, high-thickness double-sided tactile networking cards paired with embedded high-contrast QR scan codes for instant contact file saving.',
-    longDescription: 'Luxury real estate agents require physical touchpoints that instantly establish luxury authority. NoLabel crafted custom cards for Vanguard Realty on velvet-touch thick stock with high-margin modern grids, pairing the physical card with an instant custom mobile landing page for quick digital exchange.',
+    longDescription: 'Luxury real estate agents require physical touchpoints that instantly establish luxury authority. No/Label Solutions crafted custom cards for Vanguard Realty on velvet-touch thick stock with high-margin modern grids, pairing the physical card with an instant custom mobile landing page for quick digital exchange.',
     year: '2025',
     client: 'Vanguard Elite Real Estate',
     metrics: [
@@ -228,22 +256,6 @@ export const PROJECTS: Project[] = [
     tags: ['SVG Engineering', 'Typography Hierarchy', 'Favicons & Marks', 'Style Guides']
   },
   {
-    id: 'landing-funnel',
-    title: 'FitShift Co. Lead Funnel',
-    category: 'Web Development',
-    description: 'A high-converting, interactive single-page landing site with custom quote configurators, instant calendar booking widgets, and lead routing.',
-    longDescription: 'FitShift wanted to launch a local corporate wellness project quickly. We developed a supercharged speed landing page highlighting structured service paths, interactive calculators, and an auto-routing form to filter high-budget leads directly.',
-    year: '2025',
-    client: 'FitShift Wellness Group',
-    metrics: [
-      { label: 'Landing Conversion Rate', value: '9.4%' },
-      { label: 'Average Interaction Time', value: '2m 15s' },
-      { label: 'First Contentful Paint', value: '0.35s' }
-    ],
-    accentColor: 'from-teal-400/15 to-transparent',
-    tags: ['React Elements', 'Lead Routing', 'Conversion Design', 'Speed Engineered']
-  },
-  {
     id: 'seo-optimized-growth',
     title: 'Elite Roof Repair Local SEO',
     category: 'SEO',
@@ -268,7 +280,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: 'Founder & Principal',
     company: 'Wright-Way Services LLC',
     avatarLetter: 'M',
-    quote: 'The speed of our new contractor site under NoLabel development is staggering. In our industry, mobile clients call the first business that loads and looks premium. We doubled our digital lead flow in the first 45 days.',
+    quote: 'The speed of our new contractor site under No/Label Solutions development is staggering. In our industry, mobile clients call the first business that loads and looks premium. We doubled our digital lead flow in the first 45 days.',
     rating: 5
   },
   {
@@ -286,7 +298,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: 'Managing Broker',
     company: 'Vanguard Realty',
     avatarLetter: 'D',
-    quote: 'We wanted physical business cards that felt premium, with instant mobile linkage. The QR contact cards NoLabel made are flawless. Clients are consistently impressed when they tap our custom page and save my number instantly.',
+    quote: 'We wanted physical business cards that felt premium, with instant mobile linkage. The QR contact cards No/Label Solutions made are flawless. Clients are consistently impressed when they tap our custom page and save my number instantly.',
     rating: 5
   },
   {
@@ -310,7 +322,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Elena Wright',
     role: 'Brand Planner & Typography Lead',
-    bio: 'Crafts flawless brand packages, luxury print mockups, and cohesive color palettes. Elena ensures that NoLabel designs look incredibly distinct, spacing feels elegant, and branding coordinates scale cleanly across physical and screen layers.',
+    bio: 'Crafts flawless brand packages, luxury print mockups, and cohesive color palettes. Elena ensures that No/Label Solutions designs look incredibly distinct, spacing feels elegant, and branding coordinates scale cleanly across physical and screen layers.',
     avatarLetter: 'E'
   }
 ];

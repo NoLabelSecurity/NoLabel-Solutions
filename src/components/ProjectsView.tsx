@@ -54,7 +54,7 @@ export default function ProjectsView({ onNavigate, selectedProjectId, onClearSel
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <span className="text-xs font-mono text-[#00D9FF] bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded-full uppercase tracking-wider">
-              Agency Case Studies
+              Solutions Case Studies
             </span>
             <h1 className="text-4xl sm:text-5xl font-display font-medium text-white tracking-tight" id="portfolio-title">
               Our Deployments & Engineered Works
@@ -108,19 +108,18 @@ export default function ProjectsView({ onNavigate, selectedProjectId, onClearSel
               >
                 {/* Beautiful custom responsive wireframe illustration based on project categories */}
                 <div className="w-full relative overflow-hidden">
-                  {project.id === 'contractor-web' && <ImagePlaceholder type="desktop" title={project.title} />}
-                  {project.id === 'handyman-brand' && <ImagePlaceholder type="handyman-brand" title={project.title} />}
+                  {(project.id === 'contractor-web' || project.id === 'easys-welding' || project.id === 'flashpoint-web' || project.id === 'seo-optimized-growth') && (
+                    <ImagePlaceholder type="desktop" title={project.title} />
+                  )}
                   {project.id === 'premium-cards' && <ImagePlaceholder type="business-card" title={project.title} />}
                   {project.id === 'social-cohesion' && <ImagePlaceholder type="social-media" title={project.title} />}
                   {project.id === 'core-logo' && <ImagePlaceholder type="logo-showcase" title={project.title} />}
-                  {project.id === 'landing-funnel' && <ImagePlaceholder type="desktop" title={project.title} />}
-                  {project.id === 'seo-optimized-growth' && <ImagePlaceholder type="desktop" title={project.title} />}
                   {project.id !== 'contractor-web' && 
-                   project.id !== 'handyman-brand' && 
+                   project.id !== 'easys-welding' && 
+                   project.id !== 'flashpoint-web' && 
                    project.id !== 'premium-cards' && 
                    project.id !== 'social-cohesion' && 
                    project.id !== 'core-logo' && 
-                   project.id !== 'landing-funnel' && 
                    project.id !== 'seo-optimized-growth' && (
                      <ImagePlaceholder type="default" title={project.title} />
                   )}
@@ -217,19 +216,18 @@ export default function ProjectsView({ onNavigate, selectedProjectId, onClearSel
                   <div>
                     <span className="text-[9px] font-mono text-gray-500 block mb-2 uppercase">OUTPUT WORKPIECE BLUEPRINT</span>
                     
-                    {activeModalProject.id === 'contractor-web' && <ImagePlaceholder type="desktop" title={activeModalProject.title} />}
-                    {activeModalProject.id === 'handyman-brand' && <ImagePlaceholder type="handyman-brand" title={activeModalProject.title} />}
+                    {(activeModalProject.id === 'contractor-web' || activeModalProject.id === 'easys-welding' || activeModalProject.id === 'flashpoint-web' || activeModalProject.id === 'seo-optimized-growth') && (
+                      <ImagePlaceholder type="desktop" title={activeModalProject.title} />
+                    )}
                     {activeModalProject.id === 'premium-cards' && <ImagePlaceholder type="business-card" title={activeModalProject.title} />}
                     {activeModalProject.id === 'social-cohesion' && <ImagePlaceholder type="social-media" title={activeModalProject.title} />}
                     {activeModalProject.id === 'core-logo' && <ImagePlaceholder type="logo-showcase" title={activeModalProject.title} />}
-                    {activeModalProject.id === 'landing-funnel' && <ImagePlaceholder type="desktop" title={activeModalProject.title} />}
-                    {activeModalProject.id === 'seo-optimized-growth' && <ImagePlaceholder type="desktop" title={activeModalProject.title} />}
                     {activeModalProject.id !== 'contractor-web' && 
-                     activeModalProject.id !== 'handyman-brand' && 
+                     activeModalProject.id !== 'easys-welding' && 
+                     activeModalProject.id !== 'flashpoint-web' && 
                      activeModalProject.id !== 'premium-cards' && 
                      activeModalProject.id !== 'social-cohesion' && 
                      activeModalProject.id !== 'core-logo' && 
-                     activeModalProject.id !== 'landing-funnel' && 
                      activeModalProject.id !== 'seo-optimized-growth' && (
                        <ImagePlaceholder type="default" title={activeModalProject.title} />
                     )}

@@ -57,12 +57,17 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
                 id="hero-badge-brand"
               >
                 {/* NL Icon brand box with bright cyan glow and dark background */}
-                <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-cyan-400/20" id="hero-brand-logo">
-                  <span className="text-xl font-display font-extrabold text-black tracking-tight select-none">NL</span>
+                <div className="w-20 h-20 rounded-2xl overflow-hidden flex items-center justify-center shadow-lg shadow-cyan-400/20" id="hero-brand-logo">
+                  <img 
+                    src="https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/NLS_Logo.png?raw=true" 
+                    alt="No/Label Logo" 
+                    className="w-full h-full object-contain"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <div>
-                  <h2 className="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight leading-none">NoLabel</h2>
-                  <span className="text-[10px] font-mono font-bold tracking-[0.15em] text-[#00D9FF] uppercase">Web Agency</span>
+                  <h2 className="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight leading-none">No/Label</h2>
+                  <span className="text-[10px] font-mono font-bold tracking-[0.15em] text-[#00D9FF] uppercase">Solutions</span>
                 </div>
               </motion.div>
 
@@ -237,13 +242,20 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
                     id="matte-card"
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 bg-gradient-to-tr from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center text-[10px] text-black font-extrabold">NL</div>
+                      <div className="w-7 h-7 rounded-lg overflow-hidden flex items-center justify-center">
+                        <img 
+                          src="https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/NLS_Logo.png?raw=true" 
+                          alt="No/Label Logo" 
+                          className="w-full h-full object-contain"
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
                       <div>
-                        <span className="text-xs font-display font-semibold text-white block leading-none">NoLabel</span>
-                        <span className="text-[5px] font-mono leading-none text-[#00D9FF] tracking-widest uppercase block mt-0.5">Web Agency</span>
+                        <span className="text-xs font-display font-semibold text-white block leading-none">No/Label</span>
+                        <span className="text-[5px] font-mono leading-none text-[#00D9FF] tracking-widest uppercase block mt-0.5">Solutions</span>
                       </div>
                     </div>
-                    <span className="text-[7.5px] font-mono text-gray-500 text-left mt-auto">nolabel.agency</span>
+                    <span className="text-[7.5px] font-mono text-gray-500 text-left mt-auto">nolabel.solutions</span>
                   </motion.div>
 
                   {/* Center: Premium White Business Card */}
@@ -254,8 +266,8 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
                   >
                     <div className="flex items-start justify-between">
                       <div className="text-left">
-                        <span className="text-[11px] font-display font-bold block leading-none">NoLabel</span>
-                        <span className="text-[5px] font-mono text-[#0055ff] uppercase font-bold tracking-wider">Web Agency</span>
+                        <span className="text-[11px] font-display font-bold block leading-none">No/Label</span>
+                        <span className="text-[5px] font-mono text-[#0055ff] uppercase font-bold tracking-wider">Solutions</span>
                       </div>
                       
                       {/* Stylized custom SVG QR Code block */}
@@ -274,8 +286,8 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
 
                     <div className="text-[5.5px] sm:text-[6.5px] font-mono text-slate-800 space-y-0.5 text-left mt-1.5 border-t border-slate-100 pt-1.5 flex flex-col">
                       <span className="font-semibold text-slate-900 flex items-center gap-1">☏ 864-123-4567</span>
-                      <span className="flex items-center gap-1">✉ hello@nolabel.agency</span>
-                      <span className="font-semibold text-[#0055ff] flex items-center gap-1">🌐 nolabel.agency</span>
+                      <span className="flex items-center gap-1">✉ hello@nolabel.solutions</span>
+                      <span className="font-semibold text-[#0055ff] flex items-center gap-1">🌐 nolabel.solutions</span>
                     </div>
                   </motion.div>
 
@@ -288,8 +300,15 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
                     {/* Post Header */}
                     <div className="p-1 px-2 border-b border-[#1A2433] bg-[#0B0F14]/80 flex items-center justify-between">
                       <div className="flex items-center gap-1 leading-none text-left">
-                        <div className="w-3.5 h-3.5 bg-[#00D9FF] rounded-full flex items-center justify-center text-[5px] text-black font-extrabold scale-90">NL</div>
-                        <span className="font-mono font-bold text-[6px]">NoLabel</span>
+                        <div className="w-3.5 h-3.5 rounded-full overflow-hidden flex items-center justify-center scale-90">
+                          <img 
+                            src="https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/NLS_Logo.png?raw=true" 
+                            alt="No/Label Logo" 
+                            className="w-full h-full object-contain"
+                            referrerPolicy="no-referrer"
+                          />
+                        </div>
+                        <span className="font-mono font-bold text-[6px]">No/Label</span>
                       </div>
                       <span className="text-[5px] text-gray-500 font-bold leading-none">•••</span>
                     </div>
@@ -511,29 +530,39 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-          {/* We will showcase the first 4 projects with beautiful mockups */}
-          {PROJECTS.slice(0, 4).map((project, idx) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: (idx % 2) * 0.1, ease: 'easeOut' }}
-              whileHover={{ y: -8, borderColor: 'rgba(0, 217, 255, 0.4)', boxShadow: '0 12px 30px -10px rgba(0, 217, 255, 0.08)' }}
-              onClick={() => onSelectProject(project.id)}
-              className="bg-[#121923]/90 border border-[#1A2433] rounded-2xl p-5 sm:p-6 flex flex-col justify-between gap-6 cursor-pointer group transition-all duration-305 relative overflow-hidden"
-              id={`featured-project-${project.id}`}
-            >
-              {/* Dynamic image mockup depending on category */}
-              <div className="w-full relative overflow-hidden">
-                {project.id === 'contractor-web' && <ImagePlaceholder type="desktop" title={project.title} />}
-                {project.id === 'handyman-brand' && <ImagePlaceholder type="handyman-brand" title={project.title} />}
-                {project.id === 'premium-cards' && <ImagePlaceholder type="business-card" title={project.title} />}
-                {project.id === 'social-cohesion' && <ImagePlaceholder type="social-media" title={project.title} />}
-                {project.id !== 'contractor-web' && project.id !== 'handyman-brand' && project.id !== 'premium-cards' && project.id !== 'social-cohesion' && (
-                  <ImagePlaceholder type="default" title={project.title} />
-                )}
-              </div>
+          {/* We will showcase the selected featured projects with beautiful mockups */}
+          {PROJECTS.filter(p => ['contractor-web', 'easys-welding', 'flashpoint-web', 'premium-cards'].includes(p.id))
+            .sort((a, b) => {
+              const order = ['contractor-web', 'easys-welding', 'flashpoint-web', 'premium-cards'];
+              return order.indexOf(a.id) - order.indexOf(b.id);
+            })
+            .map((project, idx) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: (idx % 2) * 0.1, ease: 'easeOut' }}
+                whileHover={{ y: -8, borderColor: 'rgba(0, 217, 255, 0.4)', boxShadow: '0 12px 30px -10px rgba(0, 217, 255, 0.08)' }}
+                onClick={() => onSelectProject(project.id)}
+                className="bg-[#121923]/90 border border-[#1A2433] rounded-2xl p-5 sm:p-6 flex flex-col justify-between gap-6 cursor-pointer group transition-all duration-305 relative overflow-hidden"
+                id={`featured-project-${project.id}`}
+              >
+                {/* Dynamic image mockup depending on category or id */}
+                <div className="w-full relative overflow-hidden">
+                  {(project.id === 'contractor-web' || project.id === 'flashpoint-web' || project.id === 'easys-welding') && (
+                    <ImagePlaceholder type="desktop" title={project.title} />
+                  )}
+                  {project.id === 'premium-cards' && <ImagePlaceholder type="business-card" title={project.title} />}
+                  {project.id === 'social-cohesion' && <ImagePlaceholder type="social-media" title={project.title} />}
+                  {project.id !== 'contractor-web' && 
+                   project.id !== 'flashpoint-web' && 
+                   project.id !== 'easys-welding' && 
+                   project.id !== 'premium-cards' && 
+                   project.id !== 'social-cohesion' && (
+                    <ImagePlaceholder type="default" title={project.title} />
+                  )}
+                </div>
 
               {/* Info section of featured project */}
               <div className="space-y-4">

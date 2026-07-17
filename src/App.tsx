@@ -74,7 +74,7 @@ export default function App() {
       {/* 1. STICKY GLASSMORPHISM NAVBAR */}
       <header className="sticky top-0 z-40 w-full bg-[#0B0F14]/75 backdrop-blur-md border-b border-[#121923]" id="global-navbar">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-24">
             
             {/* Logo */}
             <div 
@@ -82,12 +82,17 @@ export default function App() {
               className="flex items-center gap-2.5 cursor-pointer group"
               id="header-logo"
             >
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-tr from-[#00D9FF] to-[#3B82F6] flex items-center justify-center font-bold text-base text-[#0B0F14] font-display select-none tracking-tighter group-hover:scale-105 transition-transform">
-                NL
+              <div className="w-24 h-24 overflow-hidden flex items-center justify-center select-none group-hover:scale-105 transition-transform">
+                <img 
+                  src="https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/NLS_Logo.png?raw=true" 
+                  alt="No/Label Logo" 
+                  className="w-full h-full object-contain"
+                  referrerPolicy="no-referrer"
+                />
               </div>
               <div className="text-left select-none">
-                <span className="font-display font-bold text-xl tracking-tight text-white block">NoLabel</span>
-                <span className="text-[8px] font-mono tracking-widest text-[#00D9FF] -mt-1 block">WEB_AGENCY</span>
+                <span className="font-display font-bold text-xl tracking-tight text-white block">No/Label</span>
+                <span className="text-[8px] font-mono tracking-widest text-[#00D9FF] -mt-1 block font-bold">SOLUTIONS</span>
               </div>
             </div>
 
@@ -207,18 +212,23 @@ export default function App() {
             {/* Left info column */}
             <div className="md:col-span-5 space-y-5">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-400 to-blue-500 flex items-center justify-center font-bold text-xs text-[#0B0F14]">
-                  NL
+                <div className="w-12 h-12 rounded-lg overflow-hidden flex items-center justify-center">
+                  <img 
+                    src="https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/NLS_Logo.png?raw=true" 
+                    alt="No/Label Logo" 
+                    className="w-full h-full object-contain"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
-                <span className="font-display font-bold text-lg tracking-tight text-white">NoLabel</span>
+                <span className="font-display font-bold text-lg tracking-tight text-white">No/Label Solutions</span>
               </div>
               <p className="text-gray-400 text-xs sm:text-sm leading-relaxed max-w-sm font-light">
-                NoLabel is a small business web development, branding, and digital presence agency built strictly to help local contractors, builders, shops, and service groups establish authentic regional credibility. No bloated page builders.
+                No/Label Solutions is a small business web development, branding, and digital presence partner built strictly to help local contractors, builders, shops, and service groups establish authentic regional credibility. No bloated page builders.
               </p>
               
               <div className="text-[11px] font-mono text-gray-500 space-y-1">
-                <p>NOLABEL DIGITAL PLATFORM SYSTEMS</p>
-                <p>© 2026 NoLabel. All rights reserved.</p>
+                <p>NO/LABEL SOLUTIONS DIGITAL SYSTEMS</p>
+                <p>© 2026 No/Label Solutions. All rights reserved.</p>
               </div>
             </div>
 

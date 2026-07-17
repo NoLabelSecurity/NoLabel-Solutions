@@ -28,16 +28,16 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             className="max-w-3xl space-y-4"
           >
             <span className="text-xs font-mono text-[#00D9FF] bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded-full uppercase tracking-wider inline-block">
-              Our Agency Creed
+              Our Creed
             </span>
             <h1 className="text-4xl sm:text-5xl font-display font-medium text-white tracking-tight leading-none" id="about-title">
-              We Are NoLabel.
+              We Are No/Label Solutions.
             </h1>
             <h2 className="text-xl sm:text-2xl font-display font-light text-gray-400">
               Helping small businesses establish a professional digital presence.
             </h2>
             <p className="text-gray-400 text-sm sm:text-md font-light leading-relaxed max-w-2xl pt-2">
-              We founded NoLabel because we saw local contractors, shops, boutiques, and freelancers drowning in expensive SaaS contracts, sluggish website templates, and flashy agencies that didn't understand regional markets. We engineer elite, high-speed code and tactile brand assets designed to match your service quality.
+              We founded No/Label Solutions because we saw local contractors, shops, boutiques, and freelancers drowning in expensive SaaS contracts, sluggish website templates, and flashy agencies that didn't understand regional markets. We engineer elite, high-speed code and tactile brand assets designed to match your service quality.
             </p>
           </motion.div>
         </div>
@@ -120,7 +120,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             className="lg:col-span-7"
           >
             <div className="space-y-2">
-              <span className="text-[10px] font-mono text-gray-500 block uppercase">NOLABEL DESIGN LAB & WORKSPACE MOCKUP</span>
+              <span className="text-[10px] font-mono text-gray-500 block uppercase">NO/LABEL DESIGN LAB & WORKSPACE MOCKUP</span>
               
               <motion.div 
                 whileHover={{ y: -4, borderColor: 'rgba(0, 217, 255, 0.25)' }}
@@ -134,7 +134,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
                   <div className="flex justify-between items-center border-b border-[#1A2433] pb-3 text-xs font-mono text-gray-400">
                     <span className="flex items-center gap-1.5 font-mono text-[10px]">
                       <Terminal className="w-3.5 h-3.5 text-cyan-400" /> 
-                      NOLABEL_WORKSPACE.CFG
+                      NO_LABEL_WORKSPACE.CFG
                     </span>
                     <span>STATUS: ACTIVE SYSTEM</span>
                   </div>
@@ -168,7 +168,14 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
                   {/* Representing the workspace image with geometric layers */}
                   <div className="bg-[#0B0F14]/50 border border-[#1A2433] p-4 rounded-xl flex items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded bg-gradient-to-tr from-cyan-400 to-blue-500 flex items-center justify-center text-[#0B0F14] font-bold font-mono text-xs">NL</div>
+                      <div className="w-8 h-8 rounded overflow-hidden flex items-center justify-center">
+                        <img 
+                          src="https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/NLS_Logo.png?raw=true" 
+                          alt="No/Label Logo" 
+                          className="w-full h-full object-contain"
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
                       <div>
                         <span className="text-xs text-white uppercase font-mono block">Creative Studio CAD Details</span>
                         <span className="text-[10px] text-gray-500 block font-sans font-light">Abstract engineering draft representing our physical headquarters</span>
@@ -229,7 +236,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               {/* Verified seal */}
               <div className="flex items-center gap-1.5 text-xs text-gray-500 font-mono mt-4 pt-4 border-t border-[#1A2433]">
                 <Award className="w-3.5 h-3.5 text-yellow-500" />
-                <span>NOLABEL AUTHORIZED AGENCY MAKER</span>
+                <span>NO/LABEL AUTHORIZED SOLUTIONS MAKER</span>
               </div>
             </motion.div>
           ))}
