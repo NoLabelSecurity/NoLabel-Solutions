@@ -34,6 +34,20 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
     }
   };
 
+  // Map service ID to background image filename from github
+  const getServiceBackgroundImage = (id: string) => {
+    switch (id) {
+      case 'brand-identity': return 'brand_identity.png';
+      case 'logo-design': return 'logo_design.png';
+      case 'business-cards': return 'business_cards.png';
+      case 'social-media': return 'social_presence.png';
+      case 'local-seo': return 'seo_google.png';
+      case 'qr-solutions': return 'QR_codes.png';
+      case 'automation': return 'business_automation.png';
+      default: return null;
+    }
+  };
+
   return (
     <div className="space-y-24 pb-20 overflow-hidden">
       {/* SECTION 1 — HERO */}
@@ -375,49 +389,35 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 whileHover={{ y: -6, borderColor: 'rgba(0, 217, 255, 0.4)', boxShadow: '0 10px 30px -10px rgba(0, 217, 255, 0.1)' }}
-                className="md:col-span-8 bg-gradient-to-br from-[#121923] to-[#1A2433] border border-[#1A2433] rounded-2xl p-6 sm:p-8 flex flex-col justify-between gap-6 relative shadow-xl overflow-hidden group text-left transition-colors duration-300"
+                className="md:col-span-8 bg-[#121923] border border-[#1A2433] rounded-2xl p-6 flex flex-col justify-between gap-6 relative shadow-xl overflow-hidden group text-left transition-colors duration-300"
                 id="service-featured-card"
               >
-                <div className="absolute right-0 top-0 w-48 h-48 bg-gradient-to-br from-cyan-500/10 to-transparent blur-2xl group-hover:scale-125 transition-transform" />
-                
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="p-3 bg-cyan-500/10 rounded-lg border border-cyan-500/20 text-[#00D9FF]">
-                      {getIcon(mainService.iconName, 'w-8 h-8')}
-                    </div>
-                    <span className="px-3 py-1 bg-cyan-500/10 rounded-full text-[10px] font-mono text-[#00D9FF] tracking-wider uppercase">PRIMARY FOCUS</span>
-                  </div>
-
-                  <h3 className="text-2xl font-display font-bold text-white max-w-md">{mainService.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed max-w-xl">{mainService.shortDescription}</p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 border-t border-[#1A2433]/80">
-                    {mainService.features.map((feat, index) => (
-                      <div key={index} className="flex items-center gap-2 text-xs text-gray-300">
-                        <span className="text-[#00D9FF]">✓</span>
-                        <span>{feat}</span>
-                      </div>
-                    ))}
-                  </div>
+                <div className="w-full relative overflow-hidden rounded-xl border border-[#1A2433]">
+                  <img 
+                    src="https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/home-cards/web-design-services.png?raw=true" 
+                    alt="Web Design and Development Services" 
+                    className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.01]"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
 
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4">
+                <div className="flex items-center justify-between pt-2 border-t border-[#1A2433]">
                   <button
                     onClick={() => {
                       onNavigate('services');
                       window.scrollTo(0, 0);
                     }}
-                    className="text-xs text-cyan-400 hover:text-cyan-300 font-mono tracking-wider flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer"
+                    className="text-xs text-gray-400 hover:text-cyan-400 font-mono tracking-wider flex items-center gap-1 cursor-pointer transition-colors"
                   >
-                    LEARN ABOUT METHOD <span>→</span>
+                    LEARN MORE <span>→</span>
                   </button>
                   <motion.button
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => onNavigate('contact')}
-                    className="px-5 py-2.5 bg-cyan-400 hover:bg-cyan-300 text-[#0B0F14] font-display font-semibold rounded-lg text-sm transition-colors text-center cursor-pointer shadow-md hover:shadow-cyan-400/25"
+                    className="px-5 py-2.5 bg-cyan-400 hover:bg-cyan-300 text-[#0B0F14] font-display font-semibold rounded-lg text-xs transition-colors text-center cursor-pointer shadow-md hover:shadow-cyan-400/25"
                   >
-                    {mainService.ctaText}
+                    BUILD YOUR SITE
                   </motion.button>
                 </div>
               </motion.div>
@@ -460,44 +460,63 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
             </motion.div>
 
             {/* Other Services Secondary Cards */}
-            {otherServices.map((service, index) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: (index % 3) * 0.08, ease: "easeOut" }}
-                whileHover={{ y: -6, borderColor: 'rgba(0, 217, 255, 0.25)', boxShadow: '0 8px 24px -10px rgba(0, 217, 255, 0.05)' }}
-                className="md:col-span-4 bg-[#121923] border border-[#1A2433] rounded-2xl p-6 flex flex-col justify-between gap-5 text-left relative overflow-hidden group transition-colors duration-300"
-                id={`service-card-${service.id}`}
-              >
-                <div className="space-y-3">
-                  <div className="p-2.5 bg-[#1A2433] w-fit rounded-lg text-[#00D9FF]">
-                    {getIcon(service.iconName)}
-                  </div>
-                  <h4 className="text-lg font-display font-medium text-white group-hover:text-cyan-400 transition-colors">{service.title}</h4>
-                  <p className="text-gray-400 text-xs leading-relaxed">{service.shortDescription}</p>
-                </div>
+            {otherServices.map((service, index) => {
+              const bgImg = getServiceBackgroundImage(service.id);
+              const bgUrl = bgImg 
+                ? `https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/home-cards/${bgImg}?raw=true`
+                : null;
 
-                <div className="pt-4 border-t border-[#1A2433] flex items-center justify-between mt-auto">
-                  <button
-                    onClick={() => {
-                      onNavigate('services');
-                      window.scrollTo(0, 0);
-                    }}
-                    className="text-[10px] font-mono tracking-wider text-gray-400 hover:text-cyan-400 flex items-center gap-1 cursor-pointer"
-                  >
-                    EXPLORE <span>→</span>
-                  </button>
-                  <button
-                    onClick={() => onNavigate('contact')}
-                    className="text-[10px] font-mono tracking-wider text-[#00D9FF] hover:text-white cursor-pointer"
-                  >
-                    GET QUOTE
-                  </button>
-                </div>
-              </motion.div>
-            ))}
+              return (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.5, delay: (index % 3) * 0.08, ease: "easeOut" }}
+                  whileHover={{ y: -6, borderColor: 'rgba(0, 217, 255, 0.25)', boxShadow: '0 8px 24px -10px rgba(0, 217, 255, 0.05)' }}
+                  className="md:col-span-4 bg-[#121923] border border-[#1A2433] rounded-2xl p-6 flex flex-col justify-between gap-5 text-left relative overflow-hidden group transition-colors duration-300"
+                  id={`service-card-${service.id}`}
+                >
+                  {bgUrl && (
+                    <div className="absolute inset-0 z-0">
+                      <img 
+                        src={bgUrl} 
+                        alt="" 
+                        className="w-full h-full object-cover opacity-100 group-hover:scale-105 transition-all duration-500 pointer-events-none"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/50" />
+                    </div>
+                  )}
+
+                  <div className="space-y-3 relative z-10">
+                    <div className="p-2.5 bg-[#1A2433]/90 w-fit rounded-lg text-[#00D9FF]">
+                      {getIcon(service.iconName)}
+                    </div>
+                    <h4 className="text-lg font-display font-medium text-white group-hover:text-cyan-400 transition-colors">{service.title}</h4>
+                    <p className="text-gray-400 text-xs leading-relaxed">{service.shortDescription}</p>
+                  </div>
+
+                  <div className="pt-4 border-t border-[#1A2433] flex items-center justify-between mt-auto relative z-10">
+                    <button
+                      onClick={() => {
+                        onNavigate('services');
+                        window.scrollTo(0, 0);
+                      }}
+                      className="text-[10px] font-mono tracking-wider text-gray-400 hover:text-cyan-400 flex items-center gap-1 cursor-pointer"
+                    >
+                      EXPLORE <span>→</span>
+                    </button>
+                    <button
+                      onClick={() => onNavigate('contact')}
+                      className="text-[10px] font-mono tracking-wider text-[#00D9FF] hover:text-white cursor-pointer"
+                    >
+                      GET QUOTE
+                    </button>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

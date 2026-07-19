@@ -45,6 +45,19 @@ export default function ProjectsView({ onNavigate, selectedProjectId, onClearSel
     onClearSelectedProject();
   };
 
+  const getProjectLiveUrl = (id: string) => {
+    switch (id) {
+      case 'contractor-web':
+        return 'https://wright-way-services.netlify.app/';
+      case 'easys-welding':
+        return 'https://easys-welding.netlify.app/';
+      case 'flashpoint-web':
+        return 'https://flashpoint-solutions.netlify.app/';
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="space-y-16 pb-20 text-left">
       {/* HEADER HERO */}
@@ -279,7 +292,17 @@ export default function ProjectsView({ onNavigate, selectedProjectId, onClearSel
                     <span>{activeModalProject.statusLine || "Deployment live & locked to global servers."}</span>
                   </div>
                   
-                  <div className="flex gap-3 w-full sm:w-auto">
+                  <div className="flex flex-wrap gap-3 w-full sm:w-auto justify-end">
+                    {getProjectLiveUrl(activeModalProject.id) && (
+                      <a
+                        href={getProjectLiveUrl(activeModalProject.id)!}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 sm:flex-initial px-5 py-2.5 bg-[#121923] border border-cyan-500/30 hover:border-[#00D9FF] text-[#00D9FF] hover:text-white rounded-lg text-xs font-display font-semibold transition-all text-center cursor-pointer flex items-center justify-center gap-1.5"
+                      >
+                        Visit Site <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
+                    )}
                     <button
                       onClick={handleCloseProjectModal}
                       className="flex-1 sm:flex-initial px-5 py-2.5 bg-[#0B0F14] border border-[#1A2433] hover:border-gray-500 text-gray-300 hover:text-white rounded-lg text-xs transition-colors text-center cursor-pointer"

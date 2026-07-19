@@ -18,7 +18,7 @@
 | Primary Database | None (Static data layers with client state) |
 | API Type | Direct UI data collection bindings |
 | Deployment Platform | Google Cloud Run Container |
-| Last Updated | 2026-07-17 |
+| Last Updated | 2026-07-19 |
 
 ---
 
