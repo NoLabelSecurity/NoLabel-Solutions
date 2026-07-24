@@ -27,6 +27,7 @@
 
 ### Recently Completed
 
+- ✅ **Open Graph & Social Media Previews**: Added premium, high-fidelity social media preview capabilities to the primary entry template (`index.html`). This ensures that when the platform link is shared on messaging platforms (Discord, Slack, iMessage) or social networks (LinkedIn, Facebook, Twitter/X), an elegant, high-contrast visual banner representing No/Label Solutions unfurls beautifully along with custom descriptions.
 - ✅ **Interactive 3D Virtual Business Card**: Designed and integrated a vertical, interactive 3D business card in the "QR & Digital Business Cards" catalog section on the Services page. The component supports full pointer-dragging, responsive swipe gestures on mobile, natural spring-snapping physics to align front/back faces, and a convenient manual flip helper button.
 - ✅ **Interactive Client Brand Boards**: Added actual high-resolution Brand Board assets for both "Easy's Welding" and "Flashpoint Solutions" in the Case Studies modals, allowing visitors to see the exact industrial visual assets designed. Removed the old temporary logo placeholder.
 - ✅ **No/Label Brand Board Deployment**: Replaced the generic "Premium Business Cards" mock-up container inside the landing view's Client Deployments grid with the bespoke, real-life No/Label Solutions Brand Board.

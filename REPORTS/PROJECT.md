@@ -42,6 +42,7 @@ Current Focus: Seamless project delivery, metadata verification, and client hand
 
 ### Recently Completed
 
+- ✅ **Open Graph & Social Media Previews**: Integrated a professional title, meta descriptions, and complete Open Graph and Twitter Card tags in `index.html`. Shared links will now unfurl a high-contrast social banner pointing directly to the official project preview image.
 - ✅ **Jacobs Fractal Burning Brand Board Preview**: Integrated the premium high-resolution Jacobs Fractal Burning Brand Board directly inside the Brand Identity Design card's showcase panel on the Services page, adding beautiful custom hover states.
 - ✅ **3D Virtual Interactive Business Card**: Replaced the static QR saves card mockup on the Services page with an advanced, interactive 3D portrait business card. Users can click-grab or swipe to spin the card horizontally to view both front and back faces, complete with smooth spring snapping on release and a manual flip control button.
 - ✅ **Industrial Brand Board Integrations**: Created and integrated high-fidelity Brand Board preview assets for both "Easy's Welding" and "Flashpoint Solutions" under the Branding Case Studies section, mapping them to real high-resolution images from the official GitHub repositories. Removed the redundant generic "core-logo" case study design.

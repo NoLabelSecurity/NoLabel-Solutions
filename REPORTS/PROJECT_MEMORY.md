@@ -87,6 +87,12 @@ To build an ultra-premium, highly distinctive developer portal showcasing tailor
 - **Decision**: Created an interactive 3D draggable portrait business card component that snaps to hold the nearest side in view, complete with a fallback manual flip shortcut.
 - **Reason**: Delights users with a tactile, playful physical-to-digital demonstration that showcases high-contrast double-sided digital card capabilities.
 
+---
+
+### Open Graph Social Previews
+- **Decision**: Integrated Open Graph (`og:`) and Twitter card tags inside `index.html` referencing official social media graphic preview banners.
+- **Reason**: Guarantees that No/Label Solutions displays beautifully across multiple social and chat environments, expanding the digital brand surface.
+
 </details>
 
 ---
