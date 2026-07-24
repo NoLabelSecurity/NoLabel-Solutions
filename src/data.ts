@@ -187,41 +187,57 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'flashpoint-web',
-    title: 'Flashpoint Security Services',
+    title: 'Flashpoint Solutions',
     category: 'Web Development',
-    description: 'An elite, high-security cyber defense and physical asset security consultation web portal designed to capture enterprise and municipal contracts.',
-    longDescription: 'Flashpoint Security Services delivers comprehensive, military-grade physical and cyber threat mitigation. They partnered with No/Label Solutions to architect a premium, high-trust digital portal that reflects their flawless operational integrity. The custom interface features zero-friction security consulting schedulers, automated threat intelligence resource downloads, and secure client intake channels. Engineered on a secure, lightweight stack, the site achieves pristine accessibility scores while projecting absolute corporate stability.',
+    description: 'A premium, lead-focused service portal for handyman, home repair, and renovation services designed to capture residential and commercial contracts.',
+    longDescription: 'Flashpoint Solutions delivers expert handyman, home repair, and renovation services with pristine quality and reliability. They partnered with No/Label Solutions to architect a premium, high-trust digital portal that showcases their repair craftsmanship and streamlines booking. The custom interface features zero-friction estimate request tools, categorized service offerings, and secure contact channels. Engineered on a modern lightweight stack, the site achieves pristine speed and accessibility scores while projecting absolute local service authority.',
     year: '2025',
-    client: 'Flashpoint Protection Group',
+    client: 'Flashpoint Solutions',
     metrics: [
-      { label: 'Enterprise RFPs Captured', value: '+85%' },
-      { label: 'Security Ingestion Load', value: 'Under 0.2s' },
-      { label: 'Qualified Consultations', value: '4.1x' }
+      { label: 'Booking Inquiry Increase', value: '+85%' },
+      { label: 'Mobile Performance Score', value: '98/100' },
+      { label: 'Service Booking Speed', value: 'Instant' }
     ],
     accentColor: 'from-red-500/20 to-transparent',
     tags: [
-      'High-Trust UX Architecture',
-      'Secure Lead Intake',
-      'Performance Hardened',
-      'Compliance Optimized'
+      'Handyman Booking',
+      'Home Repair & Renovation',
+      'Local Lead Routing',
+      'Speed Optimized'
     ],
-    statusLine: 'System Active & Structurally Hardened for High-Load Operational Demands.'
+    statusLine: 'System Active & Optimized for Local Home Service Searches.'
   },
   {
     id: 'premium-cards',
-    title: 'Vanguard Realty Business Cards',
+    title: 'Easy\'s Welding Business Cards',
     category: 'Print Design',
-    description: 'Ultra-premium, high-thickness double-sided tactile networking cards paired with embedded high-contrast QR scan codes for instant contact file saving.',
-    longDescription: 'Luxury real estate agents require physical touchpoints that instantly establish luxury authority. No/Label Solutions crafted custom cards for Vanguard Realty on velvet-touch thick stock with high-margin modern grids, pairing the physical card with an instant custom mobile landing page for quick digital exchange.',
-    year: '2025',
-    client: 'Vanguard Elite Real Estate',
+    description: 'Ultra-premium, heavy-duty double-sided tactile networking business cards custom-designed for a modern industrial brand.',
+    longDescription: 'To project physical reliability and heavy-duty craftsmanship in the field, Easy\'s Welding & Fabrication required double-sided business cards that look and feel professional. No/Label Solutions designed high-contrast cards with balanced layouts, clean margins, and an elegant technical grid, providing a physical handshake that builds instant client trust.',
+    year: '2026',
+    client: 'Easy\'s Welding & Fabrication',
     metrics: [
-      { label: 'Contact Saves Per Scan', value: '88%' },
       { label: 'Print Resolution', value: '300 DPI' },
-      { label: 'Positive Pitch Responses', value: '+45%' }
+      { label: 'Grid Precision', value: '100%' },
+      { label: 'Brand Uniformity', value: 'Pristine' }
     ],
-    accentColor: 'from-amber-400/10 to-transparent',
-    tags: ['Print Materials', 'Tactile Layouts', 'Integrated QR', 'vCard Setup']
+    accentColor: 'from-orange-500/10 to-transparent',
+    tags: ['Print Materials', 'Tactile Layouts', 'Industrial Branding', 'Double-Sided Design']
+  },
+  {
+    id: 'wright-way-cards',
+    title: 'Wright-Way Business Cards',
+    category: 'Print Design',
+    description: 'Ultra-premium double-sided portrait (vertical) business cards designed with precision alignment and technical grid symmetry.',
+    longDescription: 'Wright-Way Home Inspections required a distinct offline touchpoint that aligns with their professional, high-standards approach. No/Label Solutions engineered a portrait-oriented vertical layout that breaks standard business card conventions, resulting in an eye-catching, structured piece of marketing collateral.',
+    year: '2026',
+    client: 'Wright-Way Inspections',
+    metrics: [
+      { label: 'Print Resolution', value: '300 DPI' },
+      { label: 'Grid Precision', value: '100%' },
+      { label: 'Card Orientation', value: 'Portrait (Vertical)' }
+    ],
+    accentColor: 'from-blue-500/10 to-transparent',
+    tags: ['Print Materials', 'Tactile Layouts', 'Portrait Orientation', 'Technical Branding', 'Double-Sided Design']
   },
   {
     id: 'social-cohesion',
@@ -239,21 +255,54 @@ export const PROJECTS: Project[] = [
     accentColor: 'from-indigo-400/10 to-transparent',
     tags: ['Grid Architecture', 'Canva Layouts', 'Dynamic Copy Banners', 'Visual Vibe Audit']
   },
+
   {
-    id: 'core-logo',
-    title: 'ProLink Logistics Identity',
+    id: 'nolabel-branding',
+    title: 'No/Label Brand Board',
     category: 'Branding',
-    description: 'A timeless, geometric vector logo design engineered to maintain high-impact clarity on massive shipping panels, uniform shirts, or small invoices.',
-    longDescription: 'ProLink Logistics requested an identity that conveys speed, security, and industrial capability. We developed a bold, balanced emblem using technical typography, delivering complete responsive scaling specifications for trucks, apparel, and digital document headers.',
+    description: 'A comprehensive branding board consisting of cohesive visual guidelines, modern color profiles, and typographic hierarchies designed to define a crisp tech aesthetic.',
+    longDescription: 'To maintain an impeccable brand presence across all digital and print mediums, No/Label Solutions engineered a unified brand guidelines board. This asset lays out exact color coordinates, typography combinations, and geometric placement patterns, providing a rock-solid foundation for subsequent marketing materials and web elements.',
     year: '2026',
-    client: 'ProLink Worldwide Inc.',
+    client: 'No/Label Solutions',
     metrics: [
-      { label: 'Scalable Vector Nodes', value: 'Clean' },
-      { label: 'Exported Files Deliverable', value: '24' },
-      { label: 'Resolution Margin', value: 'Infinite' }
+      { label: 'Color Space', value: 'HEX/RGB' },
+      { label: 'Visual Uniformity', value: '100%' },
+      { label: 'Production Quality', value: 'Pristine' }
     ],
-    accentColor: 'from-blue-500/15 to-teal-500/5',
-    tags: ['SVG Engineering', 'Typography Hierarchy', 'Favicons & Marks', 'Style Guides']
+    accentColor: 'from-cyan-500/15 to-transparent',
+    tags: ['Brand Identity', 'Style Guidelines', 'Asset Layouts', 'Typography pairing', 'Color Systems']
+  },
+  {
+    id: 'easys-welding-branding',
+    title: "Easy's Welding Brand Board",
+    category: 'Branding',
+    description: 'A comprehensive brand board with technical color parameters, customized typography selections, and a heavy industrial visual identity.',
+    longDescription: "To ensure visual continuity across physical signage, heavy-duty service vehicles, uniform apparel, and digital invoices, Easy's Welding & Fabrication utilized a customized industrial brand board. We curated high-contrast safety accent palettes, structural font systems, and clean vector grids, cementing their reputation as a premier fabricator.",
+    year: '2026',
+    client: "Easy's Welding & Fabrication",
+    metrics: [
+      { label: 'Color Contrast', value: 'High' },
+      { label: 'System Unity', value: '100%' },
+      { label: 'Asset Resolution', value: '300 DPI' }
+    ],
+    accentColor: 'from-orange-500/15 to-transparent',
+    tags: ['Brand Identity', 'Style Guidelines', 'Industrial Aesthetic', 'Typography pairing', 'Color Systems']
+  },
+  {
+    id: 'flashpoint-branding',
+    title: 'Flashpoint Solutions Brand Board',
+    category: 'Branding',
+    description: 'A cohesive visual brand board for Flashpoint Solutions, defining color guidelines, typographic pairings, and professional layouts for local services.',
+    longDescription: 'To establish a strong and high-trust presence, Flashpoint Solutions required an elite brand board defining color variables, typographic treatments, and geometric logo guidelines. This asset provides a consistent look and feel for service trucks, client forms, and web portals.',
+    year: '2026',
+    client: 'Flashpoint Solutions',
+    metrics: [
+      { label: 'Color Guidelines', value: 'Standardized' },
+      { label: 'Visual Consistency', value: '100%' },
+      { label: 'Resolution Ready', value: '300 DPI' }
+    ],
+    accentColor: 'from-red-500/15 to-transparent',
+    tags: ['Brand Identity', 'Style Guidelines', 'Asset Layouts', 'Typography pairing', 'Color Systems']
   },
   {
     id: 'seo-optimized-growth',

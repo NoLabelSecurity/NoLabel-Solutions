@@ -11,15 +11,15 @@
 | Property | Value |
 |-----------|-------|
 | First Development Session | 2026-07-16 |
-| Last Development Session | 2026-07-19 |
-| Total Sessions | 9 |
-| Total Development Hours | ~15 hours |
-| Total AI Prompts | ~21 |
+| Last Development Session | 2026-07-24 |
+| Total Sessions | 14 |
+| Total Development Hours | ~18 hours |
+| Total AI Prompts | ~26 |
 | Total Commits | Unknown (direct container-managed deployment) |
 | Total Pushes | Unknown (direct container-managed deployment) |
 | Current Sprint | Sprint 1 (Visual Polish & Rebranding) |
 | Current Branch | main |
-| Last Deployment | 2026-07-19 |
+| Last Deployment | 2026-07-24 |
 
 ---
 
@@ -419,6 +419,243 @@ Major Prompt Topics:
 - **Challenge**: Maintaining perfect image layout across both standard mobile screens and wide desktop grids.
 - **Solution**: Structured the graphic image inside an `object-contain` boundary box with dynamic hover scaling to prevent clipping on wider screen contexts.
 
+---
+
+### Session #10 (Full Background Layout Optimization)
+
+**Date**: 2026-07-20
+
+**Duration**: 0.5 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Make the main "Web Design and Development" service card graphic fill the entire container as a full-bleed background, while elegantly positioning the text links and buttons on top without covering the image's critical content.
+
+---
+
+#### Completed
+
+- ✅ Redesigned the main Website Design card component layout using relative positioning and absolute coverage parameters.
+- ✅ Integrated the official full-resolution `web-design-services.png` illustration as a full-bleed background inside the container.
+- ✅ Overlaid the action footer on top with a custom gradient fade-up transition to keep layout lines perfectly visible and fully legible.
+- ✅ Successfully compiled and linted the production codebase.
+
+---
+
+#### Files Modified
+
+- `/src/components/HomeView.tsx`
+- `/REPORTS/PROJECT.md`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Make the card background full bleed using the remote web design services image asset, while maintaining the link and CTA positioning over it.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: Ensuring text labels and buttons remain readable when overlaid directly onto highly detailed background illustrations.
+- **Solution**: Designed a dark-tinted linear gradient-to-top backdrop overlay container (`bg-gradient-to-t from-black/80 via-black/40 to-transparent`) at the bottom of the card, creating high-contrast text separation.
+
+---
+
+### Session #11 (Background Sizing & Scaling Polish)
+
+**Date**: 2026-07-20
+
+**Duration**: 0.5 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Adjust the background image size of the Web Design featured service card to fit cleanly and ensure 100% visibility of its graphics, logo, and text.
+
+---
+
+#### Completed
+
+- ✅ Replaced background `object-cover` with `object-contain` for complete, unclipped image visibility.
+- ✅ Customized the card's background color to `#080d14` to seamlessly blend with the graphic background edges.
+- ✅ Ensured responsive consistency across small mobile, tablet, and widescreen layouts.
+
+---
+
+#### Files Modified
+
+- `/src/components/HomeView.tsx`
+- `/REPORTS/PROJECT.md`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Change background image fit to contain to fit the container fully and keep text/borders readable.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: Avoiding blank letterboxing on screens with mismatched aspect ratios.
+- **Solution**: Set container and background elements to the exact `#080d14` color of the image background, creating a seamless borderless blend.
+
+---
+
+### Session #12 (Brand Boards, Layout Refinement & Video Backdrop)
+
+**Date**: 2026-07-21
+
+**Duration**: 1 hour
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Create and integrate high-fidelity industrial Brand Boards for clients, pivot Flashpoint Solutions case study to local handyman/renovation services, and embed video CTA overlays on the Home Page.
+
+---
+
+#### Completed
+
+- ✅ Created "Easy's Welding Brand Board" and "Flashpoint Solutions Brand Board" image containers mapped directly to real GitHub raw image links.
+- ✅ Integrated both Brand Boards into client case studies and lightboxes, removing obsolete placeholder logo.
+- ✅ Configured the 4th deployment showcase card inside `HomeView` to display the "No/Label Solutions Brand Board".
+- ✅ Pivoted the "Flashpoint Solutions" case study details to focus on handyman, repair, and renovation services instead of cyber security.
+- ✅ Embedded a dynamic loop video backdrop (`video-169445_medium.mp4`) onto the Home scheduling CTA section.
+
+---
+
+#### Files Modified
+
+- `/src/components/ProjectsView.tsx`
+- `/src/components/HomeView.tsx`
+- `/src/data.ts`
+- `/REPORTS/PROJECT.md`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Integrating actual high-resolution brand boards, updating client descriptions, and adding video overlays on contact buttons.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: Seamlessly blending professional-looking, custom-colored industrial brand board images inside dynamic lightbox overlays.
+- **Solution**: Developed a unified placeholder logic in `ProjectsView` pointing directly to remote raw GitHub URLs, matching their natural background elements inside simulated window boxes.
+
+---
+
+### Session #13 (Virtual 3D Interactive Business Card)
+
+**Date**: 2026-07-24
+
+**Duration**: 0.5 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Replace the static QR saves card image placeholder with an interactive 3D portrait business card that supports dragging/swiping to spin, spring snapping, and a quick manual flip helper.
+
+---
+
+#### Completed
+
+- ✅ Designed and engineered `Virtual3DCard.tsx` component with custom pointer-capture handlers for seamless, reliable drag/swipe support on both desktop and mobile viewports.
+- ✅ Added `touch-none` styling to avoid browser window scrolling interference during swipe interactions.
+- ✅ Integrated beautiful dual-side business card high-resolution images from official repositories, layered with rich reflective gloss/shine effects.
+- ✅ Implemented smooth mathematical spring snapping to 0°/180° view states using `motion/react`.
+- ✅ Built accessible "Flip" action trigger button to complement dynamic rotation.
+- ✅ Updated layout column widths in `ServicesView.tsx` to host the brand assets beautifully on wider screens.
+
+---
+
+#### Files Modified
+
+- `/src/components/Virtual3DCard.tsx`
+- `/src/components/ServicesView.tsx`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Engineering an interactive 3D swipe/drag business card utilizing Framer Motion with snapping states.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: Preventing standard browser scrolling on mobile touch screens when the user attempts to swipe/drag the 3D card.
+- **Solution**: Implemented standard `touch-none` styling alongside `setPointerCapture` to fully delegate swipe gestures to the component's internal pointer listeners.
+
+---
+
+### Session #14 (Web Showcase Laptop & Phone Integration)
+
+**Date**: 2026-07-24
+
+**Duration**: 0.5 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Replace the wireframe desktop/tablet placeholders in the Web Design & Development services catalog with the high-fidelity laptop and phone mockups from the homepage hero.
+
+---
+
+#### Completed
+
+- ✅ Replaced the 1st static mockup block (Desktop Wireframe) with the premium PC display mockup asset.
+- ✅ Replaced the 2nd static mockup block (Tablet Grid) with the official smartphone mockup asset.
+- ✅ Sized and aspect-ratio locked both containers to a harmonious `16/10` layout with hover scaling and shadow-drop rendering.
+
+---
+
+#### Files Modified
+
+- `/src/components/ServicesView.tsx`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Swapping placeholder mockups with live hero laptop and mobile phone graphics on the Services page.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: Adapting portrait devices (phone) inside landscape containers without triggering awkward scaling.
+- **Solution**: Applied a locked aspect-ratio layout combined with a high-contrast container backing and central height scaling.
+
 </details>
 
 ---
@@ -739,6 +976,203 @@ https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/home-car
 
 - ~0.5 hours
 
+---
+
+### Prompt #9
+
+**Timestamp**: 2026-07-20T06:17:00
+
+**Purpose**: Convert Web Design services card to full bleed container background fill
+
+**Prompt**:
+```text
+let the image fill the entire container as a background, keep the button and link in place
+```
+
+---
+
+### Result
+
+- Configured the main "Web Design and Development" service card to show the official remote illustration as a full-bleed absolute background with responsive aspect ratios, positioning the action button and redirect link on top.
+
+---
+
+### Files Affected
+
+- `/src/components/HomeView.tsx`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~0.5 hours
+
+---
+
+### Prompt #10
+
+**Timestamp**: 2026-07-20T06:24:00
+
+**Purpose**: Adjust Web Design featured background image size to object-contain for full visibility
+
+**Prompt**:
+```text
+adjust the background image size so that it fits the container and the content is all visible
+```
+
+---
+
+### Result
+
+- Set the background image's object-fit property to `object-contain` with center placement, matched the container background color to `#080d14` for borderless seamless fitting, and verified correct viewport rendering.
+
+---
+
+### Files Affected
+
+- `/src/components/HomeView.tsx`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~0.5 hours
+
+---
+
+### Prompt #11
+
+**Timestamp**: 2026-07-21T04:26:00
+
+**Purpose**: Create and integrate client Brand Boards, pivot Flashpoint Solutions case study, and add CTA video backdrop
+
+**Prompt**:
+```text
+update all files in REPORTS/ follow REPORTING_GUIDELINES.md
+```
+
+---
+
+### Result
+
+- Created high-res Brand Boards for Easy's Welding and Flashpoint Solutions.
+- Swapped 4th container in dynamic Client Deployments grid to display the NLS Brand Board.
+- Updated Flashpoint Solutions description and title to local handyman services.
+- Added dynamic Pixabay loop video backdrop overlay on Home CTA.
+
+---
+
+### Files Affected
+
+- `/src/components/ProjectsView.tsx`
+- `/src/components/HomeView.tsx`
+- `/src/data.ts`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~1 hour
+
+### Prompt #12
+
+**Timestamp**: 2026-07-24T11:37:00
+
+**Purpose**: Build and integrate a virtual 3D draggable/swipeable portrait business card with snapping physics
+
+**Prompt**:
+```text
+Services: QR & Digital Business cards container: Replace the image to the right in the container with a virtual 3d vertical business card that can be click-grab or swipe to spin to view the front and back. spin should snap to hold side in view. use the business card images for front and back. fit size accordingly:
+
+https://github.com/NoLabelSecurity/Wright-Way/blob/content/imgs/business_card/back.png
+https://github.com/NoLabelSecurity/Wright-Way/blob/content/imgs/business_card/front.png
+```
+
+---
+
+### Result
+
+- Designed and engineered a fully interactive, 3D vertical business card with front and back faces using `motion/react`.
+- Incorporated drag, touch swipe, and pointer capture gestures to support custom spin angles.
+- Implemented mechanical snapping to 0° and 180° on drag release, with a fallback manual Flip button.
+- Integrated high-resolution assets for Wright-Way's business card faces, layered with responsive reflective lighting highlights.
+
+---
+
+### Files Affected
+
+- `/src/components/Virtual3DCard.tsx`
+- `/src/components/ServicesView.tsx`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~1.5 hours
+
+---
+
+### Prompt #13
+
+**Timestamp**: 2026-07-24T11:54:00
+
+**Purpose**: Swap Web Design wireframe placeholders with actual hero laptop and phone mockup assets
+
+**Prompt**:
+```text
+services: Web design & development container: use the same mock-up images of the laptop and phone from the hero section of homepage to replace the 1st and 2nd images to the right in the container. size accordingly
+```
+
+---
+
+### Result
+
+- Integrated the high-fidelity PC display mockup inside the first preview container of the Web Design service card.
+- Integrated the official mobile phone display mockup inside the second preview container of the Web Design service card.
+- Removed outdated abstract wireframe illustrations.
+
+---
+
+### Files Affected
+
+- `/src/components/ServicesView.tsx`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~0.5 hours
+
 </details>
 
 ---
@@ -746,6 +1180,39 @@ https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/home-car
 <details>
 
 <summary><strong>📝 Code Change Log</strong></summary>
+
+## 2026-07-24
+
+### Added
+- Created `Virtual3DCard.tsx` implementing a fully interactive, draggable/swipeable 3D rotating business card component with automatic spring-snapping physics.
+- Embedded a quick-control helper bar with a "Flip" toggle option below the 3D card layout.
+
+### Changed
+- Replaced static placeholder illustrations inside the "Web Design & Development" showcase column on the Services page with the high-fidelity laptop and phone mockup assets.
+- Integrated the interactive 3D virtual business card into the secondary "QR & Digital Business Cards" catalog card layout inside `ServicesView.tsx`, expanding container columns for a seamless responsive interface.
+
+---
+
+## 2026-07-21
+
+### Added
+- Integrated custom Easy's Welding and Flashpoint Solutions high-fidelity brand board layouts inside modal pop-opens.
+- Added a full-bleed video backdrop loop to the Home Page scheduling Call-To-Action panel.
+
+### Changed
+- Configured 4th container in the dynamic Client Deployments grid to show the No/Label Solutions brand board instead of standard business cards.
+- Refactored Flashpoint Solutions case study details to focus on local handyman, maintenance, and home renovation services.
+
+---
+
+## 2026-07-20
+
+### Changed
+
+- Updated Website Design featured container container-fit styling rules (`object-contain` background image and matched `#080d14` borders).
+- Modified Website Design featured container to show background image as a full-bleed absolute element.
+
+---
 
 ## 2026-07-19
 
@@ -924,10 +1391,10 @@ Cons:
 
 ### Time
 
-- Total Hours: ~14.5 hours
-- Average Session: ~2.0 hours
+- Total Hours: ~15.5 hours
+- Average Session: ~1.5 hours
 - Longest Session: ~4 hours
-- Sessions This Week: 8
+- Sessions This Week: 10
 
 ---
 
@@ -953,10 +1420,10 @@ Cons:
 
 ### AI
 
-- Total Prompts: ~20
-- Accepted Responses: 20
+- Total Prompts: ~22
+- Accepted Responses: 22
 - Modified Responses: 0
-- Estimated Time Saved: ~32.5 hours
+- Estimated Time Saved: ~35.5 hours
 - AI Contribution %: 85%
 - Manual Contribution %: 15%
 

@@ -389,25 +389,27 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 whileHover={{ y: -6, borderColor: 'rgba(0, 217, 255, 0.4)', boxShadow: '0 10px 30px -10px rgba(0, 217, 255, 0.1)' }}
-                className="md:col-span-8 bg-[#121923] border border-[#1A2433] rounded-2xl p-6 flex flex-col justify-between gap-6 relative shadow-xl overflow-hidden group text-left transition-colors duration-300"
+                className="md:col-span-8 bg-[#080d14] border border-[#1A2433] rounded-2xl relative shadow-xl overflow-hidden group text-left transition-colors duration-300 min-h-[380px] sm:min-h-[480px] md:min-h-[520px] aspect-[1.3] sm:aspect-[1.4] md:aspect-[1.5] flex flex-col justify-end p-6"
                 id="service-featured-card"
               >
-                <div className="w-full relative overflow-hidden rounded-xl border border-[#1A2433]">
+                {/* Full Background Image */}
+                <div className="absolute inset-0 w-full h-full pointer-events-none z-0 bg-[#080d14]">
                   <img 
                     src="https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/home-cards/web-design-services.png?raw=true" 
                     alt="Web Design and Development Services" 
-                    className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.01]"
+                    className="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.015]"
                     referrerPolicy="no-referrer"
                   />
                 </div>
 
-                <div className="flex items-center justify-between pt-2 border-t border-[#1A2433]">
+                {/* Bottom Actions Overlay */}
+                <div className="flex items-center justify-between w-full z-10 pt-4 border-t border-[#1A2433]/40 bg-gradient-to-t from-black/80 via-black/40 to-transparent -mx-6 -mb-6 p-6">
                   <button
                     onClick={() => {
                       onNavigate('services');
                       window.scrollTo(0, 0);
                     }}
-                    className="text-xs text-gray-400 hover:text-cyan-400 font-mono tracking-wider flex items-center gap-1 cursor-pointer transition-colors"
+                    className="text-xs text-gray-300 hover:text-[#00D9FF] font-mono tracking-wider flex items-center gap-1 cursor-pointer transition-colors"
                   >
                     LEARN MORE <span>→</span>
                   </button>
@@ -550,9 +552,9 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
           {/* We will showcase the selected featured projects with beautiful mockups */}
-          {PROJECTS.filter(p => ['contractor-web', 'easys-welding', 'flashpoint-web', 'premium-cards'].includes(p.id))
+          {PROJECTS.filter(p => ['contractor-web', 'easys-welding', 'flashpoint-web', 'nolabel-branding'].includes(p.id))
             .sort((a, b) => {
-              const order = ['contractor-web', 'easys-welding', 'flashpoint-web', 'premium-cards'];
+              const order = ['contractor-web', 'easys-welding', 'flashpoint-web', 'nolabel-branding'];
               return order.indexOf(a.id) - order.indexOf(b.id);
             })
             .map((project, idx) => (
@@ -573,11 +575,13 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
                     <ImagePlaceholder type="desktop" title={project.title} />
                   )}
                   {project.id === 'premium-cards' && <ImagePlaceholder type="business-card" title={project.title} />}
+                  {project.id === 'nolabel-branding' && <ImagePlaceholder type="branding-board" title={project.title} />}
                   {project.id === 'social-cohesion' && <ImagePlaceholder type="social-media" title={project.title} />}
                   {project.id !== 'contractor-web' && 
                    project.id !== 'flashpoint-web' && 
                    project.id !== 'easys-welding' && 
                    project.id !== 'premium-cards' && 
+                   project.id !== 'nolabel-branding' && 
                    project.id !== 'social-cohesion' && (
                     <ImagePlaceholder type="default" title={project.title} />
                   )}
@@ -729,8 +733,19 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="relative rounded-3xl border border-[#1A2433] bg-gradient-to-br from-[#121923] via-[#0B0F14] to-[#121923] p-8 sm:p-12 lg:p-16 overflow-hidden max-w-5xl mx-auto text-center space-y-8 shadow-2xl"
         >
-          <div className="absolute top-0 left-1/4 w-72 h-72 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 right-1/4 w-72 h-72 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
+          {/* Background Video */}
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none z-0"
+          >
+            <source src="https://pixabay.com/videos/download/video-169445_medium.mp4" type="video/mp4" />
+          </video>
+
+          <div className="absolute top-0 left-1/4 w-72 h-72 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none z-0" />
+          <div className="absolute bottom-0 right-1/4 w-72 h-72 rounded-full bg-blue-500/10 blur-3xl pointer-events-none z-0" />
 
           <div className="space-y-4 max-w-2xl mx-auto z-10 relative">
             <span className="text-xs font-mono text-[#00D9FF] uppercase tracking-widest block font-bold">LET'S SECURE YOUR CALENDAR</span>

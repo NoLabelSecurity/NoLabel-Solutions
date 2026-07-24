@@ -13,7 +13,7 @@
 | Project | No/Label Solutions Portal |
 | Client | brianlorick1988@gmail.com |
 | Started | 2026-07-16 |
-| Last Updated | 2026-07-19 |
+| Last Updated | 2026-07-24 |
 | Major Version | 1.0.0 |
 | Active Phase | Handover Complete |
 
@@ -68,6 +68,24 @@ To build an ultra-premium, highly distinctive developer portal showcasing tailor
 ### Dual-Column Price Estimator
 - **Decision**: Set up service toggles next to an dynamic progress line calculator inside the inquiry view.
 - **Reason**: Drives high engagement and transparently anchors value before users submit cold form inquiries.
+
+---
+
+### Cinematic CTA Video Overlay
+- **Decision**: Embedded a looping video file backdrop (`video-169445_medium.mp4`) behind the scheduling call-to-action button block on the main Home Page.
+- **Reason**: Boosts conversions by creating a highly premium, modern cinematic atmosphere that feels active and high-tech.
+
+---
+
+### Bespoke Brand Boards Integration
+- **Decision**: Replaced static graphic placeholders with actual high-resolution Brand Boards from client GitHub repositories inside case study modal pop-opens.
+- **Reason**: Provides genuine visual proof-of-work showcasing complete custom logo, typography, and color palette design outcomes.
+
+---
+
+### Interactive 3D Business Card
+- **Decision**: Created an interactive 3D draggable portrait business card component that snaps to hold the nearest side in view, complete with a fallback manual flip shortcut.
+- **Reason**: Delights users with a tactile, playful physical-to-digital demonstration that showcases high-contrast double-sided digital card capabilities.
 
 </details>
 

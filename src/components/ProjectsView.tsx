@@ -10,6 +10,41 @@ import { PROJECTS } from '../data';
 import { Project } from '../types';
 import ImagePlaceholder from './ImagePlaceholder';
 
+// Flashpoint Solutions Branded Components
+function FlashpointHouseIcon({ className = "w-16 h-16" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 100 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Chimney */}
+      <path d="M66 22V10H74V28" stroke="#1B75BC" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Main Roof Triangle */}
+      <path d="M12 40L50 10L88 40" stroke="#1B75BC" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Roof horizontal base */}
+      <path d="M18 40H82" stroke="#1B75BC" strokeWidth="5.5" strokeLinecap="round" />
+      {/* Circular Window with Green Crosshair */}
+      <circle cx="50" cy="27" r="9.5" stroke="#22C55E" strokeWidth="4" fill="none" />
+      {/* Window Crosshair quadrants */}
+      <path d="M50 17.5V36.5" stroke="#22C55E" strokeWidth="2.5" />
+      <path d="M40.5 27H59.5" stroke="#22C55E" strokeWidth="2.5" />
+    </svg>
+  );
+}
+
+function FlashpointFullLogo({ className = "" }: { className?: string }) {
+  return (
+    <div className={`flex flex-col items-start ${className}`}>
+      <FlashpointHouseIcon className="w-28 h-14 -ml-2.5" />
+      <div className="text-left select-none mt-1">
+        <span className="text-2xl sm:text-3xl font-sans font-black tracking-tight text-[#1B75BC] block leading-none">
+          Flashpoint
+        </span>
+        <span className="text-sm sm:text-md font-sans font-bold tracking-widest text-[#22C55E] block leading-none mt-1">
+          SOLUTIONS LLC
+        </span>
+      </div>
+    </div>
+  );
+}
+
 interface ProjectsViewProps {
   onNavigate: (page: string) => void;
   selectedProjectId: string | null;
@@ -125,12 +160,20 @@ export default function ProjectsView({ onNavigate, selectedProjectId, onClearSel
                     <ImagePlaceholder type="desktop" title={project.title} />
                   )}
                   {project.id === 'premium-cards' && <ImagePlaceholder type="business-card" title={project.title} />}
+                  {project.id === 'wright-way-cards' && <ImagePlaceholder type="business-card-portrait" title={project.title} />}
+                  {project.id === 'nolabel-branding' && <ImagePlaceholder type="branding-board" title={project.title} />}
+                  {project.id === 'easys-welding-branding' && <ImagePlaceholder type="branding-board-easys" title={project.title} />}
+                  {project.id === 'flashpoint-branding' && <ImagePlaceholder type="branding-board-flashpoint" title={project.title} />}
                   {project.id === 'social-cohesion' && <ImagePlaceholder type="social-media" title={project.title} />}
                   {project.id === 'core-logo' && <ImagePlaceholder type="logo-showcase" title={project.title} />}
                   {project.id !== 'contractor-web' && 
                    project.id !== 'easys-welding' && 
                    project.id !== 'flashpoint-web' && 
                    project.id !== 'premium-cards' && 
+                   project.id !== 'wright-way-cards' && 
+                   project.id !== 'nolabel-branding' && 
+                   project.id !== 'easys-welding-branding' && 
+                   project.id !== 'flashpoint-branding' && 
                    project.id !== 'social-cohesion' && 
                    project.id !== 'core-logo' && 
                    project.id !== 'seo-optimized-growth' && (
@@ -206,84 +249,283 @@ export default function ProjectsView({ onNavigate, selectedProjectId, onClearSel
               </button>
 
               <div className="space-y-8">
-                {/* Categorical labels */}
-                <div className="flex flex-wrap items-center gap-3">
-                  <span className="px-3 py-1 bg-cyan-500/15 border border-cyan-500/30 rounded-full text-xs font-mono text-cyan-400 tracking-wider">
-                    {activeModalProject.category.toUpperCase()}
-                  </span>
-                  <span className="text-xs text-gray-500 font-mono">CLIENT: {activeModalProject.client}</span>
-                  <span className="text-xs text-gray-500 font-mono">● {activeModalProject.year}</span>
-                </div>
+                {activeModalProject.id === 'core-logo' ? (
+                  // Custom Flashpoint Solutions LLC Branding Layout
+                  <>
+                    {/* Categorical labels */}
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full text-xs font-mono text-green-400 tracking-wider font-semibold">
+                        {activeModalProject.category.toUpperCase()}
+                      </span>
+                      <span className="text-xs text-gray-500 font-mono">CLIENT: {activeModalProject.client}</span>
+                      <span className="text-xs text-gray-500 font-mono">● {activeModalProject.year}</span>
+                    </div>
 
-                <div className="space-y-3">
-                  <h2 className="text-3xl sm:text-4xl font-display font-medium text-white tracking-tight">
-                    {activeModalProject.title}
-                  </h2>
-                  <p className="text-gray-400 text-sm leading-relaxed max-w-2xl font-light">
-                    {activeModalProject.description}
-                  </p>
-                </div>
-
-                {/* Simulated responsive visualization inside the modal */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-[#0B0F14]/70 border border-[#1A2433] rounded-2xl p-4">
-                  <div>
-                    <span className="text-[9px] font-mono text-gray-500 block mb-2 uppercase">OUTPUT WORKPIECE BLUEPRINT</span>
-                    
-                    {(activeModalProject.id === 'contractor-web' || activeModalProject.id === 'easys-welding' || activeModalProject.id === 'flashpoint-web' || activeModalProject.id === 'seo-optimized-growth') && (
-                      <ImagePlaceholder type="desktop" title={activeModalProject.title} />
-                    )}
-                    {activeModalProject.id === 'premium-cards' && <ImagePlaceholder type="business-card" title={activeModalProject.title} />}
-                    {activeModalProject.id === 'social-cohesion' && <ImagePlaceholder type="social-media" title={activeModalProject.title} />}
-                    {activeModalProject.id === 'core-logo' && <ImagePlaceholder type="logo-showcase" title={activeModalProject.title} />}
-                    {activeModalProject.id !== 'contractor-web' && 
-                     activeModalProject.id !== 'easys-welding' && 
-                     activeModalProject.id !== 'flashpoint-web' && 
-                     activeModalProject.id !== 'premium-cards' && 
-                     activeModalProject.id !== 'social-cohesion' && 
-                     activeModalProject.id !== 'core-logo' && 
-                     activeModalProject.id !== 'seo-optimized-growth' && (
-                       <ImagePlaceholder type="default" title={activeModalProject.title} />
-                    )}
-                  </div>
-
-                  <div className="flex flex-col justify-between">
-                    <div className="space-y-4">
-                      <span className="text-[9px] font-mono text-gray-500 block uppercase">Project Deliverables & Tech Tags</span>
-                      
-                      <div className="flex flex-wrap gap-2">
-                        {activeModalProject.tags.map((tag, i) => (
-                          <span key={i} className="px-2.5 py-1 bg-[#121923] border border-[#1A2433] rounded text-[10px] font-mono text-gray-300">
-                            {tag}
-                          </span>
-                        ))}
+                    {/* Header Row: Big Flashpoint Logo Left, Description Right */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-end pb-4 border-b border-[#1A2433]">
+                      <div>
+                        <FlashpointFullLogo />
                       </div>
-
-                      <div className="space-y-3 font-sans text-xs text-gray-400 leading-relaxed font-light">
-                        <p className="text-gray-300 font-normal">Brief summary:</p>
-                        <p>{activeModalProject.longDescription}</p>
+                      <div className="md:text-right">
+                        <p className="text-gray-400 text-sm sm:text-md leading-relaxed font-light max-w-md md:ml-auto">
+                          {activeModalProject.description}
+                        </p>
                       </div>
                     </div>
 
-                    {/* Secondary statistics showing inside lightbox */}
-                    <div className="pt-6 border-t border-[#1A2433] mt-6">
-                      <div className="flex items-center gap-2 mb-3">
-                        <Activity className="w-4 h-4 text-green-400" />
-                        <span className="text-[9px] font-mono text-gray-400 uppercase tracking-widest">Post-Deployment Metrics</span>
+                    {/* Blueprint and deliverables columns */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-[#0B0F14]/70 border border-[#1A2433] rounded-2xl p-4">
+                      <div>
+                        <span className="text-[9px] font-mono text-gray-500 block mb-3 uppercase tracking-wider font-semibold">OUTPUT WORKPIECE BLUEPRINT</span>
+                        <ImagePlaceholder type="logo-showcase" title={activeModalProject.title} />
                       </div>
-                      
-                      <div className="grid grid-cols-3 gap-2">
-                        {activeModalProject.metrics.map((met, i) => (
-                          <div key={i} className="bg-[#121923] p-2.5 border border-[#1A2433] rounded-lg">
-                            <span className="text-[7px] text-gray-500 block uppercase tracking-tight">{met.label}</span>
-                            <span className="text-white text-xs sm:text-sm font-semibold tracking-tight text-white block mt-1">
-                              {met.value}
-                            </span>
+
+                      <div className="flex flex-col justify-between">
+                        <div className="space-y-4">
+                          <span className="text-[9px] font-mono text-gray-500 block uppercase tracking-wider font-semibold">Project Deliverables & Tech Tags</span>
+                          
+                          <div className="flex flex-wrap gap-2">
+                            {activeModalProject.tags.map((tag, i) => (
+                              <span key={i} className="px-2.5 py-1 bg-[#121923] border border-[#1A2433] rounded text-[10px] font-mono text-emerald-400">
+                                {tag}
+                              </span>
+                            ))}
                           </div>
-                        ))}
+
+                          <div className="space-y-3 font-sans text-xs text-gray-400 leading-relaxed font-light">
+                            <p className="text-gray-300 font-semibold font-sans">Brief summary:</p>
+                            <p>{activeModalProject.longDescription}</p>
+                          </div>
+                        </div>
+
+                        {/* Secondary statistics showing inside lightbox */}
+                        <div className="pt-6 border-t border-[#1A2433] mt-6">
+                          <div className="flex items-center gap-2 mb-3">
+                            <Activity className="w-4 h-4 text-emerald-400" />
+                            <span className="text-[9px] font-mono text-gray-400 uppercase tracking-widest font-semibold">Post-Deployment Metrics</span>
+                          </div>
+                          
+                          <div className="grid grid-cols-3 gap-2">
+                            {activeModalProject.metrics.map((met, i) => (
+                              <div key={i} className="bg-[#121923] p-2.5 border border-[#1A2433] rounded-lg">
+                                <span className="text-[7px] text-gray-500 block uppercase tracking-tight">{met.label}</span>
+                                <span className="text-white text-xs sm:text-sm font-semibold tracking-tight block mt-1 font-mono">
+                                  {met.value}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+
+                    {/* Responsive Scaling Guide Column spanning full width */}
+                    <div className="border border-[#1A2433] bg-[#0E131F]/40 rounded-2xl p-5 space-y-4 text-left">
+                      <div className="flex items-center gap-2 border-b border-[#1A2433] pb-2">
+                        <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">RESPONSIVE SCALING GUIDE</span>
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {/* Truck */}
+                        <div className="space-y-2">
+                          <div className="flex justify-between items-center text-[9.5px] font-mono">
+                            <span className="text-emerald-400 uppercase font-bold">Truck / Shipping Panel</span>
+                            <span className="text-gray-500">48" - 96" Wide</span>
+                          </div>
+                          <div className="bg-[#0B0F14]/90 border border-[#1A2433] rounded-xl p-4 flex items-center justify-center min-h-[160px] relative overflow-hidden group">
+                            <div className="w-full max-w-[200px] relative scale-95 group-hover:scale-100 transition-transform duration-300">
+                              <svg viewBox="0 0 160 80" className="w-full h-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="10" y1="65" x2="150" y2="65" stroke="rgba(255,255,255,0.08)" strokeWidth="2" />
+                                <rect x="35" y="15" width="95" height="40" rx="3" fill="#121923" stroke="#1A2433" strokeWidth="2" />
+                                <path d="M15 40h20v22H19c-2.2 0-4-1.8-4-4V40z" fill="#1E293B" stroke="#1A2433" strokeWidth="2" />
+                                <path d="M15 40l6-8h14v8H15z" fill="#0B0F14" stroke="#1A2433" strokeWidth="1.5" />
+                                <path d="M22 62a6 6 0 0112 0h14a6 6 0 0112 0h22a6 6 0 0112 0h12" stroke="#1A2433" strokeWidth="2" />
+                                <circle cx="28" cy="62" r="7" fill="#0B0F14" stroke="#334155" strokeWidth="2" />
+                                <circle cx="28" cy="62" r="2.5" fill="#64748B" />
+                                <circle cx="54" cy="62" r="7" fill="#0B0F14" stroke="#334155" strokeWidth="2" />
+                                <circle cx="54" cy="62" r="2.5" fill="#64748B" />
+                                <circle cx="106" cy="62" r="7" fill="#0B0F14" stroke="#334155" strokeWidth="2" />
+                                <circle cx="106" cy="62" r="2.5" fill="#64748B" />
+                                
+                                <g transform="translate(62, 22) scale(0.24)">
+                                  <path d="M12 40L50 10L88 40" stroke="#1B75BC" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+                                  <path d="M18 40H82" stroke="#1B75BC" strokeWidth="6" strokeLinecap="round" />
+                                  <circle cx="50" cy="27" r="9.5" stroke="#22C55E" strokeWidth="5" />
+                                  <path d="M50 17.5V36.5" stroke="#22C55E" strokeWidth="3.5" />
+                                  <path d="M40.5 27H59.5" stroke="#22C55E" strokeWidth="3.5" />
+                                  <text x="50" y="58" fill="#1B75BC" fontSize="13" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">Flashpoint</text>
+                                  <text x="50" y="72" fill="#22C55E" fontSize="9" fontWeight="bold" letterSpacing="0.5" textAnchor="middle" fontFamily="sans-serif">SOLUTIONS LLC</text>
+                                </g>
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Shirts */}
+                        <div className="space-y-2">
+                          <div className="flex justify-between items-center text-[9.5px] font-mono">
+                            <span className="text-emerald-400 uppercase font-bold">Uniform / Apparel</span>
+                            <span className="text-gray-500">3" - 5" Wide</span>
+                          </div>
+                          <div className="bg-[#0B0F14]/90 border border-[#1A2433] rounded-xl p-4 flex items-center justify-center min-h-[160px] relative overflow-hidden group">
+                            <div className="w-full max-w-[200px] relative scale-95 group-hover:scale-100 transition-transform duration-300">
+                              <svg viewBox="0 0 160 80" className="w-full h-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(25, 5) scale(0.85)" opacity="0.65">
+                                  <path d="M10 20l20-8 15 15-5 12h-8v35H18V39h-8v-19z" fill="#0B0F14" stroke="#1A2433" strokeWidth="1.5" />
+                                  <path d="M30 12l10 10-10 12-10-12 10-10z" fill="#1E293B" stroke="#1A2433" strokeWidth="1.5" />
+                                </g>
+                                <g transform="translate(60, 2)">
+                                  <path d="M10 20l25-8 15 15-5 12h-10v35H20V39h-10v-19z" fill="#121923" stroke="#1A2433" strokeWidth="1.5" />
+                                  <path d="M35 12l12 10-12 12-12-12 12-12z" fill="#0B0F14" stroke="#1A2433" strokeWidth="1.5" />
+                                  <circle cx="35" cy="28" r="1.5" fill="#475569" />
+                                  <circle cx="35" cy="33" r="1.5" fill="#475569" />
+                                  
+                                  <g transform="translate(18, 25) scale(0.11)">
+                                    <path d="M12 40L50 10L88 40" stroke="#1B75BC" strokeWidth="8" />
+                                    <path d="M18 40H82" stroke="#1B75BC" strokeWidth="8" />
+                                    <circle cx="50" cy="27" r="9.5" stroke="#22C55E" strokeWidth="6" />
+                                    <path d="M50 17.5V36.5" stroke="#22C55E" strokeWidth="4.5" />
+                                    <path d="M40.5 27H59.5" stroke="#22C55E" strokeWidth="4.5" />
+                                  </g>
+                                </g>
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Invoices */}
+                        <div className="space-y-2">
+                          <div className="flex justify-between items-center text-[9.5px] font-mono">
+                            <span className="text-emerald-400 uppercase font-bold">Invoices / Digital Headers</span>
+                            <span className="text-gray-500">150px - 600px Wide</span>
+                          </div>
+                          <div className="bg-[#0B0F14]/90 border border-[#1A2433] rounded-xl p-4 flex items-center justify-center min-h-[160px] relative overflow-hidden group">
+                            <div className="w-full max-w-[200px] relative scale-95 group-hover:scale-100 transition-transform duration-300">
+                              <div className="bg-[#121923] border border-[#1A2433] rounded-lg p-3 aspect-[1.5] w-full flex flex-col justify-between relative shadow-inner">
+                                <div className="flex justify-between items-start">
+                                  <div className="space-y-1">
+                                    <div className="h-1.5 w-16 bg-gray-700 rounded-sm" />
+                                    <div className="h-1.5 w-12 bg-gray-800 rounded-sm" />
+                                    <div className="h-1 w-20 bg-gray-800/60 rounded-sm" />
+                                  </div>
+                                  <div className="scale-50 -mt-3 -mr-3">
+                                    <FlashpointHouseIcon className="w-12 h-6" />
+                                    <div className="text-[4px] font-bold text-[#1B75BC] leading-none text-center">Flashpoint</div>
+                                    <div className="text-[3px] font-bold text-[#22C55E] leading-none text-center">SOLUTIONS LLC</div>
+                                  </div>
+                                </div>
+                                <div className="space-y-1.5 py-2 border-t border-b border-[#1A2433]/60 my-1">
+                                  <div className="flex justify-between items-center">
+                                    <div className="h-1.5 w-24 bg-gray-800 rounded-sm" />
+                                    <div className="h-1.5 w-6 bg-gray-700 rounded-sm" />
+                                  </div>
+                                  <div className="flex justify-between items-center">
+                                    <div className="h-1.5 w-16 bg-gray-800 rounded-sm" />
+                                    <div className="h-1.5 w-6 bg-gray-700 rounded-sm" />
+                                  </div>
+                                </div>
+                                <div className="flex justify-between items-center mt-auto">
+                                  <div className="h-1 w-12 bg-gray-800 rounded-sm" />
+                                  <div className="h-2 w-8 bg-green-500/20 border border-green-500/40 rounded-sm" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  // Standard default layout
+                  <>
+                    {/* Categorical labels */}
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="px-3 py-1 bg-cyan-500/15 border border-cyan-500/30 rounded-full text-xs font-mono text-cyan-400 tracking-wider">
+                        {activeModalProject.category.toUpperCase()}
+                      </span>
+                      <span className="text-xs text-gray-500 font-mono">CLIENT: {activeModalProject.client}</span>
+                      <span className="text-xs text-gray-500 font-mono">● {activeModalProject.year}</span>
+                    </div>
+
+                    <div className="space-y-3">
+                      <h2 className="text-3xl sm:text-4xl font-display font-medium text-white tracking-tight">
+                        {activeModalProject.title}
+                      </h2>
+                      <p className="text-gray-400 text-sm leading-relaxed max-w-2xl font-light">
+                        {activeModalProject.description}
+                      </p>
+                    </div>
+
+                    {/* Simulated responsive visualization inside the modal */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-[#0B0F14]/70 border border-[#1A2433] rounded-2xl p-4">
+                      <div>
+                        <span className="text-[9px] font-mono text-gray-500 block mb-2 uppercase">OUTPUT WORKPIECE BLUEPRINT</span>
+                        
+                        {(activeModalProject.id === 'contractor-web' || activeModalProject.id === 'easys-welding' || activeModalProject.id === 'flashpoint-web' || activeModalProject.id === 'seo-optimized-growth') && (
+                          <ImagePlaceholder type="desktop" title={activeModalProject.title} />
+                        )}
+                        {activeModalProject.id === 'premium-cards' && <ImagePlaceholder type="business-card" title={activeModalProject.title} />}
+                        {activeModalProject.id === 'wright-way-cards' && <ImagePlaceholder type="business-card-portrait" title={activeModalProject.title} />}
+                        {activeModalProject.id === 'nolabel-branding' && <ImagePlaceholder type="branding-board" title={activeModalProject.title} />}
+                        {activeModalProject.id === 'easys-welding-branding' && <ImagePlaceholder type="branding-board-easys" title={activeModalProject.title} />}
+                        {activeModalProject.id === 'flashpoint-branding' && <ImagePlaceholder type="branding-board-flashpoint" title={activeModalProject.title} />}
+                        {activeModalProject.id === 'social-cohesion' && <ImagePlaceholder type="social-media" title={activeModalProject.title} />}
+                        {activeModalProject.id === 'core-logo' && <ImagePlaceholder type="logo-showcase" title={activeModalProject.title} />}
+                        {activeModalProject.id !== 'contractor-web' && 
+                         activeModalProject.id !== 'easys-welding' && 
+                         activeModalProject.id !== 'flashpoint-web' && 
+                         activeModalProject.id !== 'premium-cards' && 
+                         activeModalProject.id !== 'wright-way-cards' && 
+                         activeModalProject.id !== 'nolabel-branding' && 
+                         activeModalProject.id !== 'easys-welding-branding' && 
+                         activeModalProject.id !== 'flashpoint-branding' && 
+                         activeModalProject.id !== 'social-cohesion' && 
+                         activeModalProject.id !== 'core-logo' && 
+                         activeModalProject.id !== 'seo-optimized-growth' && (
+                           <ImagePlaceholder type="default" title={activeModalProject.title} />
+                        )}
+                      </div>
+
+                      <div className="flex flex-col justify-between">
+                        <div className="space-y-4">
+                          <span className="text-[9px] font-mono text-gray-500 block uppercase">Project Deliverables & Tech Tags</span>
+                          
+                          <div className="flex flex-wrap gap-2">
+                            {activeModalProject.tags.map((tag, i) => (
+                              <span key={i} className="px-2.5 py-1 bg-[#121923] border border-[#1A2433] rounded text-[10px] font-mono text-gray-300">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+
+                          <div className="space-y-3 font-sans text-xs text-gray-400 leading-relaxed font-light">
+                            <p className="text-gray-300 font-normal">Brief summary:</p>
+                            <p>{activeModalProject.longDescription}</p>
+                          </div>
+                        </div>
+
+                        {/* Secondary statistics showing inside lightbox */}
+                        <div className="pt-6 border-t border-[#1A2433] mt-6">
+                          <div className="flex items-center gap-2 mb-3">
+                            <Activity className="w-4 h-4 text-green-400" />
+                            <span className="text-[9px] font-mono text-gray-400 uppercase tracking-widest font-semibold">Post-Deployment Metrics</span>
+                          </div>
+                          
+                          <div className="grid grid-cols-3 gap-2">
+                            {activeModalProject.metrics.map((met, i) => (
+                              <div key={i} className="bg-[#121923] p-2.5 border border-[#1A2433] rounded-lg">
+                                <span className="text-[7px] text-gray-500 block uppercase tracking-tight">{met.label}</span>
+                                <span className="text-white text-xs sm:text-sm font-semibold tracking-tight text-white block mt-1">
+                                  {met.value}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
 
                 {/* Footer buttons of lightbox modal */}
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 mt-4 border-t border-[#1A2433]">

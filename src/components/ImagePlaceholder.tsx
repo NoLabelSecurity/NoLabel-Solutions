@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 
 interface ImagePlaceholderProps {
-  type?: 'desktop' | 'tablet' | 'mobile' | 'logo-showcase' | 'business-card' | 'social-media' | 'qr-showcase' | 'branding-kit' | 'gallery' | 'default' | 'handyman-brand';
+  type?: 'desktop' | 'tablet' | 'mobile' | 'logo-showcase' | 'business-card' | 'business-card-portrait' | 'social-media' | 'qr-showcase' | 'branding-kit' | 'gallery' | 'default' | 'handyman-brand' | 'branding-board' | 'branding-board-easys' | 'branding-board-flashpoint';
   accent?: string;
   title?: string;
   className?: string;
@@ -39,7 +39,7 @@ export default function ImagePlaceholder({
     } else if (isEasysWelding) {
       browserUrl = 'easysweldingandfabrication.com';
     } else if (isFlashpoint) {
-      browserUrl = 'flashpointsecurity.com';
+      browserUrl = 'flashpointsolutions.com';
     }
 
     // Determine target image source
@@ -279,83 +279,195 @@ export default function ImagePlaceholder({
 
   if (type === 'business-card') {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+      <div className="flex flex-col gap-4 max-w-md mx-auto w-full">
         {/* Front of Card */}
-        <div className="relative w-full rounded-xl border border-[#1A2433] bg-gradient-to-br from-[#121923] to-[#0B0F14] p-6 overflow-hidden flex flex-col justify-between shadow-xl" style={{ aspectRatio: '1.75/1' }}>
-          <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-cyan-500/10 blur-xl pointer-events-none" />
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center">
-              <img 
-                src="https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/NLS_Logo.png?raw=true" 
-                alt="No/Label Logo" 
-                className="w-full h-full object-contain"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div>
-              <span className="font-display font-bold text-md tracking-tight text-white block">No/Label</span>
-              <span className="text-[8px] font-mono tracking-widest text-[#00D9FF] -mt-1 block font-bold">SOLUTIONS</span>
-            </div>
-          </div>
-          <div className="mt-auto">
-            <p className="text-xs text-gray-400 font-mono tracking-wider">PREMIUM OFFLINE TOUCHPOINT</p>
-            <p className="text-[10px] text-gray-500">Dual-layered silk-matte vector template</p>
-          </div>
+        <div className="relative w-full rounded-xl border border-[#1A2433] overflow-hidden bg-[#0B0F14] shadow-xl" style={{ aspectRatio: '1.75/1' }}>
+          <img 
+            src="https://github.com/NoLabelSecurity/Easy-Welding/blob/Content/img/business_card/Front.png?raw=true" 
+            alt="Easy's Welding Business Card - Front" 
+            className="w-full h-full object-cover object-center"
+            referrerPolicy="no-referrer"
+          />
         </div>
 
         {/* Back of Card */}
-        <div className="relative w-full rounded-xl border border-[#1A2433] bg-[#0B0F14] p-6 overflow-hidden flex flex-col justify-between shadow-xl" style={{ aspectRatio: '1.75/1' }}>
-          <div className="absolute inset-0 bg-[radial-gradient(#1a2433_1px,transparent_1.5px)] bg-[size:10px_10px] opacity-30 pointer-events-none" />
-          <div className="flex justify-between items-start">
-            <div>
-              <p className="font-display font-medium text-sm text-white">Alexander Finch</p>
-              <p className="text-[9px] text-[#00D9FF] font-mono tracking-wider uppercase">Senior Architect</p>
-            </div>
-            {/* Simulated QR Code on Back */}
-            <div className="w-12 h-12 rounded bg-[#121923] border border-[#1A2433] p-1 flex flex-col items-center justify-center gap-0.5">
-              <div className="grid grid-cols-4 gap-0.5 w-full h-full opacity-60">
-                {Array.from({ length: 16 }).map((_, i) => (
-                  <div key={i} className={`rounded-sm ${(i * 3 + 1) % 4 === 0 || i % 3 === 0 ? 'bg-[#00D9FF]' : 'bg-transparent'}`} />
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-1 text-[8px] font-mono text-gray-400 mt-auto">
-            <div>
-              <p className="text-[6px] text-gray-500 uppercase">TELEPHONE</p>
-              <p>+1 (555) 304-2041</p>
-            </div>
-            <div>
-              <p className="text-[6px] text-gray-500 uppercase">SYSTEM LINK</p>
-              <p className="text-[#00D9FF]">nolabel.dev/card</p>
-            </div>
-          </div>
+        <div className="relative w-full rounded-xl border border-[#1A2433] overflow-hidden bg-[#0B0F14] shadow-xl" style={{ aspectRatio: '1.75/1' }}>
+          <img 
+            src="https://github.com/NoLabelSecurity/Easy-Welding/blob/Content/img/business_card/Back.png?raw=true" 
+            alt="Easy's Welding Business Card - Back" 
+            className="w-full h-full object-cover object-center"
+            referrerPolicy="no-referrer"
+          />
         </div>
       </div>
     );
   }
 
+  if (type === 'business-card-portrait') {
+    return (
+      <div className="grid grid-cols-2 gap-4 w-full max-w-lg mx-auto">
+        {/* Front of Card */}
+        <div className="relative w-full rounded-xl border border-[#1A2433] overflow-hidden bg-[#0B0F14] shadow-xl" style={{ aspectRatio: '2/3.5' }}>
+          <img 
+            src="https://github.com/NoLabelSecurity/Wright-Way/blob/content/imgs/business_card/front.png?raw=true" 
+            alt="Wright-Way Business Card - Front" 
+            className="w-full h-full object-cover object-center"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+
+        {/* Back of Card */}
+        <div className="relative w-full rounded-xl border border-[#1A2433] overflow-hidden bg-[#0B0F14] shadow-xl" style={{ aspectRatio: '2/3.5' }}>
+          <img 
+            src="https://github.com/NoLabelSecurity/Wright-Way/blob/content/imgs/business_card/back.png?raw=true" 
+            alt="Wright-Way Business Card - Back" 
+            className="w-full h-full object-cover object-center"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+      </div>
+    );
+  }
+
+  if (type === 'branding-board') {
+    return (
+      <div className="relative w-full rounded-xl border border-[#1A2433] overflow-hidden bg-[#0B0F14] shadow-xl" style={{ aspectRatio: '1.75/1' }}>
+        <img 
+          src="https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/branding/NLS%20brand%20board.png?raw=true" 
+          alt="No/Label Brand Board" 
+          className="w-full h-full object-cover object-center"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+    );
+  }
+
+  if (type === 'branding-board-easys') {
+    return (
+      <div className="relative w-full rounded-xl border border-[#1A2433] overflow-hidden bg-[#0B0F14] shadow-xl" style={{ aspectRatio: '1.75/1' }}>
+        <img 
+          src="https://github.com/NoLabelSecurity/Easy-Welding/blob/Content/img/branding/Easys%20Welding%20Brand%20Board.png?raw=true" 
+          alt="Easy's Welding Brand Board" 
+          className="w-full h-full object-cover object-center"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+    );
+  }
+
+  if (type === 'branding-board-flashpoint') {
+    return (
+      <div className="relative w-full rounded-xl border border-[#1A2433] overflow-hidden bg-[#0B0F14] shadow-xl" style={{ aspectRatio: '1.75/1' }}>
+        <img 
+          src="https://github.com/NoLabelSecurity/Flashpoint-Solutions/blob/content/imgs/flashpoint%20brand%20board.png?raw=true" 
+          alt="Flashpoint Solutions Brand Board" 
+          className="w-full h-full object-cover object-center"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+    );
+  }
+
   if (type === 'logo-showcase') {
+    const blueprints = [
+      {
+        label: 'Symmetric',
+        monogram: 'SY',
+        icon: (
+          <svg className="w-6 h-6 text-emerald-400 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" strokeDasharray="3 3" className="stroke-emerald-500/30" />
+            <circle cx="12" cy="12" r="5" stroke="#22C55E" />
+            <path d="M12 2v20M2 12h20" stroke="rgba(16, 185, 129, 0.2)" strokeWidth="1" />
+          </svg>
+        ),
+        colorClass: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
+      },
+      {
+        label: 'Grid Lines',
+        monogram: 'GR',
+        icon: (
+          <svg className="w-6 h-6 text-emerald-400 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+            <path d="M3 3h18v18H3V3z" stroke="rgba(16, 185, 129, 0.2)" />
+            <path d="M9 3v18M15 3v18M3 9h18M3 15h18" stroke="#22C55E" strokeWidth="1" />
+          </svg>
+        ),
+        colorClass: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
+      },
+      {
+        label: 'Monogram',
+        monogram: 'F',
+        icon: (
+          <span className="text-emerald-400 font-display font-black text-lg select-none group-hover:scale-110 transition-transform duration-300">
+            F
+          </span>
+        ),
+        colorClass: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
+      },
+      {
+        label: 'Contrast Node',
+        monogram: 'CO',
+        icon: (
+          <svg className="w-5 h-5 text-emerald-400 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="8" stroke="#22C55E" strokeWidth="2" />
+            <path d="M12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20V4Z" fill="#22C55E" />
+          </svg>
+        ),
+        colorClass: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
+      },
+      {
+        label: 'Minimal Typography',
+        monogram: 'Aa',
+        icon: (
+          <span className="text-emerald-400 font-sans font-semibold text-base select-none group-hover:scale-110 transition-transform duration-300">
+            Aa
+          </span>
+        ),
+        colorClass: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
+      },
+      {
+        label: 'Strong Typestyle',
+        monogram: 'ST',
+        icon: (
+          <span className="text-emerald-400 font-mono font-bold text-base border border-emerald-500/30 px-1.5 py-0.2 rounded bg-emerald-500/5 select-none group-hover:scale-110 transition-transform duration-300">
+            T
+          </span>
+        ),
+        colorClass: 'bg-[#121923] border-[#1A2433] text-gray-400'
+      },
+      {
+        label: 'Horizontal Lockup',
+        monogram: 'HO',
+        icon: (
+          <svg className="w-5 h-5 text-[#22C55E] group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <rect x="5" y="11" width="14" height="10" rx="2" stroke="#22C55E" />
+            <path d="M8 11V7a4 4 0 018 0v4" stroke="#22C55E" />
+          </svg>
+        ),
+        colorClass: 'bg-[#121923] border-[#1A2433] text-gray-400'
+      },
+      {
+        label: 'Adaptable Badge',
+        monogram: 'AD',
+        icon: (
+          <svg className="w-5 h-5 text-[#22C55E] group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7s0 6 8 10z" stroke="#22C55E" />
+          </svg>
+        ),
+        colorClass: 'bg-[#121923] border-[#1A2433] text-gray-400'
+      }
+    ];
+
     return (
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full">
-        {['Symmetric', 'Grid Lines', 'Monogram', 'Contrast Mode', 'Minimal Typography', 'Stamp Ring', 'Horizontal', 'Adaptive Badge'].map((label, idx) => (
-          <div key={idx} className="aspect-square bg-[#121923] hover:bg-[#1A2433] rounded-xl border border-[#1A2433] flex flex-col justify-between p-3 transition-all duration-300 group">
-            <div className="flex-1 flex items-center justify-center relative">
-              <div className="absolute scale-75 group-hover:scale-90 transition-all duration-300 opacity-20 w-16 h-16 rounded-full border border-dashed border-cyan-500" />
-              <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-xs font-mono font-bold border transition-colors ${
-                idx % 4 === 0 
-                  ? 'bg-cyan-500/10 border-cyan-500/30 text-cyan-400' 
-                  : idx % 4 === 1
-                  ? 'bg-blue-500/10 border-blue-500/30 text-blue-400'
-                  : idx % 4 === 2
-                  ? 'bg-purple-500/10 border-purple-500/30 text-[#A855F7]'
-                  : 'bg-white/5 border-white/10 text-white'
-              }`}>
-                {label.substring(0,2).toUpperCase()}
+        {blueprints.map((bp, idx) => (
+          <div key={idx} className="aspect-square bg-[#0E131F]/60 hover:bg-[#121923] rounded-xl border border-[#1A2433] hover:border-emerald-500/40 flex flex-col justify-between p-3.5 transition-all duration-300 group">
+            <div className="flex-1 flex flex-col items-center justify-center relative gap-1">
+              {/* Box Monogram Identifier */}
+              <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-xs font-mono font-bold border transition-colors ${bp.colorClass}`}>
+                {bp.icon}
               </div>
             </div>
-            <div className="text-[9px] font-mono text-gray-500 text-center">{label}</div>
+            <div className="text-[10px] font-mono text-gray-400 text-center leading-tight mt-2 select-none group-hover:text-emerald-400 transition-colors">{bp.label}</div>
           </div>
         ))}
       </div>

@@ -8,6 +8,7 @@ import { motion } from 'motion/react';
 import { Globe, Palette, Layers, CreditCard, Instagram, MapPin, QrCode, Cpu, ArrowRight, ShieldCheck, Zap, Cog, Smartphone } from 'lucide-react';
 import { SERVICES } from '../data';
 import ImagePlaceholder from './ImagePlaceholder';
+import Virtual3DCard from './Virtual3DCard';
 
 interface ServicesViewProps {
   onNavigate: (page: string) => void;
@@ -150,32 +151,40 @@ export default function ServicesView({ onNavigate }: ServicesViewProps) {
 
               {/* Right Mockup Showcase column */}
               <div className="lg:col-span-5 space-y-6">
-                <span className="text-[10px] font-mono text-gray-500 block uppercase text-center lg:text-left">ADAPTIVE DEVICE PREVIEW</span>
+                <span className="text-[10px] font-mono text-gray-500 block uppercase text-center lg:text-left">ADAPTIVE DEVICE PREVIEWS</span>
                 
                 <div className="space-y-4">
-                  {/* Embedded Desktop interface preview */}
+                  {/* High-Fidelity Laptop preview */}
                   <motion.div 
                     whileHover={{ y: -4 }}
-                    className="bg-[#0B0F14] p-2 rounded-xl border border-[#1A2433] transition-transform duration-300"
+                    className="bg-[#0B0F14]/30 p-4 sm:p-6 rounded-2xl border border-[#1A2433] transition-all duration-300 flex items-center justify-center overflow-hidden relative group"
+                    id="services-web-pc-mockup"
+                    style={{ aspectRatio: '16/10' }}
                   >
-                    <ImagePlaceholder type="desktop" title="Local Service Site Demo" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <img 
+                      src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/imgs/hero-pc.png" 
+                      alt="NoLabel High-Fidelity Laptop Preview" 
+                      className="w-full h-full object-contain filter drop-shadow-[0_12px_20px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-[1.02]"
+                      referrerPolicy="no-referrer"
+                    />
                   </motion.div>
 
-                  {/* Dual Grid of tablets and smartphones */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <motion.div 
-                      whileHover={{ y: -4 }}
-                      className="bg-[#0B0F14] p-2 rounded-xl border border-[#1A2433] transition-transform duration-300"
-                    >
-                      <ImagePlaceholder type="tablet" title="Adaptive Layout" />
-                    </motion.div>
-                    <motion.div 
-                      whileHover={{ y: -4 }}
-                      className="bg-[#0B0F14] p-2 rounded-xl border border-[#1A2433] transition-transform duration-300"
-                    >
-                      <ImagePlaceholder type="mobile" title="Custom App Form" />
-                    </motion.div>
-                  </div>
+                  {/* High-Fidelity Phone preview */}
+                  <motion.div 
+                    whileHover={{ y: -4 }}
+                    className="bg-[#0B0F14]/30 p-4 sm:p-6 rounded-2xl border border-[#1A2433] transition-all duration-300 flex items-center justify-center overflow-hidden relative group"
+                    id="services-web-phone-mockup"
+                    style={{ aspectRatio: '16/10' }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <img 
+                      src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/imgs/hero-phone.png" 
+                      alt="NoLabel High-Fidelity Phone Preview" 
+                      className="h-full w-auto object-contain filter drop-shadow-[0_12px_20px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-[1.03]"
+                      referrerPolicy="no-referrer"
+                    />
+                  </motion.div>
                 </div>
               </div>
 
@@ -237,13 +246,13 @@ export default function ServicesView({ onNavigate }: ServicesViewProps) {
                 </div>
 
                 {/* Small preview block right aligned for large screens */}
-                <div className="w-full sm:w-44 flex-shrink-0">
+                <div className={`w-full ${service.id === 'qr-solutions' ? 'sm:w-48' : 'sm:w-44'} flex-shrink-0 flex justify-center`}>
                   {service.id === 'brand-identity' && <ImagePlaceholder type="branding-kit" title="Colors" className="opacity-80 animate-fade" />}
                   {service.id === 'logo-design' && <ImagePlaceholder type="logo-showcase" title="Vector logo" className="scale-95" />}
                   {service.id === 'business-cards' && <ImagePlaceholder type="business-card" title="Vanguard Realty Cards" className="scale-95" />}
                   {service.id === 'social-media' && <ImagePlaceholder type="social-media" title="Instagram Grid" />}
                   {service.id === 'local-seo' && <ImagePlaceholder type="qr-showcase" title="SEO targeting" />}
-                  {service.id === 'qr-solutions' && <ImagePlaceholder type="qr-showcase" title="Digital saves" />}
+                  {service.id === 'qr-solutions' && <Virtual3DCard />}
                   {service.id === 'automation' && <ImagePlaceholder type="tablet" title="Automated pipeline" className="opacity-80" />}
                 </div>
 

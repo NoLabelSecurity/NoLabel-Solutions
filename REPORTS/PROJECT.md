@@ -22,7 +22,7 @@
 | **Environment** | Development / Staging |
 | **Overall Completion** | 100% |
 | **Project Health** | 🟢 Excellent |
-| **Last Updated** | 2026-07-19 |
+| **Last Updated** | 2026-07-24 |
 
 ---
 
@@ -42,6 +42,13 @@ Current Focus: Seamless project delivery, metadata verification, and client hand
 
 ### Recently Completed
 
+- ✅ **3D Virtual Interactive Business Card**: Replaced the static QR saves card mockup on the Services page with an advanced, interactive 3D portrait business card. Users can click-grab or swipe to spin the card horizontally to view both front and back faces, complete with smooth spring snapping on release and a manual flip control button.
+- ✅ **Industrial Brand Board Integrations**: Created and integrated high-fidelity Brand Board preview assets for both "Easy's Welding" and "Flashpoint Solutions" under the Branding Case Studies section, mapping them to real high-resolution images from the official GitHub repositories. Removed the redundant generic "core-logo" case study design.
+- ✅ **Home Deployments Card Update**: Configured the 4th container in the client deployments showcase grid inside the landing view to display the bespoke "No/Label Solutions Brand Board" instead of the generic "Premium Business Cards" mock-up.
+- ✅ **Handyman Service Transition for Flashpoint**: Realigned the portfolio details and text descriptions for "Flashpoint Solutions", transforming their services focus from cyber defense/security to professional handyman, home repair, and residential renovation.
+- ✅ **Cinematic Video Backdrop Integration**: Embedded an immersive, high-quality video backdrop (`video-169445_medium.mp4`) as the background overlay for the main Call-to-Action scheduling container on the Home page, dramatically increasing visual aesthetics.
+- ✅ **Web Design card container-fit background sizing**: Adjusted the background image size of the featured Web Design and Development service card to `object-contain` with center-alignment and seamless `#080d14` background blending, ensuring the background image perfectly fits the container and all of its content/corners are fully visible on all viewport widths.
+- ✅ **Full background fill for Web Design card**: Updated the featured Web Design and Development service card to let its official visual asset completely fill the container as a background, while seamlessly maintaining the navigation link and call-to-action button positions on top of the layout.
 - ✅ **Web Design Services Card Visual Upgrade**: Completely cleaned the featured Website Design & Fast Hosting card to display its official graphic representation from GitHub `web-design-services.png` at 100% size, adding a "Learn more" text link to the bottom left and a "Build Your Site" button in the bottom right while keeping the image's layout and details fully readable.
 - ✅ **Web Development Pop-Open Site Integration**: Integrated dedicated "Visit Site" buttons inside the project details modals for all live-deployed web application case studies (Wright-Way Home Inspections & Renovations, Easy's Welding & Fabrication, and Flashpoint Security Services) linking directly to their official Netlify-hosted portals.
 - ✅ **Full Background Visibility & Cleanup**: Set background image transparency/opacity to 100% on the digital presence secondary service cards, pairing them with dark-tinted overlay gradients for high-contrast text readability. Deleted the redundant local `/assets` directory.
@@ -96,11 +103,11 @@ Current Focus: Seamless project delivery, metadata verification, and client hand
 
 ### Development
 
-Total Development Hours: ~15 hours
+Total Development Hours: ~17 hours
 
-Coding Sessions: 9
+Coding Sessions: 12
 
-Average Session Length: ~1.7 hours
+Average Session Length: ~1.4 hours
 
 Longest Session: ~4 hours
 
@@ -128,13 +135,13 @@ APIs: 0
 
 ### AI
 
-Total Prompts: ~21
+Total Prompts: ~24
 
-Accepted Responses: 21
+Accepted Responses: 24
 
 Modified Responses: 0
 
-Estimated Time Saved: ~34 hours
+Estimated Time Saved: ~38 hours
 
 AI Contribution: 85%
 
@@ -150,6 +157,12 @@ Manual Contribution: 15%
 
 | Date | Activity | Status |
 |------|----------|--------|
+| 2026-07-21 | Integrated high-resolution Brand Boards for Easy's Welding and Flashpoint Solutions inside portfolio showcase modals | Complete |
+| 2026-07-21 | Replaced generic client cards with No/Label Solutions Brand Board as the 4th deployment asset on Home page | Complete |
+| 2026-07-21 | Realigned Flashpoint Solutions case study to highlight handyman, home repair, and home renovation services | Complete |
+| 2026-07-21 | Embedded video backdrop overlays on the main Home Page scheduling Call-to-Action panel | Complete |
+| 2026-07-20 | Adjusted background image size of Web Design service card to object-contain with center-alignment to ensure 100% visibility | Complete |
+| 2026-07-20 | Implemented full container background fill on Website Design and Development featured service card, preserving footer action alignments | Complete |
 | 2026-07-19 | Redesigned main Web Design services container with full-visible graphical asset representation, "Learn More" redirect link, and "Build Your Site" call-to-action button | Complete |
 | 2026-07-19 | Integrated dedicated "Visit Site" buttons to all live-deployed web development project pop-open modals | Complete |
 | 2026-07-19 | Upgraded secondary service cards background image opacities to 100% and removed redundant local assets/ directory | Complete |
