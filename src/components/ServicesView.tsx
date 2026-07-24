@@ -246,8 +246,17 @@ export default function ServicesView({ onNavigate }: ServicesViewProps) {
                 </div>
 
                 {/* Small preview block right aligned for large screens */}
-                <div className={`w-full ${service.id === 'qr-solutions' ? 'sm:w-48' : 'sm:w-44'} flex-shrink-0 flex justify-center`}>
-                  {service.id === 'brand-identity' && <ImagePlaceholder type="branding-kit" title="Colors" className="opacity-80 animate-fade" />}
+                <div className={`w-full ${service.id === 'brand-identity' || service.id === 'qr-solutions' ? 'sm:w-48' : 'sm:w-44'} flex-shrink-0 flex justify-center`}>
+                  {service.id === 'brand-identity' && (
+                    <div className="w-full transition-all duration-300 group-hover:scale-[1.03] flex items-center justify-center">
+                      <img 
+                        src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/imgs/Jacobs%20Fractal%20Burning%20Brand%20Board.png" 
+                        alt="Jacobs Fractal Burning Brand Board"
+                        className="w-full h-auto object-contain rounded-xl border border-[#1A2433] shadow-2xl bg-[#0B0F14]/20"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                  )}
                   {service.id === 'logo-design' && <ImagePlaceholder type="logo-showcase" title="Vector logo" className="scale-95" />}
                   {service.id === 'business-cards' && <ImagePlaceholder type="business-card" title="Vanguard Realty Cards" className="scale-95" />}
                   {service.id === 'social-media' && <ImagePlaceholder type="social-media" title="Instagram Grid" />}
