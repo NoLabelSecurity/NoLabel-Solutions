@@ -108,8 +108,8 @@ To build an ultra-premium, highly distinctive developer portal showcasing tailor
 ---
 
 ### Hero Background Video Integration
-- **Decision**: Embedded an ambient, high-definition stock background video loop in the main landing Hero section container on the Home page, accompanied by a vertical gradient contrast mask that has been lightened by 30% opacity absolute values (`from-[#0B0F14]/10 via-[#0B0F14]/45 to-[#0B0F14]/70`).
-- **Reason**: Instantly captivates visitors with modern, high-tech cinematic motion on load with significantly enhanced stock video visibility, while maintaining flawless text legibility for headers.
+- **Decision**: Embedded an ambient, high-definition stock background video loop in the main landing Hero section container on the Home page, configured to run at 100% opacity with a fully transparent overlay for maximum visibility. Aligned the bottom section border perfectly flush with the bottom of the video by nesting the sections inside a single helper div, eliminating parent spacing gaps.
+- **Reason**: Instantly captivates visitors with modern, high-tech cinematic motion on load with full uncompromised video visibility, while achieving seamless transitions between the Hero and subsequent Services Overview section.
 
 </details>
 

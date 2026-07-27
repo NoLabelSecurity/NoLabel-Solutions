@@ -50,22 +50,23 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
 
   return (
     <div className="space-y-24 pb-20 overflow-hidden">
-      {/* SECTION 1 — HERO */}
-      <section className="relative pt-6 pb-12 sm:pt-12 sm:pb-16 md:pt-16 md:pb-24 overflow-hidden">
-        {/* Background Video */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover opacity-25"
-          >
-            <source src="https://cdn.pixabay.com/video/2022/06/21/121470-724697516_large.mp4" type="video/mp4" />
-          </video>
-          {/* Ambient overlay to ensure text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F14]/10 via-[#0B0F14]/45 to-[#0B0F14]/70" />
-        </div>
+      <div>
+        {/* SECTION 1 — HERO */}
+        <section className="relative pt-6 pb-12 sm:pt-12 sm:pb-16 md:pt-16 md:pb-24 overflow-hidden">
+          {/* Background Video */}
+          <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover opacity-100"
+            >
+              <source src="https://cdn.pixabay.com/video/2022/06/21/121470-724697516_large.mp4" type="video/mp4" />
+            </video>
+            {/* Ambient overlay to ensure text contrast */}
+            <div className="absolute inset-0 bg-transparent" />
+          </div>
 
         {/* Subtle background glow element */}
         <div className="absolute top-1/4 -left-36 w-96 h-96 rounded-full bg-blue-500/5 blur-3xl pointer-events-none" />
@@ -582,6 +583,7 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
           </div>
         </div>
       </section>
+    </div>
 
       {/* SECTION 3 — FEATURED PROJECT SHOWCASE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

@@ -27,7 +27,7 @@
 
 ### Recently Completed
 
-- ✅ **Hero Background Video Integration**: Embedded an ambient, high-definition stock background video inside the main Hero section on the Home page, overlaid with an eye-safe dark linear contrast gradient with a total 30% transparency boost to significantly enhance video visibility while preserving text contrast.
+- ✅ **Hero Background Video Integration**: Embedded an ambient, high-definition stock background video inside the main Hero section on the Home page, configured to run at 100% opacity with a fully transparent overlay for maximum visibility. Aligned the bottom section border perfectly flush with the bottom of the video by nesting the sections inside a single helper div, eliminating parent spacing gaps.
 - ✅ **Local SEO Video Integration**: Upgraded the "Local SEO & Google Business" service container on the Services page by removing the old static placeholder icon and integrating a high-definition autoplaying loop video preview.
 - ✅ **Home Web Design Card Layout Shift**: Repositioned the text content block downwards with responsive padding (`pt-24 sm:pt-32 md:pt-36`) to eliminate overlap with the background mockup. Concurrently, relocated the divider line and actions container further down using an automatic spacer (`mt-auto`) and compact bottom padding bounds.
 - ✅ **Home Web Design Card Sizing & Full Overlay Visibility**: Refined the Featured Website Design & Development card background image on the Home view to fit (`object-contain object-right`) with 100% opacity for absolute visual crispness. Increased the overlay transparency to 100% on the right side to maximize the visibility of the design mockups.

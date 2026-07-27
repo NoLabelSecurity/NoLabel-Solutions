@@ -12,9 +12,9 @@
 |-----------|-------|
 | First Development Session | 2026-07-16 |
 | Last Development Session | 2026-07-27 |
-| Total Sessions | 26 |
-| Total Development Hours | ~24 hours |
-| Total AI Prompts | ~38 |
+| Total Sessions | 28 |
+| Total Development Hours | ~25 hours |
+| Total AI Prompts | ~40 |
 | Total Commits | Unknown (direct container-managed deployment) |
 | Total Pushes | Unknown (direct container-managed deployment) |
 | Current Sprint | Sprint 1 (Visual Polish & Rebranding) |
@@ -1189,6 +1189,94 @@ Major Prompt Topics:
 - **Challenge**: Bright video details reducing contrast for secondary sub-headings.
 - **Solution**: Set up a vertical linear gradient layout that fades gently downwards, preserving darkness exactly where main body copy and buttons sit.
 
+---
+
+### Session #27 (Hero Overlay Transparency Increase)
+
+**Date**: 2026-07-27
+
+**Duration**: 0.5 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Further increase the main Hero background gradient overlay transparency by 20% for maximum background stock video visibility.
+
+---
+
+#### Completed
+
+- ✅ Enhanced stock video presence on the Home page by dropping the dark vertical gradient backdrop opacity by another 20% absolute values (`from-[#0B0F14]/0 via-[#0B0F14]/25 to-[#0B0F14]/50`).
+- ✅ Achieved maximum cinematic impact on page entry while maintaining clean legibility bounds on main headlines.
+
+---
+
+#### Files Modified
+
+- `/src/components/HomeView.tsx`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Boosting background video visibility with a 20% absolute transparency offset.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: Off-white/slate typography blending into high-exposure sections of the Pixabay video clip.
+- **Solution**: Balanced the drop with a smooth, mid-range transition (`via-[#0B0F14]/25` to `to-[#0B0F14]/50`) that protects heading contrast while allowing the motion to pop.
+
+---
+
+### Session #28 (Hero Spacing & Full 100% Video Visibility)
+
+**Date**: 2026-07-27
+
+**Duration**: 0.5 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Make the Hero and Services Overview divider perfectly flush with the background video, and make the background video 100% visible by removing background overlay tint.
+
+---
+
+#### Completed
+
+- ✅ Nested Section 1 (Hero) and Section 2 (Services Overview) inside a single helper `div` wrapper to eliminate parent `space-y-24` margin layout gaps, bringing Section 2's top border divider perfectly flush with the bottom of the video.
+- ✅ Set the background `<video>` element opacity to `opacity-100` and updated the ambient background overlay to `bg-transparent` for 100% visibility of the cinematic motion background.
+
+---
+
+#### Files Modified
+
+- `/src/components/HomeView.tsx`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Aligning Section dividers flush with background videos and increasing overlay transparency to 100%.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: Sibling elements inside standard flex/grid layouts with a global layout gap will always push apart.
+- **Solution**: Nesting adjacent sections into a singular container blocks out the vertical margin, achieving a perfectly flush edge.
+
 </details>
 
 ---
@@ -2187,6 +2275,82 @@ increase hero background overlay transparency by 10% for more visibility
 
 - ~0.5 hours
 
+---
+
+### Prompt #26
+
+**Timestamp**: 2026-07-27T10:32:03
+
+**Purpose**: Increase hero background overlay transparency by another 20% for optimal video visibility.
+
+**Prompt**:
+```text
+increase hero background overlay transparency by 20% for more visibility
+```
+
+---
+
+### Result
+
+- Adjusted vertical gradient overlay opacities downwards to `from-[#0B0F14]/0 via-[#0B0F14]/25 to-[#0B0F14]/50`.
+- Maximized background stock video presence while preserving text contrast and readability.
+
+---
+
+### Files Affected
+
+- `/src/components/HomeView.tsx`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~0.5 hours
+
+---
+
+### Prompt #27
+
+**Timestamp**: 2026-07-27T10:38:08
+
+**Purpose**: Align section divider flush with the background video and increase transparency for 100% video visibility.
+
+**Prompt**:
+```text
+adjust hero background sections divider line to be flush with bottom of background video. increase hero background section overly transparency for 100% visibility of background
+```
+
+---
+
+### Result
+
+- Nested Section 1 (Hero) and Section 2 (Services Overview) inside a single wrapper `div` element to eliminate the parent `space-y-24` layout margin, aligning the divider line perfectly flush.
+- Updated background video opacity to `opacity-100` and overlay style to `bg-transparent` for 100% visibility.
+
+---
+
+### Files Affected
+
+- `/src/components/HomeView.tsx`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~0.5 hours
+
 </details>
 
 ---
@@ -2203,7 +2367,9 @@ increase hero background overlay transparency by 10% for more visibility
 - Added a loopable, autoplaying, muted `<video>` player in the Local SEO service container on the Services page, referencing the official Pixabay video source inside a beautifully styled rounded-xl frame.
 
 ### Changed
-- Increased the transparency of the Hero section background video's vertical gradient overlay by an additional 10% (reaching a total 30% reduction: `from-[#0B0F14]/10 via-[#0B0F14]/45 to-[#0B0F14]/70`) to significantly enhance stock video visibility.
+- Aligned the Hero background and Services Overview sections' divider line to be perfectly flush by nesting them inside a wrapper div, eliminating the standard flex/grid vertical margin gap.
+- Set the background video opacity to 100% and overlay transparency to 100% (`bg-transparent`) for maximum background video visibility.
+- Increased the transparency of the Hero section background video's vertical gradient overlay by an additional 20% (reaching a total 50% opacity reduction: `from-[#0B0F14]/0 via-[#0B0F14]/25 to-[#0B0F14]/50`) to significantly enhance stock video visibility.
 - Shifted the text content layer down further (`pt-24 sm:pt-32 md:pt-36`) and relocated the divider and footer actions downwards (`mt-auto` and custom bottom padding) inside the Featured Website Design card on the Home page.
 - Decreased the height of the Featured Website Design & Development card container (`min-h-[380px] sm:min-h-[430px] md:min-h-[470px]`) to snugly frame the backdrop landscape image.
 - Adjusted the Featured Website Design & Development card background image on the Home page to fit (`object-contain object-right`) with 100% opacity for full crisp visibility.
