@@ -51,12 +51,27 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
   return (
     <div className="space-y-24 pb-20 overflow-hidden">
       {/* SECTION 1 — HERO */}
-      <section className="relative pt-6 pb-12 sm:pt-12 sm:pb-16 md:pt-16 md:pb-24">
+      <section className="relative pt-6 pb-12 sm:pt-12 sm:pb-16 md:pt-16 md:pb-24 overflow-hidden">
+        {/* Background Video */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-25"
+          >
+            <source src="https://cdn.pixabay.com/video/2022/06/21/121470-724697516_large.mp4" type="video/mp4" />
+          </video>
+          {/* Ambient overlay to ensure text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F14]/10 via-[#0B0F14]/45 to-[#0B0F14]/70" />
+        </div>
+
         {/* Subtle background glow element */}
         <div className="absolute top-1/4 -left-36 w-96 h-96 rounded-full bg-blue-500/5 blur-3xl pointer-events-none" />
         <div className="absolute top-1/3 -right-36 w-96 h-96 rounded-full bg-[#00D9FF]/5 blur-3xl pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Texts & Brand badge */}
@@ -389,38 +404,83 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 whileHover={{ y: -6, borderColor: 'rgba(0, 217, 255, 0.4)', boxShadow: '0 10px 30px -10px rgba(0, 217, 255, 0.1)' }}
-                className="md:col-span-8 bg-[#080d14] border border-[#1A2433] rounded-2xl relative shadow-xl overflow-hidden group text-left transition-colors duration-300 min-h-[380px] sm:min-h-[480px] md:min-h-[520px] aspect-[1.3] sm:aspect-[1.4] md:aspect-[1.5] flex flex-col justify-end p-6"
+                className="md:col-span-8 bg-[#080d14] border border-[#1A2433] rounded-2xl relative shadow-xl overflow-hidden group text-left transition-all duration-300 min-h-[380px] sm:min-h-[430px] md:min-h-[470px] flex flex-col justify-between p-0"
                 id="service-featured-card"
               >
                 {/* Full Background Image */}
                 <div className="absolute inset-0 w-full h-full pointer-events-none z-0 bg-[#080d14]">
                   <img 
-                    src="https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/home-cards/web-design-services.png?raw=true" 
+                    src="https://raw.githubusercontent.com/NoLabelSecurity/NoLabel-Solutions/content/media/Web%20Design%20Service%20-%20Landscape.png" 
                     alt="Web Design and Development Services" 
-                    className="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.015]"
+                    className="w-full h-full object-contain object-right transition-transform duration-500 group-hover:scale-[1.015] opacity-100"
                     referrerPolicy="no-referrer"
                   />
                 </div>
 
-                {/* Bottom Actions Overlay */}
-                <div className="flex items-center justify-between w-full z-10 pt-4 border-t border-[#1A2433]/40 bg-gradient-to-t from-black/80 via-black/40 to-transparent -mx-6 -mb-6 p-6">
-                  <button
-                    onClick={() => {
-                      onNavigate('services');
-                      window.scrollTo(0, 0);
-                    }}
-                    className="text-xs text-gray-300 hover:text-[#00D9FF] font-mono tracking-wider flex items-center gap-1 cursor-pointer transition-colors"
-                  >
-                    LEARN MORE <span>→</span>
-                  </button>
-                  <motion.button
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => onNavigate('contact')}
-                    className="px-5 py-2.5 bg-cyan-400 hover:bg-cyan-300 text-[#0B0F14] font-display font-semibold rounded-lg text-xs transition-colors text-center cursor-pointer shadow-md hover:shadow-cyan-400/25"
-                  >
-                    BUILD YOUR SITE
-                  </motion.button>
+                {/* Content Overlay */}
+                <div className="relative z-10 w-full h-full flex flex-col justify-between pt-24 sm:pt-32 md:pt-36 px-6 sm:px-8 md:px-10 pb-4 sm:pb-5 md:pb-5 flex-grow bg-gradient-to-r from-black/90 via-black/30 to-transparent">
+                  <div className="max-w-md sm:max-w-xl space-y-5">
+                    <div className="space-y-1">
+                      <span className="text-[10px] font-mono text-[#00D9FF] uppercase tracking-wider block">OUR DIGITAL PRESENCE SERVICES</span>
+                      <h3 className="text-2xl sm:text-3xl font-display font-medium text-white tracking-tight">
+                        Website Design & Development
+                      </h3>
+                      <p className="text-gray-300 text-xs sm:text-sm leading-relaxed font-sans max-w-lg">
+                        Custom high-performance websites engineered for small businesses, local services, and startups.
+                      </p>
+                    </div>
+
+                    <div className="space-y-2.5">
+                      <span className="text-[9px] font-mono text-gray-400 block uppercase tracking-wider font-semibold">FEATURES:</span>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs text-gray-300 font-mono">
+                        <span className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" /> Custom Responsive Layouts
+                        </span>
+                        <span className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" /> SEO-ready Blueprint Structuring
+                        </span>
+                        <span className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" /> Google Analytics Setup
+                        </span>
+                        <span className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" /> Complete Mobile Optimization
+                        </span>
+                        <span className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" /> Lightning-fast Loading Times
+                        </span>
+                        <span className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" /> Lead Capture & Interactive Forms
+                        </span>
+                        <span className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" /> CMS Integration Options
+                        </span>
+                        <span className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" /> Secure Hosting Setup
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom Actions Overlay */}
+                  <div className="flex items-center justify-between w-full pt-4 border-t border-[#1A2433]/30 mt-auto">
+                    <button
+                      onClick={() => {
+                        onNavigate('services');
+                        window.scrollTo(0, 0);
+                      }}
+                      className="text-xs text-gray-300 hover:text-[#00D9FF] font-mono tracking-wider flex items-center gap-1 cursor-pointer transition-colors"
+                    >
+                      LEARN MORE <span>→</span>
+                    </button>
+                    <motion.button
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => onNavigate('contact')}
+                      className="px-5 py-2.5 bg-cyan-400 hover:bg-cyan-300 text-[#0B0F14] font-display font-semibold rounded-lg text-xs transition-colors text-center cursor-pointer shadow-md hover:shadow-cyan-400/25"
+                    >
+                      BUILD YOUR SITE
+                    </motion.button>
+                  </div>
                 </div>
               </motion.div>
             )}

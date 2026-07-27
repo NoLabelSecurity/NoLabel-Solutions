@@ -150,42 +150,8 @@ export default function ServicesView({ onNavigate }: ServicesViewProps) {
               </div>
 
               {/* Right Mockup Showcase column */}
-              <div className="lg:col-span-5 space-y-6">
-                <span className="text-[10px] font-mono text-gray-500 block uppercase text-center lg:text-left">ADAPTIVE DEVICE PREVIEWS</span>
-                
-                <div className="space-y-4">
-                  {/* High-Fidelity Laptop preview */}
-                  <motion.div 
-                    whileHover={{ y: -4 }}
-                    className="bg-[#0B0F14]/30 p-4 sm:p-6 rounded-2xl border border-[#1A2433] transition-all duration-300 flex items-center justify-center overflow-hidden relative group"
-                    id="services-web-pc-mockup"
-                    style={{ aspectRatio: '16/10' }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <img 
-                      src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/imgs/hero-pc.png" 
-                      alt="NoLabel High-Fidelity Laptop Preview" 
-                      className="w-full h-full object-contain filter drop-shadow-[0_12px_20px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-[1.02]"
-                      referrerPolicy="no-referrer"
-                    />
-                  </motion.div>
-
-                  {/* High-Fidelity Phone preview */}
-                  <motion.div 
-                    whileHover={{ y: -4 }}
-                    className="bg-[#0B0F14]/30 p-4 sm:p-6 rounded-2xl border border-[#1A2433] transition-all duration-300 flex items-center justify-center overflow-hidden relative group"
-                    id="services-web-phone-mockup"
-                    style={{ aspectRatio: '16/10' }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <img 
-                      src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/imgs/hero-phone.png" 
-                      alt="NoLabel High-Fidelity Phone Preview" 
-                      className="h-full w-auto object-contain filter drop-shadow-[0_12px_20px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-[1.03]"
-                      referrerPolicy="no-referrer"
-                    />
-                  </motion.div>
-                </div>
+              <div className="lg:col-span-5 space-y-6" id="services-web-design-blank-showcase">
+                {/* Space left blank as requested */}
               </div>
 
             </div>
@@ -246,7 +212,7 @@ export default function ServicesView({ onNavigate }: ServicesViewProps) {
                 </div>
 
                 {/* Small preview block right aligned for large screens */}
-                <div className={`w-full ${service.id === 'brand-identity' || service.id === 'qr-solutions' ? 'sm:w-48' : 'sm:w-44'} flex-shrink-0 flex justify-center`}>
+                <div className={`w-full ${service.id === 'brand-identity' || service.id === 'qr-solutions' || service.id === 'local-seo' ? 'sm:w-48' : 'sm:w-44'} flex-shrink-0 flex justify-center`}>
                   {service.id === 'brand-identity' && (
                     <div className="w-full transition-all duration-300 group-hover:scale-[1.03] flex items-center justify-center">
                       <img 
@@ -260,7 +226,19 @@ export default function ServicesView({ onNavigate }: ServicesViewProps) {
                   {service.id === 'logo-design' && <ImagePlaceholder type="logo-showcase" title="Vector logo" className="scale-95" />}
                   {service.id === 'business-cards' && <ImagePlaceholder type="business-card" title="Vanguard Realty Cards" className="scale-95" />}
                   {service.id === 'social-media' && <ImagePlaceholder type="social-media" title="Instagram Grid" />}
-                  {service.id === 'local-seo' && <ImagePlaceholder type="qr-showcase" title="SEO targeting" />}
+                  {service.id === 'local-seo' && (
+                    <div className="w-full transition-all duration-300 group-hover:scale-[1.03] flex items-center justify-center">
+                      <video 
+                        src="https://pixabay.com/videos/download/video-155163_medium.mp4" 
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-auto object-contain rounded-xl border border-[#1A2433] shadow-2xl bg-[#0B0F14]/20"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                  )}
                   {service.id === 'qr-solutions' && <Virtual3DCard />}
                   {service.id === 'automation' && <ImagePlaceholder type="tablet" title="Automated pipeline" className="opacity-80" />}
                 </div>

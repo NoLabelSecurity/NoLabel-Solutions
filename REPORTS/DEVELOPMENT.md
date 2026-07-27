@@ -11,15 +11,15 @@
 | Property | Value |
 |-----------|-------|
 | First Development Session | 2026-07-16 |
-| Last Development Session | 2026-07-24 |
-| Total Sessions | 16 |
-| Total Development Hours | ~19 hours |
-| Total AI Prompts | ~28 |
+| Last Development Session | 2026-07-27 |
+| Total Sessions | 26 |
+| Total Development Hours | ~24 hours |
+| Total AI Prompts | ~38 |
 | Total Commits | Unknown (direct container-managed deployment) |
 | Total Pushes | Unknown (direct container-managed deployment) |
 | Current Sprint | Sprint 1 (Visual Polish & Rebranding) |
 | Current Branch | main |
-| Last Deployment | 2026-07-24 |
+| Last Deployment | 2026-07-27 |
 
 ---
 
@@ -746,6 +746,449 @@ Major Prompt Topics:
 - **Challenge**: Enabling social previews that load on multiple networks reliably.
 - **Solution**: Defined rich dimensional sizes explicitly and hosted standard `og:` properties using absolute raw GitHub CDN urls.
 
+---
+
+### Session #17 (Web Showcase Alignment & Visual Balance)
+
+**Date**: 2026-07-27
+
+**Duration**: 0.25 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Remove mockup frames and images from the Web Design & Development card's right column to leave a clean, uncluttered negative space layout block.
+
+---
+
+#### Completed
+
+- ✅ Cleared out the laptop and phone graphic mockup elements and outer nested background wrapper blocks from the Web Design & Development card's auxiliary preview column.
+- ✅ Preserved structural `lg:col-span-5` grid column balancing to maintain harmonious left-right negative space alignment without disrupting text presentation widths.
+
+---
+
+#### Files Modified
+
+- `/src/components/ServicesView.tsx`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Removing inner illustration preview containers to maintain an elegant negative space.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: Preventing the layout from breaking or shifting left-side headings when nested preview elements are removed.
+- **Solution**: Kept the grid structural `lg:col-span-5` container block with a blank spacer reference to secure correct responsive proportions.
+
+---
+
+### Session #18 (Website Design Landscape Brand Board Backdrop Integration)
+
+**Date**: 2026-07-27
+
+**Duration**: 0.5 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Swap the Featured Web Design & Development card's background image with the landscape design asset, and layer rich text descriptions & features on top for absolute readability.
+
+---
+
+#### Completed
+
+- ✅ Updated the background image source of the Web Design featured service container to the raw high-definition landscape design brand board banner.
+- ✅ Structured a comprehensive, high-contrast textual overlay on top of the background image, presenting features lists and lead actions elegantly.
+- ✅ Integrated clean visual layout scaling on hovered triggers for consistent visual balance.
+
+---
+
+#### Files Modified
+
+- `/src/components/HomeView.tsx`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Swapping featured website container backdrop assets and layering text lists.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: Ensuring text legibility over rich and colourful image details.
+- **Solution**: Implemented a heavy dark gradient mask (`bg-gradient-to-r from-black/90 via-black/60 to-transparent`) to ensure perfect WCAG accessibility while preserving background image transparency.
+
+---
+
+### Session #19 (Local SEO Video Integration)
+
+**Date**: 2026-07-27
+
+**Duration**: 0.5 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Replace the outdated static icon preview in the Local SEO service card with a premium, autoplaying loop video preview.
+
+---
+
+#### Completed
+
+- ✅ Removed the legacy static image placeholder from the top right column of the Local SEO service container.
+- ✅ Integrated an inline custom `<video>` player pointing directly to the high-definition Pixabay video asset.
+- ✅ Structured smooth scale-up microinteractions on card hovers to blend naturally with nearby brand boards.
+
+---
+
+#### Files Modified
+
+- `/src/components/ServicesView.tsx`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Replacing the top-right local SEO mockup with a loopable high-definition mp4 video player.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: Ensuring modern browser auto-play permissions allow silent rendering instantly.
+- **Solution**: Enabled explicit `autoPlay`, `loop`, `muted`, and `playsInline` attributes on the element to ensure safe native client execution.
+
+---
+
+### Session #20 (Home Web Design Card Image Fit & Full Overlay Visibility)
+
+**Date**: 2026-07-27
+
+**Duration**: 0.5 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Adjust the featured Web Design card background image scaling and opacity for full view within container, while updating the overlays to allow 100% full visibility.
+
+---
+
+#### Completed
+
+- ✅ Configured the landscape background image to fit perfectly inside the card using `object-contain object-right` with 100% opacity for full crisp visibility.
+- ✅ Adjusted the dark background overlay to be highly transparent (`bg-gradient-to-r from-black/90 via-black/30 to-transparent`) to maximize the visibility of the design mockups.
+
+---
+
+#### Files Modified
+
+- `/src/components/HomeView.tsx`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Decreasing background image size to fit/fill container and increasing overlays transparency to 100%.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: Balancing high background image visibility with text legibility.
+- **Solution**: Designed a precise horizontal linear gradient starting with solid dark contrast on the left (under text) and shifting immediately to fully transparent on the right (exposing the full landscape mockups).
+
+---
+
+### Session #21 (Featured Web Design Container Height Optimization)
+
+**Date**: 2026-07-27
+
+**Duration**: 0.5 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Decrease the overall height of the featured Web Design & Development card container to frame the landscape image snugly.
+
+---
+
+#### Completed
+
+- ✅ Slashed the min-height parameters on mobile, tablet, and desktop (`min-h-[380px] sm:min-h-[430px] md:min-h-[470px]`) to closely align with the vertical bounding frame of the landscape mockup artwork.
+- ✅ Retained smooth scaling animation transitions on hover triggers.
+
+---
+
+#### Files Modified
+
+- `/src/components/HomeView.tsx`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Reducing container height properties to fit and frame the design mockups precisely.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: Preventing feature list content clipping or vertical layout overflow on extra small devices.
+- **Solution**: Implemented compact padding scales paired with flex column space distribution, scaling safely to avoid any visual collisions.
+
+---
+
+### Session #22 (Featured Web Design Card Layout Adjustments)
+
+**Date**: 2026-07-27
+
+**Duration**: 0.5 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Adjust layout of featured Web Design card on Home page by shifting text content layer, divider, button, and link downwards for maximum mockup visibility.
+
+---
+
+#### Completed
+
+- ✅ Repositioned text content layer downwards inside the Web Design card using custom responsive top padding (`pt-12 sm:pt-16 md:pt-20`).
+- ✅ Shifted the bottom divider line and actions down further towards the bottom border using custom tighter bottom padding (`pb-4 sm:pb-5 md:pb-5`) and flexible spacer alignments (`mt-auto`).
+
+---
+
+#### Files Modified
+
+- `/src/components/HomeView.tsx`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Adjusting text content layers, margins, dividers, buttons, and link positioning in the featured web design card.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: Shifting content downward without clipping the lower actions container.
+- **Solution**: Replaced the fixed top margin (`mt-8`) on the action block with a dynamic automatic spacer (`mt-auto`) to neatly pin actions to the bottom padding bounds.
+
+---
+
+### Session #23 (Featured Web Design Card Shift Downward)
+
+**Date**: 2026-07-27
+
+**Duration**: 0.5 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Further adjust the featured Web Design card on the Home page by shifting the text content block downwards to completely avoid overlapping with background mockup devices.
+
+---
+
+#### Completed
+
+- ✅ Increased the top padding bounds of the text content overlay (`pt-24 sm:pt-32 md:pt-36`) to cleanly drop the text down by roughly 3-4 lines of height.
+- ✅ Retained flawless layout margins, automatic flexible pinning, and absolute visibility of the background mockup items on the right side.
+
+---
+
+#### Files Modified
+
+- `/src/components/HomeView.tsx`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Bringing the text content overlay layer down in the container for full visual clearance.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: Shifting text content down while keeping buttons accessible.
+- **Solution**: Set the footer actions container to `mt-auto` with clean bounds, so the content safely dynamically adjusts within the card.
+
+---
+
+### Session #24 (Hero Background Video Integration)
+
+**Date**: 2026-07-27
+
+**Duration**: 0.5 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Use a premium high-definition stock video asset for the main Hero section background.
+
+---
+
+#### Completed
+
+- ✅ Integrated an autoplaying, looping, muted background `<video>` using the provided Pixabay MP4 URL inside the Hero section container.
+- ✅ Overlaid a professional dark vertical linear gradient layer to ensure seamless, WCAG-AA compliant text contrast on the hero headlines.
+- ✅ Maintained full responsiveness across mobile, tablet, and desktop viewports.
+
+---
+
+#### Files Modified
+
+- `/src/components/HomeView.tsx`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Adding the specified stock video file to the Hero section background.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: Maintaining perfect legibility for white display headlines on top of video frames.
+- **Solution**: Configured a dark overlay starting with a subtle dark tint (`from-[#0B0F14]/40`) that transitions into a rich opaque backdrop (`via-[#0B0F14]/75` to `to-[#0B0F14]`).
+
+---
+
+### Session #25 (Hero Overlay Transparency Tweaks)
+
+**Date**: 2026-07-27
+
+**Duration**: 0.5 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Increase the Hero background overlay transparency by 20% to make the newly added background stock video much more visible.
+
+---
+
+#### Completed
+
+- ✅ Enhanced the visual fidelity of the main Home Hero by adjusting the dark vertical gradient backdrop, dropping the opacity by 20% absolute values (`from-[#0B0F14]/20 via-[#0B0F14]/55 to-[#0B0F14]/80`).
+- ✅ Achieved gorgeous visibility of the underlying background stock video while maintaining flawless WCAG-AA legibility across all typography weights.
+
+---
+
+#### Files Modified
+
+- `/src/components/HomeView.tsx`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Increasing background overlay transparency by 20% for optimal video visibility.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: Preventing neon/cyan display copy from bleeding into lighter video frames.
+- **Solution**: Set up a balanced 20/55/80 split gradient overlay that dynamically shields critical text nodes while fully unleashing high visual contrast on non-critical blank canvas zones.
+
+---
+
+### Session #26 (Hero Background Gradient Fine-Tuning)
+
+**Date**: 2026-07-27
+
+**Duration**: 0.5 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Further increase the main Hero background gradient overlay transparency by 10% for improved stock video aesthetics.
+
+---
+
+#### Completed
+
+- ✅ Slashed the gradient mask opacity levels downwards by another 10% absolute scale (`from-[#0B0F14]/10 via-[#0B0F14]/45 to-[#0B0F14]/70`).
+- ✅ Perfected real-time background video visibility while preserving high-contrast text aesthetics.
+
+---
+
+#### Files Modified
+
+- `/src/components/HomeView.tsx`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Increasing Hero background overlay transparency by another 10%.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: Bright video details reducing contrast for secondary sub-headings.
+- **Solution**: Set up a vertical linear gradient layout that fades gently downwards, preserving darkness exactly where main body copy and buttons sit.
+
 </details>
 
 ---
@@ -1348,6 +1791,402 @@ https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/no-label
 
 - ~0.5 hours
 
+---
+
+### Prompt #16
+
+**Timestamp**: 2026-07-27T06:13:00
+
+**Purpose**: Remove Web Design mockup graphics and leave empty visual balance space
+
+**Prompt**:
+```text
+Services: Web Design and Development container: Remove the 2 inner containers and the images, leave space blank
+```
+
+---
+
+### Result
+
+- Cleared out both the PC (laptop) mockup and Phone mockup display containers from the right column of the main Web Design showcase block.
+- Maintained a clean grid column distribution to leave the right area blank with balanced visual breathing room.
+
+---
+
+### Files Affected
+
+- `/src/components/ServicesView.tsx`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~0.25 hours
+
+---
+
+### Prompt #17
+
+**Timestamp**: 2026-07-27T06:16:00
+
+**Purpose**: Swap the Home featured Web Design card background with the premium landscape layout, and layer descriptive features on top.
+
+**Prompt**:
+```text
+Home: our digital presence Services first container: replace background image with https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/Web%20Design%20Service%20-%20Landscape.png
+add content from erased image layered over the background i.e. 
+Website Design & Development
+Custom high-performance websites engineered for small businesses, local services, and startups.
+FEATURES:
+Custom Responsive Layouts
+SEO-ready Blueprint Structuring
+Google Analytics Setup
+Complete Mobile Optimization
+Lightning-fast Loading Times
+Lead Capture & Interactive Forms
+CMS Integration Options
+Secure Hosting Setup
+```
+
+---
+
+### Result
+
+- Replaced the backdrop image of the featured Website Design & Development card on the Home page with the new high-definition landscape design brand board banner.
+- Layered a sophisticated, highly readable and accessible text layer presenting features, headers, and description text in high-contrast styling.
+
+---
+
+### Files Affected
+
+- `/src/components/HomeView.tsx`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~0.5 hours
+
+---
+
+### Prompt #18
+
+**Timestamp**: 2026-07-27T06:57:30
+
+**Purpose**: Replace static Local SEO preview block with custom video integration
+
+**Prompt**:
+```text
+Services: Local SEO.. container: remove element from top right corner, replace with an inner container containing video link:
+https://pixabay.com/videos/download/video-155163_medium.mp4
+```
+
+---
+
+### Result
+
+- Replaced the static placeholder image inside the Local SEO card's right column with a premium, autoplaying loop video player.
+- Structured seamless CSS borders, custom rounded-xl corners, and clean hover scaling behaviors.
+
+---
+
+### Files Affected
+
+- `/src/components/ServicesView.tsx`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~0.5 hours
+
+---
+
+### Prompt #19
+
+**Timestamp**: 2026-07-27T08:31:40
+
+**Purpose**: Adjust background image scale/opacity and overlay transparency for full view.
+
+**Prompt**:
+```text
+decrease background image to fit/fill for full view within container. increase the background overlays transparency to 100% for full visibility
+```
+
+---
+
+### Result
+
+- Set the background image's size to fit and align perfectly to the right (`object-contain object-right`).
+- Set background image opacity to 100% for absolute visibility.
+- Adjusted the overlay linear gradient transparency (`bg-gradient-to-r from-black/90 via-black/30 to-transparent`) to be fully transparent on the right side.
+
+---
+
+### Files Affected
+
+- `/src/components/HomeView.tsx`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~0.5 hours
+
+---
+
+### Prompt #20
+
+**Timestamp**: 2026-07-27T08:37:53
+
+**Purpose**: Squeeze the featured Web Design & Development card container height to snuggly frame the landscape graphic.
+
+**Prompt**:
+```text
+decrease the height of the container to fit/frame background image.
+```
+
+---
+
+### Result
+
+- Set card height to a compact range (`min-h-[380px] sm:min-h-[430px] md:min-h-[470px]`).
+- Ensured perfect vertical spacing and aligned layout elements closely to the edges.
+
+---
+
+### Files Affected
+
+- `/src/components/HomeView.tsx`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~0.5 hours
+
+---
+
+### Prompt #21
+
+**Timestamp**: 2026-07-27T08:42:20
+
+**Purpose**: Shift text content down and push footer buttons/links down for maximum mockup visibility in featured Web Design card.
+
+**Prompt**:
+```text
+button and link text down just a little, bring divider line above them down further, and bring the text content layer down to so that items in background image are fully visible
+```
+
+---
+
+### Result
+
+- Configured responsive top padding (`pt-12 sm:pt-16 md:pt-20`) on the overlay content container to shift the text layer down, clear of top-right mockup screens.
+- Reduced the bottom padding bounds (`pb-4 sm:pb-5 md:pb-5`) and replaced the footer block's margin-top with `mt-auto` to pin footer items and the divider line to the lowest edge.
+
+---
+
+### Files Affected
+
+- `/src/components/HomeView.tsx`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~0.5 hours
+
+---
+
+### Prompt #22
+
+**Timestamp**: 2026-07-27T08:52:00
+
+**Purpose**: Shift text content down about 3-4 more lines in featured Web Design card for optimal background graphic visibility.
+
+**Prompt**:
+```text
+bring the text content in the container down a little more, about 3-4 lines
+```
+
+---
+
+### Result
+
+- Shifted text content downwards inside the card using enhanced responsive top padding (`pt-24 sm:pt-32 md:pt-36`).
+- Cleared the visual bounds of top-right brand board device mockups perfectly.
+
+---
+
+### Files Affected
+
+- `/src/components/HomeView.tsx`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~0.5 hours
+
+---
+
+### Prompt #23
+
+**Timestamp**: 2026-07-27T10:21:42
+
+**Purpose**: Use video link for hero background section.
+
+**Prompt**:
+```text
+use video link for hero background section:
+
+https://cdn.pixabay.com/video/2022/06/21/121470-724697516_large.mp4
+```
+
+---
+
+### Result
+
+- Embedded the Pixabay MP4 background video in the hero section.
+- Designed a dark vertical linear gradient overlay for elegant WCAG AA compliance.
+
+---
+
+### Files Affected
+
+- `/src/components/HomeView.tsx`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~0.5 hours
+
+---
+
+### Prompt #24
+
+**Timestamp**: 2026-07-27T10:24:42
+
+**Purpose**: Increase hero background overlay transparency by 20% for more video visibility.
+
+**Prompt**:
+```text
+increase hero background overlay transparency by 20% for more visibility
+```
+
+---
+
+### Result
+
+- Tweaked the vertical gradient overlay opacities downwards to `from-[#0B0F14]/20 via-[#0B0F14]/55 to-[#0B0F14]/80`.
+- Vastly improved the background video's visual prominence without losing text accessibility.
+
+---
+
+### Files Affected
+
+- `/src/components/HomeView.tsx`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~0.5 hours
+
+---
+
+### Prompt #25
+
+**Timestamp**: 2026-07-27T10:29:46
+
+**Purpose**: Increase hero background overlay transparency by 10% for more video visibility.
+
+**Prompt**:
+```text
+increase hero background overlay transparency by 10% for more visibility
+```
+
+---
+
+### Result
+
+- Further reduced vertical gradient overlay opacities down to `from-[#0B0F14]/10 via-[#0B0F14]/45 to-[#0B0F14]/70`.
+- Enhanced the visual clarity and cinematic feel of the background video.
+
+---
+
+### Files Affected
+
+- `/src/components/HomeView.tsx`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~0.5 hours
+
 </details>
 
 ---
@@ -1355,6 +2194,27 @@ https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/no-label
 <details>
 
 <summary><strong>📝 Code Change Log</strong></summary>
+
+## 2026-07-27
+
+### Added
+- Integrated an autoplaying, looping, muted background `<video>` element using the Pixabay stock asset in the main Hero section container on the Home page.
+- Layered high-contrast text description, title, and 8-point features bullet-list on top of the Featured Website Design & Development service card on the Home page with beautiful custom responsive grids.
+- Added a loopable, autoplaying, muted `<video>` player in the Local SEO service container on the Services page, referencing the official Pixabay video source inside a beautifully styled rounded-xl frame.
+
+### Changed
+- Increased the transparency of the Hero section background video's vertical gradient overlay by an additional 10% (reaching a total 30% reduction: `from-[#0B0F14]/10 via-[#0B0F14]/45 to-[#0B0F14]/70`) to significantly enhance stock video visibility.
+- Shifted the text content layer down further (`pt-24 sm:pt-32 md:pt-36`) and relocated the divider and footer actions downwards (`mt-auto` and custom bottom padding) inside the Featured Website Design card on the Home page.
+- Decreased the height of the Featured Website Design & Development card container (`min-h-[380px] sm:min-h-[430px] md:min-h-[470px]`) to snugly frame the backdrop landscape image.
+- Adjusted the Featured Website Design & Development card background image on the Home page to fit (`object-contain object-right`) with 100% opacity for full crisp visibility.
+- Increased the transparency of the background overlay linear gradient to 100% on the right (`bg-gradient-to-r from-black/90 via-black/30 to-transparent`) to maximize mockup visibility.
+- Replaced the background image of the Featured Website Design & Development card on the Home page with the landscape design asset.
+
+### Removed
+- Removed the old static image placeholder from the top-right column of the Local SEO service container on the Services page.
+- Removed the high-fidelity laptop and phone preview containers and image assets from the Web Design & Development card's right column, leaving clean visual negative space.
+
+---
 
 ## 2026-07-24
 

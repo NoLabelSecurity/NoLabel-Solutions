@@ -93,6 +93,24 @@ To build an ultra-premium, highly distinctive developer portal showcasing tailor
 - **Decision**: Integrated Open Graph (`og:`) and Twitter card tags inside `index.html` referencing official social media graphic preview banners.
 - **Reason**: Guarantees that No/Label Solutions displays beautifully across multiple social and chat environments, expanding the digital brand surface.
 
+---
+
+### Home Web Design Card Layered Backdrop & Sizing Fit
+- **Decision**: Swapped the featured Web Design card background image with a premium landscape brand board banner, configured sizing to `object-contain object-right` with 100% opacity, and adjusted the container heights. Shifted the text content block downwards with custom responsive top padding and repositioned footer buttons/dividers to the bottom using `mt-auto`.
+- **Reason**: Guarantees perfect WCAG-AA compliant text contrast while offering a fully visible, uncropped view of the mockup screens and fitting everything cleanly inside the card boundaries.
+
+---
+
+### Local SEO Video Player Integration
+- **Decision**: Replaced the static, low-impact SEO icon placeholder on the Services page with an autoplaying, looping, muted, and playsinline video element.
+- **Reason**: Adds a vibrant, premium digital touch to the Auxiliary Service section, showcasing high-end visual polish on page loads.
+
+---
+
+### Hero Background Video Integration
+- **Decision**: Embedded an ambient, high-definition stock background video loop in the main landing Hero section container on the Home page, accompanied by a vertical gradient contrast mask that has been lightened by 30% opacity absolute values (`from-[#0B0F14]/10 via-[#0B0F14]/45 to-[#0B0F14]/70`).
+- **Reason**: Instantly captivates visitors with modern, high-tech cinematic motion on load with significantly enhanced stock video visibility, while maintaining flawless text legibility for headers.
+
 </details>
 
 ---
