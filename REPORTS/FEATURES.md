@@ -55,9 +55,12 @@
 
 | Feature | Completed | Version | Notes |
 |----------|-----------|---------|-------|
+| About Core Makers Team Member | 2026-07-29 | 1.0.0 | Updated the first card in "about: core makers" with Brian Lorick, Owner & Lead Developer, featuring custom founder bio and 'B' avatar letter. |
+| About Core Principles Media Image | 2026-07-29 | 1.0.0 | Replaced the mock CAD/workspace element on the right of "About: Our Core Principles" with the official 1.png media asset framed in a hover-animated dark container. |
+| Hero Staggered Pop & Slide Animations | 2026-07-28 | 1.0.0 | Integrated spring pops, directional slide-ins, glowing text animations, horizontal line scale-expands, 5-cell icon spring cascade, and 3D mockup tilt pop entry animations in the Home Hero. |
 | Hero Background Video Integration | 2026-07-27 | 1.0.0 | Integrated a high-definition autoplaying loop background video inside the main Home Hero section container, refined with a flush bottom divider and 100% video opacity with a fully transparent overlay. |
 | Local SEO Video Integration | 2026-07-27 | 1.0.0 | Replaced the legacy static placeholder image inside the Local SEO card with a premium, autoplaying loop video player. |
-| Web Design Card Overlay & Backdrop | 2026-07-27 | 1.0.0 | Integrated landscape design brand board background, scaled image to fit, set overlay transparency, adjusted container heights, and shifted text content and buttons downwards for perfect mockup visibility. |
+| Web Design Card Overlay & Backdrop | 2026-07-27 | 1.0.0 | Integrated landscape design brand board background, scaled image to fit, set overlay transparency to 100%, adjusted container heights, and shifted text content and buttons downwards for perfect mockup visibility. |
 | Open Graph & Social Previews | 2026-07-24 | 1.0.0 | Integrated standard descriptive tags, Open Graph og: properties, and Twitter cards into the primary entry template. |
 | Brand Board Preview Integration | 2026-07-24 | 1.0.0 | Integrated Jacobs Fractal Burning Brand Board inside the Brand Identity Design showcase card with full scaling properties. |
 | Virtual 3D Interactive Business Card | 2026-07-24 | 1.0.0 | Interactive 3D drag/swipe-to-spin vertical card with automatic spring snapping. |

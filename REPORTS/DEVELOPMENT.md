@@ -11,15 +11,15 @@
 | Property | Value |
 |-----------|-------|
 | First Development Session | 2026-07-16 |
-| Last Development Session | 2026-07-27 |
-| Total Sessions | 28 |
-| Total Development Hours | ~25 hours |
-| Total AI Prompts | ~40 |
+| Last Development Session | 2026-07-29 |
+| Total Sessions | 32 |
+| Total Development Hours | ~27 hours |
+| Total AI Prompts | ~44 |
 | Total Commits | Unknown (direct container-managed deployment) |
 | Total Pushes | Unknown (direct container-managed deployment) |
 | Current Sprint | Sprint 1 (Visual Polish & Rebranding) |
 | Current Branch | main |
-| Last Deployment | 2026-07-27 |
+| Last Deployment | 2026-07-29 |
 
 ---
 
@@ -1277,6 +1277,186 @@ Major Prompt Topics:
 - **Challenge**: Sibling elements inside standard flex/grid layouts with a global layout gap will always push apart.
 - **Solution**: Nesting adjacent sections into a singular container blocks out the vertical margin, achieving a perfectly flush edge.
 
+---
+
+### Session #29 (Web Design Card Background Overlay Transparency)
+
+**Date**: 2026-07-27
+
+**Duration**: 0.5 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Increase the background overlay transparency of the Website Design & Development featured service card to 100% for full visibility of its background image.
+
+---
+
+#### Completed
+
+- ✅ Replaced the `bg-gradient-to-r from-black/90 via-black/30 to-transparent` background overlay inside the featured Website Design & Development card container with `bg-transparent` (100% transparency), granting absolute, clean visibility to the background design board image.
+
+---
+
+#### Files Modified
+
+- `/src/components/HomeView.tsx`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Adjusting the Website Design & Development featured card background overlay transparency to 100%.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: A dark text overlay gradient dimming custom visual web design mockups on the card backdrop.
+- **Solution**: Removed the gradient mask entirely in favor of an elegant transparent layer to allow the full landscape design board to shine natively.
+
+---
+
+### Session #30 (Hero Staggered Pop & Slide Animations)
+
+**Date**: 2026-07-28
+
+**Duration**: 0.5 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Add dynamic, staged entry animations (pops, slides, scale bounces, and interactive hover effects) to all elements in the Hero section.
+
+---
+
+#### Completed
+
+- ✅ Added spring pop animations to the NoLabel brand badge and logo box with interactive hover rotation.
+- ✅ Added directional slide-in animation for the main headline and animated gradient glow for the "Digital Presence" accent phrase.
+- ✅ Added smooth left-to-right horizontal expand animation for the cyan divider line (`scaleX`).
+- ✅ Implemented staggered spring pop transitions with elevation shadow glow across all 5 service icon items (`#feat-web-dev`, `#feat-branding`, `#feat-graphic-design`, `#feat-social-media`, `#feat-seo`).
+- ✅ Applied a scale spring entry and border-glow hover animation to the location coverage pill container.
+- ✅ Enhanced the right visual montage collage with staged 3D entry animations: MacBook sliding from top-right, iPhone popping with tilt, and physical cards (matte, white, and Instagram) springing up with staggered rotations and hover lift effects.
+
+---
+
+#### Files Modified
+
+- `/src/components/HomeView.tsx`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Adding staged entry animations (pop, slide, scale spring) to all elements in the hero section.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: Simultaneous entrance animations can feel chaotic if untimed.
+- **Solution**: Applied mathematically calibrated delay offsets across left and right hero columns (staggering from 0.15s to 0.94s) for an organic cascade.
+
+---
+
+### Session #31 (About Page Core Principles Image Showcase)
+
+**Date**: 2026-07-29
+
+**Duration**: 0.5 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Replace the right CAD/workspace wireframe placeholder box in the "Our Core Principles" section on the About page with the official image asset.
+
+---
+
+#### Completed
+
+- ✅ Replaced the mock CAD/workspace element on the right of "About: Our Core Principles" with the requested image (`https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/1.png?raw=true`).
+- ✅ Wrapped the image showcase in a sleek, hover-animated dark container matching the site's dark aesthetic (`bg-[#121923] border-[#1A2433] rounded-3xl`).
+
+---
+
+#### Files Modified
+
+- `/src/components/AboutView.tsx`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Replacing the element on the right side of About: Our Core Principles with media image 1.png.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: Direct GitHub web blob links do not render as raw image assets.
+- **Solution**: Appended `?raw=true` parameter to the GitHub media URL to ensure standard `<img>` tag browser rendering.
+
+---
+
+### Session #32 (About Page Core Makers Team Member Update)
+
+**Date**: 2026-07-29
+
+**Duration**: 0.5 hours
+
+**Developer**: AI Coding Agent
+
+**Branch**: main
+
+**Goal**: Update the first team member card in "about: core makers" with Brian Lorick, Owner & Lead Developer.
+
+---
+
+#### Completed
+
+- ✅ Updated the first team member profile in `src/data.ts` (`TEAM_MEMBERS[0]`) to feature Brian Lorick, Owner & Lead Developer.
+- ✅ Added the custom bio: "Founder of NoLabel Solutions, Brian specializes in custom React applications, scalable web architecture, and performance-driven interface engineering. He builds clean, maintainable digital experiences without bloated page builders, unnecessary dependencies, or proprietary lock-in—giving businesses complete ownership of their websites and software."
+- ✅ Set avatar letter identifier to 'B'.
+
+---
+
+#### Files Modified
+
+- `/src/data.ts`
+- `/REPORTS/DEVELOPMENT.md`
+
+---
+
+#### AI Prompts Used
+
+Prompt Count: ~1
+
+Major Prompt Topics:
+- Updating first container in about: core makers with Brian Lorick's title and bio.
+
+---
+
+#### Challenges & Solutions
+
+- **Challenge**: None.
+- **Solution**: Seamless update in data store rendered across `AboutView`.
+
 </details>
 
 ---
@@ -2351,6 +2531,165 @@ adjust hero background sections divider line to be flush with bottom of backgrou
 
 - ~0.5 hours
 
+---
+
+### Prompt #28
+
+**Timestamp**: 2026-07-27T14:09:17
+
+**Purpose**: Increase background overlay transparency of the Website Design card to 100% for full visibility of its background image.
+
+**Prompt**:
+```text
+increase transparency of background overlay to 100% for full visibility of background image
+```
+
+---
+
+### Result
+
+- Swapped the background gradient overlay (`bg-gradient-to-r from-black/90 via-black/30 to-transparent`) on the Website Design & Development card to `bg-transparent` (100% transparent), enabling absolute, uninterrupted viewing of the underlying landscape design mockups.
+
+---
+
+### Files Affected
+
+- `/src/components/HomeView.tsx`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~0.5 hours
+
+---
+
+### Prompt #29
+
+**Timestamp**: 2026-07-28T05:26:09
+
+**Purpose**: Add staged entry animations (pops, slides, scale bounces, and interactive hover effects) to all elements in the Hero section.
+
+**Prompt**:
+```text
+add animations to each of the elements in the hero section, make them pop into view, slide to view, etc
+```
+
+---
+
+### Result
+
+- Applied spring pop animations to the NoLabel brand badge and logo box with interactive hover rotation.
+- Added directional slide-in animation for the main headline and animated gradient glow for the "Digital Presence" accent phrase.
+- Added smooth left-to-right horizontal expand animation for the cyan divider line (`scaleX`).
+- Implemented staggered spring pop transitions with elevation shadow glow across all 5 service icon items.
+- Applied a scale spring entry and border-glow hover animation to the location coverage pill container.
+- Enhanced the right visual montage collage with staged 3D entry animations: MacBook sliding from top-right, iPhone popping with tilt, and physical cards springing up with staggered rotations and hover lift effects.
+
+---
+
+### Files Affected
+
+- `/src/components/HomeView.tsx`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~0.5 hours
+
+---
+
+### Prompt #30
+
+**Timestamp**: 2026-07-29T11:14:18
+
+**Purpose**: Replace the mock CAD/workspace element on the right of "About: Our Core Principles" with the official 1.png media asset.
+
+**Prompt**:
+```text
+About: Our Core Principles: replace the element on the right with this image
+https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/1.png
+```
+
+---
+
+### Result
+
+- Replaced the placeholder CAD/workspace wireframe layout in `AboutView.tsx` with the official media asset (`https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/1.png?raw=true`) framed in a sleek, hover-animated dark container matching the site's dark aesthetic.
+
+---
+
+### Files Affected
+
+- `/src/components/AboutView.tsx`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~0.5 hours
+
+---
+
+### Prompt #31
+
+**Timestamp**: 2026-07-29T11:17:04
+
+**Purpose**: Update first team member container in "about: core makers" with Brian Lorick, Owner & Lead Developer.
+
+**Prompt**:
+```text
+about: core makers: edit first containers content with:
+
+Brian Lorick
+Owner & Lead Developer
+
+Founder of NoLabel Solutions, Brian specializes in custom React applications, scalable web architecture, and performance-driven interface engineering. He builds clean, maintainable digital experiences without bloated page builders, unnecessary dependencies, or proprietary lock-in—giving businesses complete ownership of their websites and software.
+```
+
+---
+
+### Result
+
+- Updated `src/data.ts` (`TEAM_MEMBERS[0]`) to feature Brian Lorick as Owner & Lead Developer with his custom founder bio and 'B' avatar initial.
+
+---
+
+### Files Affected
+
+- `/src/data.ts`
+
+---
+
+### Outcome
+
+- ✅ Fully Implemented
+
+---
+
+### Estimated Time Saved
+
+- ~0.5 hours
+
 </details>
 
 ---
@@ -2358,6 +2697,31 @@ adjust hero background sections divider line to be flush with bottom of backgrou
 <details>
 
 <summary><strong>📝 Code Change Log</strong></summary>
+
+## 2026-07-29
+
+### Added
+- Replaced the right-hand mock wireframe element in the "Our Core Principles" section on the About page (`AboutView.tsx`) with the official image asset (`1.png?raw=true`).
+
+### Changed
+- Updated the first team member card in "about: core makers" (`src/data.ts`) to feature Brian Lorick, Owner & Lead Developer, with custom founder bio.
+
+---
+
+## 2026-07-28
+
+### Added
+- Added spring pop animations to the NoLabel brand badge and logo box with interactive hover rotation.
+- Added directional slide-in animation for the main headline and animated gradient glow for the "Digital Presence" accent phrase.
+- Added smooth left-to-right horizontal expand animation for the cyan divider line (`scaleX`).
+- Implemented staggered spring pop transitions with elevation shadow glow across all 5 service icon items (`#feat-web-dev`, `#feat-branding`, `#feat-graphic-design`, `#feat-social-media`, `#feat-seo`).
+- Applied a scale spring entry and border-glow hover animation to the location coverage pill container.
+- Enhanced the right visual montage collage with staged 3D entry animations: MacBook sliding from top-right, iPhone popping with tilt, and physical cards (matte, white, and Instagram) springing up with staggered rotations and hover lift effects.
+
+### Changed
+- Refined spring stiffness and damping physics across all Hero section `motion` components for a fluid, natural cascade.
+
+---
 
 ## 2026-07-27
 
@@ -2373,7 +2737,7 @@ adjust hero background sections divider line to be flush with bottom of backgrou
 - Shifted the text content layer down further (`pt-24 sm:pt-32 md:pt-36`) and relocated the divider and footer actions downwards (`mt-auto` and custom bottom padding) inside the Featured Website Design card on the Home page.
 - Decreased the height of the Featured Website Design & Development card container (`min-h-[380px] sm:min-h-[430px] md:min-h-[470px]`) to snugly frame the backdrop landscape image.
 - Adjusted the Featured Website Design & Development card background image on the Home page to fit (`object-contain object-right`) with 100% opacity for full crisp visibility.
-- Increased the transparency of the background overlay linear gradient to 100% on the right (`bg-gradient-to-r from-black/90 via-black/30 to-transparent`) to maximize mockup visibility.
+- Set the background overlay of the Featured Website Design & Development card on the Home page to be 100% transparent (`bg-transparent`) to maximize mockup and background landscape design board visibility.
 - Replaced the background image of the Featured Website Design & Development card on the Home page with the landscape design asset.
 
 ### Removed

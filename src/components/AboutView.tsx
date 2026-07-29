@@ -111,7 +111,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             </div>
           </motion.div>
 
-          {/* Large workspace container placeholders as requested */}
+          {/* Image Showcase for Core Principles */}
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -119,74 +119,17 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             transition={{ duration: 0.6 }}
             className="lg:col-span-7"
           >
-            <div className="space-y-2">
-              <span className="text-[10px] font-mono text-gray-500 block uppercase">NO/LABEL DESIGN LAB & WORKSPACE MOCKUP</span>
-              
-              <motion.div 
-                whileHover={{ y: -4, borderColor: 'rgba(0, 217, 255, 0.25)' }}
-                className="bg-[#121923] border border-[#1A2433] p-4 rounded-3xl relative overflow-hidden group transition-colors duration-300"
-              >
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#1a2433_1.2px,transparent_1.2px)] bg-[size:16px_16px] opacity-40 pointer-events-none" />
-                <div className="absolute -right-24 -bottom-24 w-60 h-60 rounded-full bg-blue-500/10 blur-3xl group-hover:bg-blue-500/20 transition-all duration-700" />
-                
-                {/* Visual grid rendering a gorgeous layout of workspace wireframes */}
-                <div className="space-y-4 relative z-10">
-                  <div className="flex justify-between items-center border-b border-[#1A2433] pb-3 text-xs font-mono text-gray-400">
-                    <span className="flex items-center gap-1.5 font-mono text-[10px]">
-                      <Terminal className="w-3.5 h-3.5 text-cyan-400" /> 
-                      NO_LABEL_WORKSPACE.CFG
-                    </span>
-                    <span>STATUS: ACTIVE SYSTEM</span>
-                  </div>
-
-                  <div className="grid grid-cols-12 gap-3">
-                    {/* Simulated whiteboard notes */}
-                    <div className="col-span-7 bg-[#0B0F14]/80 p-4 rounded-xl border border-[#1A2433]/70 space-y-3 font-sans font-light">
-                      <div className="h-1.5 w-1/3 bg-cyan-400/30 rounded" />
-                      <div className="h-3 w-5/6 bg-white/10 rounded" />
-                      <div className="h-2 w-full bg-gray-700 rounded" />
-                      <div className="h-2 w-2/3 bg-gray-700/50 rounded" />
-                      <div className="border-t border-[#1A2433] pt-2 mt-4 flex items-center justify-between text-[8px] font-mono text-gray-500">
-                        <span>Figma Whiteboard</span>
-                        <span>Scale: 100%</span>
-                      </div>
-                    </div>
-
-                    <div className="col-span-5 bg-[#0B0F14]/80 p-3 rounded-xl border border-[#1A2433]/70 flex flex-col justify-between">
-                      <div className="flex gap-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-red-400" />
-                        <span className="w-1.5 h-1.5 rounded-full bg-yellow-400" />
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                      </div>
-                      <div className="my-2 h-14 w-full rounded border border-cyan-400/20 bg-[#121923]/60 flex items-center justify-center">
-                        <span className="font-mono text-[9px] text-cyan-400 animate-pulse">DEPLOY_PIPELINE()</span>
-                      </div>
-                      <span className="text-[7px] font-mono text-gray-500 uppercase text-center block">Edge distribution config</span>
-                    </div>
-                  </div>
-
-                  {/* Representing the workspace image with geometric layers */}
-                  <div className="bg-[#0B0F14]/50 border border-[#1A2433] p-4 rounded-xl flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded overflow-hidden flex items-center justify-center">
-                        <img 
-                          src="https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/NLS_Logo.png?raw=true" 
-                          alt="No/Label Logo" 
-                          className="w-full h-full object-contain"
-                          referrerPolicy="no-referrer"
-                        />
-                      </div>
-                      <div>
-                        <span className="text-xs text-white uppercase font-mono block">Creative Studio CAD Details</span>
-                        <span className="text-[10px] text-gray-500 block font-sans font-light">Abstract engineering draft representing our physical headquarters</span>
-                      </div>
-                    </div>
-                    <span className="px-2.5 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded text-[9px] font-mono text-[#00D9FF]">VECTOR LAYOUT</span>
-                  </div>
-                </div>
-
-              </motion.div>
-            </div>
+            <motion.div 
+              whileHover={{ y: -4, borderColor: 'rgba(0, 217, 255, 0.3)' }}
+              className="bg-[#121923] border border-[#1A2433] rounded-3xl overflow-hidden shadow-2xl relative group transition-all duration-300"
+            >
+              <img 
+                src="https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/1.png?raw=true" 
+                alt="No/Label Solutions Core Principles" 
+                className="w-full h-auto object-cover rounded-3xl"
+                referrerPolicy="no-referrer"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </section>

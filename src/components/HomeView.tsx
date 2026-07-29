@@ -69,8 +69,16 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
           </div>
 
         {/* Subtle background glow element */}
-        <div className="absolute top-1/4 -left-36 w-96 h-96 rounded-full bg-blue-500/5 blur-3xl pointer-events-none" />
-        <div className="absolute top-1/3 -right-36 w-96 h-96 rounded-full bg-[#00D9FF]/5 blur-3xl pointer-events-none" />
+        <motion.div 
+          animate={{ opacity: [0.3, 0.7, 0.3], scale: [0.95, 1.05, 0.95] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/4 -left-36 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" 
+        />
+        <motion.div 
+          animate={{ opacity: [0.4, 0.8, 0.4], scale: [1.05, 0.95, 1.05] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute top-1/3 -right-36 w-96 h-96 rounded-full bg-[#00D9FF]/10 blur-3xl pointer-events-none" 
+        />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -80,21 +88,25 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
               
               {/* NoLabel Header Badge / Icon Row */}
               <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                initial={{ opacity: 0, scale: 0.75, y: -20, rotate: -3 }}
+                animate={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
+                transition={{ type: "spring", stiffness: 280, damping: 22 }}
                 className="flex items-center gap-3.5"
                 id="hero-badge-brand"
               >
                 {/* NL Icon brand box with bright cyan glow and dark background */}
-                <div className="w-20 h-20 rounded-2xl overflow-hidden flex items-center justify-center shadow-lg shadow-cyan-400/20" id="hero-brand-logo">
+                <motion.div 
+                  whileHover={{ scale: 1.1, rotate: 4 }}
+                  className="w-20 h-20 rounded-2xl overflow-hidden flex items-center justify-center shadow-lg shadow-cyan-400/20 cursor-pointer transition-shadow hover:shadow-cyan-400/40" 
+                  id="hero-brand-logo"
+                >
                   <img 
                     src="https://github.com/NoLabelSecurity/NoLabel-Solutions/blob/content/media/NLS_Logo.png?raw=true" 
                     alt="No/Label Logo" 
                     className="w-full h-full object-contain"
                     referrerPolicy="no-referrer"
                   />
-                </div>
+                </motion.div>
                 <div>
                   <h2 className="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight leading-none">No/Label</h2>
                   <span className="text-[10px] font-mono font-bold tracking-[0.15em] text-[#00D9FF] uppercase">Solutions</span>
@@ -103,30 +115,37 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
 
               {/* Main Headline */}
               <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.15 }}
+                initial={{ opacity: 0, x: -40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 0.15, ease: [0.215, 0.61, 0.355, 1] }}
                 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-[1.08]"
                 id="hero-headline"
               >
                 Websites, Branding & <br />
-                <span className="text-[#00D9FF] selection:bg-cyan-500/30 selection:text-white">Digital Presence</span> <br />
+                <motion.span 
+                  animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+                  className="text-[#00D9FF] selection:bg-cyan-500/30 selection:text-white inline-block drop-shadow-[0_0_15px_rgba(0,217,255,0.3)]"
+                >
+                  Digital Presence
+                </motion.span> <br />
                 Solutions
               </motion.h1>
 
               {/* Thin cyan gradient line */}
               <motion.div
-                initial={{ opacity: 0, width: 0 }}
-                animate={{ opacity: 1, width: 80 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="h-[3px] bg-gradient-to-r from-[#00D9FF] to-blue-600 rounded-full"
+                initial={{ opacity: 0, scaleX: 0 }}
+                animate={{ opacity: 1, scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                style={{ originX: 0 }}
+                className="h-[3px] w-20 bg-gradient-to-r from-[#00D9FF] to-blue-600 rounded-full"
               />
 
               {/* Subheading */}
               <motion.p 
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 25 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.38 }}
                 className="text-lg sm:text-xl text-gray-300 max-w-xl font-sans font-light leading-relaxed"
                 id="hero-subheadline"
               >
@@ -135,90 +154,123 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
               </motion.p>
 
               {/* Icon Row - 5 beautifully aligned items with separation lines */}
-              <motion.div
-                initial={{ opacity: 0, y: 25 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+              <div
                 className="grid grid-cols-2 sm:grid-cols-5 gap-y-6 md:gap-y-0 pt-8 border-t border-[#1A2433]"
                 id="hero-service-row"
               >
                 {/* Cell 1: Web Dev */}
-                <div className="flex flex-col items-center text-center space-y-2.5 border-r border-[#1A2433] px-2 last:border-0" id="feat-web-dev">
+                <motion.div 
+                  initial={{ opacity: 0, y: 35, scale: 0.75 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ type: "spring", stiffness: 220, damping: 16, delay: 0.48 }}
+                  whileHover={{ scale: 1.12, y: -6 }}
+                  className="flex flex-col items-center text-center space-y-2.5 border-r border-[#1A2433] px-2 last:border-0 cursor-pointer" 
+                  id="feat-web-dev"
+                >
                   <img 
                     src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/icons/1.png"
                     alt="Website Development"
-                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain filter drop-shadow-[0_4px_8px_rgba(0,217,255,0.2)]"
                     referrerPolicy="no-referrer"
                   />
                   <div className="text-[11px] font-mono text-gray-400 font-medium leading-tight">
                     <span>Website</span> <br />
                     <span>Development</span>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Cell 2: Branding */}
-                <div className="flex flex-col items-center text-center space-y-2.5 border-r border-[#1A2433] px-2 sm:px-3 last:border-0" id="feat-branding">
+                <motion.div 
+                  initial={{ opacity: 0, y: 35, scale: 0.75 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ type: "spring", stiffness: 220, damping: 16, delay: 0.56 }}
+                  whileHover={{ scale: 1.12, y: -6 }}
+                  className="flex flex-col items-center text-center space-y-2.5 border-r border-[#1A2433] px-2 sm:px-3 last:border-0 cursor-pointer" 
+                  id="feat-branding"
+                >
                   <img 
                     src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/icons/2.png"
                     alt="Branding & Logo Design"
-                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain filter drop-shadow-[0_4px_8px_rgba(0,217,255,0.2)]"
                     referrerPolicy="no-referrer"
                   />
                   <div className="text-[11px] font-mono text-gray-400 font-medium leading-tight">
                     <span>Branding &</span> <br />
                     <span>Logo Design</span>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Cell 3: Graphic Design */}
-                <div className="flex flex-col items-center text-center space-y-2.5 border-r border-[#1A2433] px-2 sm:px-3 last:border-0" id="feat-graphic-design">
+                <motion.div 
+                  initial={{ opacity: 0, y: 35, scale: 0.75 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ type: "spring", stiffness: 220, damping: 16, delay: 0.64 }}
+                  whileHover={{ scale: 1.12, y: -6 }}
+                  className="flex flex-col items-center text-center space-y-2.5 border-r border-[#1A2433] px-2 sm:px-3 last:border-0 cursor-pointer" 
+                  id="feat-graphic-design"
+                >
                   <img 
                     src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/icons/3.png"
                     alt="Graphic Design"
-                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain filter drop-shadow-[0_4px_8px_rgba(0,217,255,0.2)]"
                     referrerPolicy="no-referrer"
                   />
                   <div className="text-[11px] font-mono text-gray-400 font-medium leading-tight">
                     <span>Graphic</span> <br />
                     <span>Design</span>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Cell 4: Social Media */}
-                <div className="flex flex-col items-center text-center space-y-2.5 sm:border-r border-[#1A2433] px-2 sm:px-3 last:border-0" id="feat-social-media">
+                <motion.div 
+                  initial={{ opacity: 0, y: 35, scale: 0.75 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ type: "spring", stiffness: 220, damping: 16, delay: 0.72 }}
+                  whileHover={{ scale: 1.12, y: -6 }}
+                  className="flex flex-col items-center text-center space-y-2.5 sm:border-r border-[#1A2433] px-2 sm:px-3 last:border-0 cursor-pointer" 
+                  id="feat-social-media"
+                >
                   <img 
                     src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/icons/4.png"
                     alt="Social Media Management"
-                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain filter drop-shadow-[0_4px_8px_rgba(0,217,255,0.2)]"
                     referrerPolicy="no-referrer"
                   />
                   <div className="text-[11px] font-mono text-gray-400 font-medium leading-tight">
                     <span>Social Media</span> <br />
                     <span>Management</span>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Cell 5: SEO & Visibility */}
-                <div className="flex flex-col items-center text-center space-y-2.5 px-2 sm:pl-3 last:border-0" id="feat-seo">
+                <motion.div 
+                  initial={{ opacity: 0, y: 35, scale: 0.75 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ type: "spring", stiffness: 220, damping: 16, delay: 0.8 }}
+                  whileHover={{ scale: 1.12, y: -6 }}
+                  className="flex flex-col items-center text-center space-y-2.5 px-2 sm:pl-3 last:border-0 cursor-pointer" 
+                  id="feat-seo"
+                >
                   <img 
                     src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/icons/5.png"
                     alt="Local SEO & Visibility"
-                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain filter drop-shadow-[0_4px_8px_rgba(0,217,255,0.2)]"
                     referrerPolicy="no-referrer"
                   />
                   <div className="text-[11px] font-mono text-gray-400 font-medium leading-tight">
                     <span>Local SEO &</span> <br />
                     <span>Visibility</span>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </div>
 
               {/* Bottom pill container detailing region and coverage */}
               <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="inline-flex flex-wrap items-center gap-x-6 gap-y-2 px-5 py-3 bg-[#111923]/60 backdrop-blur border border-[#1A2433] rounded-full text-xs text-slate-300 font-mono shadow-xl relative mt-4"
+                initial={{ opacity: 0, y: 25, scale: 0.92 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ type: "spring", stiffness: 200, damping: 18, delay: 0.92 }}
+                whileHover={{ scale: 1.02, borderColor: "rgba(0,217,255,0.4)" }}
+                className="inline-flex flex-wrap items-center gap-x-6 gap-y-2 px-5 py-3 bg-[#111923]/60 backdrop-blur border border-[#1A2433] rounded-full text-xs text-slate-300 font-mono shadow-xl relative mt-4 transition-colors"
                 id="hero-location-bar"
               >
                 <div className="flex items-center gap-2">
@@ -236,39 +288,56 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
             {/* Right mockup view (High design visual collage matching physical mockups of the screenshot) */}
             <div className="lg:col-span-6 relative w-full flex items-center justify-center pt-8 lg:pt-0" id="hero-montage-container">
               <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8 }}
+                initial={{ opacity: 0, scale: 0.9, x: 40 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.25, ease: "easeOut" }}
                 className="w-full relative max-w-lg md:max-w-xl lg:max-w-2xl px-2 h-[420px] sm:h-[520px] flex items-start"
               >
                 
                 {/* 1. Sleek MacBook mockup from repository */}
-                <div className="absolute top-4 left-0 w-[90%] sm:w-[94%] z-10" id="mockup-macbook">
+                <motion.div 
+                  initial={{ opacity: 0, y: -40, x: 30, scale: 0.88, rotate: 2 }}
+                  animate={{ opacity: 1, y: 0, x: 0, scale: 1, rotate: 0 }}
+                  transition={{ type: "spring", stiffness: 140, damping: 18, delay: 0.35 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="absolute top-4 left-0 w-[90%] sm:w-[94%] z-10 cursor-pointer" 
+                  id="mockup-macbook"
+                >
                   <img 
                     src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/imgs/hero-pc.png"
                     alt="NoLabel High-Fidelity PC Preview"
                     className="w-full h-auto object-contain filter drop-shadow-[0_25px_25px_rgba(0,0,0,0.6)]"
                     referrerPolicy="no-referrer"
                   />
-                </div>
+                </motion.div>
 
                 {/* 2. Sleek iPhone Mockup standing up overlapping screen on right */}
-                <div className="absolute top-10 -right-2 w-[36%] sm:w-[40%] z-20" id="mockup-iphone">
+                <motion.div 
+                  initial={{ opacity: 0, x: 70, y: 30, rotate: 12, scale: 0.8 }}
+                  animate={{ opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 }}
+                  transition={{ type: "spring", stiffness: 160, damping: 16, delay: 0.52 }}
+                  whileHover={{ y: -10, rotate: -3, scale: 1.05 }}
+                  className="absolute top-10 -right-2 w-[36%] sm:w-[40%] z-20 cursor-pointer" 
+                  id="mockup-iphone"
+                >
                   <img 
                     src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/imgs/hero-phone.png"
                     alt="NoLabel High-Fidelity Phone Preview"
                     className="w-full h-auto object-contain filter drop-shadow-[0_25px_25px_rgba(0,0,0,0.6)]"
                     referrerPolicy="no-referrer"
                   />
-                </div>
+                </motion.div>
 
                 {/* 3. Floating 3D Cards in the bottom region */}
                 <div className="absolute -bottom-2 sm:-bottom-6 left-2 sm:left-4 z-30 w-[94%] flex items-end gap-3 pointer-events-none" id="mockup-physical-cards">
                   
                   {/* Left: Black Business Card */}
                   <motion.div 
-                    whileHover={{ y: -8, rotate: -2 }}
-                    className="w-[38%] bg-[#0B0F14] border border-[#1A2433] rounded-xl p-3 sm:p-4 shadow-2xl flex flex-col justify-between aspect-[1.58/1] shrink-0 rotate-[-4deg] pointer-events-auto"
+                    initial={{ opacity: 0, y: 80, x: -40, rotate: -25, scale: 0.65 }}
+                    animate={{ opacity: 1, y: 0, x: 0, rotate: -4, scale: 1 }}
+                    transition={{ type: "spring", stiffness: 220, damping: 15, delay: 0.68 }}
+                    whileHover={{ y: -14, rotate: -2, scale: 1.08, zIndex: 40 }}
+                    className="w-[38%] bg-[#0B0F14] border border-[#1A2433] rounded-xl p-3 sm:p-4 shadow-2xl flex flex-col justify-between aspect-[1.58/1] shrink-0 pointer-events-auto cursor-pointer"
                     id="matte-card"
                   >
                     <div className="flex items-center gap-2">
@@ -290,8 +359,11 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
 
                   {/* Center: Premium White Business Card */}
                   <motion.div 
-                    whileHover={{ y: -8, rotate: 1 }}
-                    className="w-[38%] bg-white border border-gray-200 rounded-xl p-2.5 sm:p-3.5 shadow-2xl flex flex-col justify-between aspect-[1.58/1] shrink-0 rotate-[-1deg] pointer-events-auto text-[#0B0F14]"
+                    initial={{ opacity: 0, y: 90, rotate: -12, scale: 0.65 }}
+                    animate={{ opacity: 1, y: 0, rotate: -1, scale: 1 }}
+                    transition={{ type: "spring", stiffness: 230, damping: 15, delay: 0.8 }}
+                    whileHover={{ y: -14, rotate: 1, scale: 1.08, zIndex: 40 }}
+                    className="w-[38%] bg-white border border-gray-200 rounded-xl p-2.5 sm:p-3.5 shadow-2xl flex flex-col justify-between aspect-[1.58/1] shrink-0 pointer-events-auto text-[#0B0F14] cursor-pointer"
                     id="white-card"
                   >
                     <div className="flex items-start justify-between">
@@ -323,8 +395,11 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
 
                   {/* Right: Instagram social mockup */}
                   <motion.div 
-                    whileHover={{ y: -8, rotate: 3 }}
-                    className="w-[30%] bg-[#0B0F14] border border-[#1A2433] rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between aspect-[1/1.2] shrink-0 rotate-[3deg] pointer-events-auto text-white text-[6px]"
+                    initial={{ opacity: 0, y: 80, x: 40, rotate: 25, scale: 0.65 }}
+                    animate={{ opacity: 1, y: 0, x: 0, rotate: 3, scale: 1 }}
+                    transition={{ type: "spring", stiffness: 220, damping: 15, delay: 0.92 }}
+                    whileHover={{ y: -14, rotate: 6, scale: 1.08, zIndex: 40 }}
+                    className="w-[30%] bg-[#0B0F14] border border-[#1A2433] rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between aspect-[1/1.2] shrink-0 pointer-events-auto text-white text-[6px] cursor-pointer"
                     id="instagram-card"
                   >
                     {/* Post Header */}
@@ -419,7 +494,7 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
                 </div>
 
                 {/* Content Overlay */}
-                <div className="relative z-10 w-full h-full flex flex-col justify-between pt-24 sm:pt-32 md:pt-36 px-6 sm:px-8 md:px-10 pb-4 sm:pb-5 md:pb-5 flex-grow bg-gradient-to-r from-black/90 via-black/30 to-transparent">
+                <div className="relative z-10 w-full h-full flex flex-col justify-between pt-24 sm:pt-32 md:pt-36 px-6 sm:px-8 md:px-10 pb-4 sm:pb-5 md:pb-5 flex-grow bg-transparent">
                   <div className="max-w-md sm:max-w-xl space-y-5">
                     <div className="space-y-1">
                       <span className="text-[10px] font-mono text-[#00D9FF] uppercase tracking-wider block">OUR DIGITAL PRESENCE SERVICES</span>

@@ -363,10 +363,10 @@ export const TESTIMONIALS: Testimonial[] = [
 
 export const TEAM_MEMBERS: TeamMember[] = [
   {
-    name: 'Julian Hayes',
-    role: 'Creative Director & Lead Developer',
-    bio: 'Specialist in custom React architecture, high-end interface typography, and front-of-house UI engineering. Julian believes small businesses deserve the exact same technical elegance as modern Fortune-500 SaaS companies.',
-    avatarLetter: 'J'
+    name: 'Brian Lorick',
+    role: 'Owner & Lead Developer',
+    bio: 'Founder of NoLabel Solutions, Brian specializes in custom React applications, scalable web architecture, and performance-driven interface engineering. He builds clean, maintainable digital experiences without bloated page builders, unnecessary dependencies, or proprietary lock-in—giving businesses complete ownership of their websites and software.',
+    avatarLetter: 'B'
   },
   {
     name: 'Elena Wright',

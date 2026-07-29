@@ -95,9 +95,27 @@ To build an ultra-premium, highly distinctive developer portal showcasing tailor
 
 ---
 
+### About Core Makers Team Member Update
+- **Decision**: Updated the first team member profile in `src/data.ts` (`TEAM_MEMBERS[0]`) to feature Brian Lorick, Owner & Lead Developer, with custom founder bio and avatar letter initial 'B'.
+- **Reason**: Authentically represents the founder's role, background, and core technical philosophy directly in the "The Core Makers" section on the About page.
+
+---
+
+### About Core Principles Media Image Replacement
+- **Decision**: Replaced the mock CAD/workspace wireframe layout on the right side of the "Our Core Principles" section in `AboutView.tsx` with the official media asset (`1.png?raw=true`), encased in a dark hover-animated border container.
+- **Reason**: Provides authentic, high-fidelity visual branding on the About page while maintaining consistency with the overall dark aesthetic.
+
+---
+
+### Hero Staggered Pop & Slide Animations
+- **Decision**: Implemented staged entrance animations using spring pops, left-to-right directional slide-ins, horizontal scale expansions (`scaleX`), continuous linear gradient glow transitions, 5-icon staggered delay cascades, and 3D tilt-pop entry physics for the right-column mockup collage.
+- **Reason**: Elevates visual polish and brand presentation on page load, guiding visitor attention smoothly across key headlines, services, and visual mockups.
+
+---
+
 ### Home Web Design Card Layered Backdrop & Sizing Fit
-- **Decision**: Swapped the featured Web Design card background image with a premium landscape brand board banner, configured sizing to `object-contain object-right` with 100% opacity, and adjusted the container heights. Shifted the text content block downwards with custom responsive top padding and repositioned footer buttons/dividers to the bottom using `mt-auto`.
-- **Reason**: Guarantees perfect WCAG-AA compliant text contrast while offering a fully visible, uncropped view of the mockup screens and fitting everything cleanly inside the card boundaries.
+- **Decision**: Swapped the featured Web Design card background image with a premium landscape brand board banner, configured sizing to `object-contain object-right` with 100% opacity, adjusted container heights, set the card overlay to be 100% transparent (`bg-transparent`), and shifted the text content block downwards with custom responsive top padding and repositioned footer buttons/dividers to the bottom using `mt-auto`.
+- **Reason**: Guarantees absolute, uninterrupted viewing of the background mockup landscape brand board while fitting everything cleanly and beautifully inside the card boundaries.
 
 ---
 
