@@ -5,12 +5,12 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { Globe, Palette, Layers, CreditCard, Instagram, MapPin, QrCode, Cpu, ArrowRight, Star, ChevronRight } from 'lucide-react';
+import { Globe, Palette, Layers, CreditCard, Instagram, MapPin, QrCode, Cpu, ArrowRight, Star, ChevronRight, Monitor, PenTool, Pencil, ThumbsUp, TrendingUp } from 'lucide-react';
 import { SERVICES, PROJECTS, TESTIMONIALS, STEPS } from '../data';
 import ImagePlaceholder from './ImagePlaceholder';
 
 interface HomeViewProps {
-  onNavigate: (page: string) => void;
+  onNavigate: (page: string, targetId?: string) => void;
   onSelectProject: (projectId: string) => void;
 }
 
@@ -153,111 +153,111 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
                 launch, and <span className="text-[#00D9FF] font-medium">grow online</span>.
               </motion.p>
 
-              {/* Icon Row - 5 beautifully aligned items with separation lines */}
+              {/* Icon Row - 5 clickable interactive items with distinct requested colors */}
               <div
                 className="grid grid-cols-2 sm:grid-cols-5 gap-y-6 md:gap-y-0 pt-8 border-t border-[#1A2433]"
                 id="hero-service-row"
               >
-                {/* Cell 1: Web Dev */}
+                {/* Cell 1: Web Dev - GREEN */}
                 <motion.div 
                   initial={{ opacity: 0, y: 35, scale: 0.75 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ type: "spring", stiffness: 220, damping: 16, delay: 0.48 }}
-                  whileHover={{ scale: 1.12, y: -6 }}
-                  className="flex flex-col items-center text-center space-y-2.5 border-r border-[#1A2433] px-2 last:border-0 cursor-pointer" 
+                  whileHover={{ scale: 1.08, y: -6 }}
+                  onClick={() => onNavigate('services', 'web-dev-feature-block')}
+                  className="flex flex-col items-center text-center space-y-2.5 border-r border-[#1A2433] px-2 last:border-0 cursor-pointer group" 
                   id="feat-web-dev"
+                  title="Navigate to Website Development"
                 >
-                  <img 
-                    src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/icons/1.png"
-                    alt="Website Development"
-                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain filter drop-shadow-[0_4px_8px_rgba(0,217,255,0.2)]"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="text-[11px] font-mono text-gray-400 font-medium leading-tight">
+                  <div className="w-13 h-13 sm:w-16 sm:h-16 rounded-2xl bg-[#081711] border border-emerald-500/50 flex items-center justify-center text-emerald-400 shadow-[0_0_18px_rgba(16,185,129,0.25)] group-hover:shadow-[0_0_30px_rgba(16,185,129,0.55)] group-hover:border-emerald-400 group-hover:bg-emerald-500/15 transition-all duration-300 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
+                    <Monitor className="w-6 h-6 sm:w-8 sm:h-8 stroke-[1.8] group-hover:scale-110 transition-transform duration-300 relative z-10" />
+                  </div>
+                  <div className="text-[11px] font-mono text-gray-300 font-medium leading-tight group-hover:text-emerald-400 transition-colors">
                     <span>Website</span> <br />
                     <span>Development</span>
                   </div>
                 </motion.div>
 
-                {/* Cell 2: Branding */}
+                {/* Cell 2: Branding & Logo Design - YELLOW */}
                 <motion.div 
                   initial={{ opacity: 0, y: 35, scale: 0.75 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ type: "spring", stiffness: 220, damping: 16, delay: 0.56 }}
-                  whileHover={{ scale: 1.12, y: -6 }}
-                  className="flex flex-col items-center text-center space-y-2.5 border-r border-[#1A2433] px-2 sm:px-3 last:border-0 cursor-pointer" 
+                  whileHover={{ scale: 1.08, y: -6 }}
+                  onClick={() => onNavigate('services', 'services-page-card-brand-identity')}
+                  className="flex flex-col items-center text-center space-y-2.5 border-r border-[#1A2433] px-2 sm:px-3 last:border-0 cursor-pointer group" 
                   id="feat-branding"
+                  title="Navigate to Branding & Logo Design"
                 >
-                  <img 
-                    src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/icons/2.png"
-                    alt="Branding & Logo Design"
-                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain filter drop-shadow-[0_4px_8px_rgba(0,217,255,0.2)]"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="text-[11px] font-mono text-gray-400 font-medium leading-tight">
+                  <div className="w-13 h-13 sm:w-16 sm:h-16 rounded-2xl bg-[#171508] border border-yellow-500/50 flex items-center justify-center text-yellow-400 shadow-[0_0_18px_rgba(234,179,8,0.25)] group-hover:shadow-[0_0_30px_rgba(234,179,8,0.55)] group-hover:border-yellow-400 group-hover:bg-yellow-500/15 transition-all duration-300 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
+                    <PenTool className="w-6 h-6 sm:w-8 sm:h-8 stroke-[1.8] group-hover:scale-110 transition-transform duration-300 relative z-10" />
+                  </div>
+                  <div className="text-[11px] font-mono text-gray-300 font-medium leading-tight group-hover:text-yellow-400 transition-colors">
                     <span>Branding &</span> <br />
                     <span>Logo Design</span>
                   </div>
                 </motion.div>
 
-                {/* Cell 3: Graphic Design */}
+                {/* Cell 3: Graphic Design - ORANGE */}
                 <motion.div 
                   initial={{ opacity: 0, y: 35, scale: 0.75 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ type: "spring", stiffness: 220, damping: 16, delay: 0.64 }}
-                  whileHover={{ scale: 1.12, y: -6 }}
-                  className="flex flex-col items-center text-center space-y-2.5 border-r border-[#1A2433] px-2 sm:px-3 last:border-0 cursor-pointer" 
+                  whileHover={{ scale: 1.08, y: -6 }}
+                  onClick={() => onNavigate('services', 'services-page-card-business-cards')}
+                  className="flex flex-col items-center text-center space-y-2.5 border-r border-[#1A2433] px-2 sm:px-3 last:border-0 cursor-pointer group" 
                   id="feat-graphic-design"
+                  title="Navigate to Graphic Design"
                 >
-                  <img 
-                    src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/icons/3.png"
-                    alt="Graphic Design"
-                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain filter drop-shadow-[0_4px_8px_rgba(0,217,255,0.2)]"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="text-[11px] font-mono text-gray-400 font-medium leading-tight">
+                  <div className="w-13 h-13 sm:w-16 sm:h-16 rounded-2xl bg-[#170e08] border border-orange-500/50 flex items-center justify-center text-orange-400 shadow-[0_0_18px_rgba(249,115,22,0.25)] group-hover:shadow-[0_0_30px_rgba(249,115,22,0.55)] group-hover:border-orange-400 group-hover:bg-orange-500/15 transition-all duration-300 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
+                    <Pencil className="w-6 h-6 sm:w-8 sm:h-8 stroke-[1.8] group-hover:scale-110 transition-transform duration-300 relative z-10" />
+                  </div>
+                  <div className="text-[11px] font-mono text-gray-300 font-medium leading-tight group-hover:text-orange-400 transition-colors">
                     <span>Graphic</span> <br />
                     <span>Design</span>
                   </div>
                 </motion.div>
 
-                {/* Cell 4: Social Media */}
+                {/* Cell 4: Social Media - RED */}
                 <motion.div 
                   initial={{ opacity: 0, y: 35, scale: 0.75 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ type: "spring", stiffness: 220, damping: 16, delay: 0.72 }}
-                  whileHover={{ scale: 1.12, y: -6 }}
-                  className="flex flex-col items-center text-center space-y-2.5 sm:border-r border-[#1A2433] px-2 sm:px-3 last:border-0 cursor-pointer" 
+                  whileHover={{ scale: 1.08, y: -6 }}
+                  onClick={() => onNavigate('services', 'services-page-card-social-media')}
+                  className="flex flex-col items-center text-center space-y-2.5 sm:border-r border-[#1A2433] px-2 sm:px-3 last:border-0 cursor-pointer group" 
                   id="feat-social-media"
+                  title="Navigate to Social Media Management"
                 >
-                  <img 
-                    src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/icons/4.png"
-                    alt="Social Media Management"
-                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain filter drop-shadow-[0_4px_8px_rgba(0,217,255,0.2)]"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="text-[11px] font-mono text-gray-400 font-medium leading-tight">
+                  <div className="w-13 h-13 sm:w-16 sm:h-16 rounded-2xl bg-[#170808] border border-red-500/50 flex items-center justify-center text-red-400 shadow-[0_0_18px_rgba(239,68,68,0.25)] group-hover:shadow-[0_0_30px_rgba(239,68,68,0.55)] group-hover:border-red-400 group-hover:bg-red-500/15 transition-all duration-300 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
+                    <ThumbsUp className="w-6 h-6 sm:w-8 sm:h-8 stroke-[1.8] group-hover:scale-110 transition-transform duration-300 relative z-10" />
+                  </div>
+                  <div className="text-[11px] font-mono text-gray-300 font-medium leading-tight group-hover:text-red-400 transition-colors">
                     <span>Social Media</span> <br />
                     <span>Management</span>
                   </div>
                 </motion.div>
 
-                {/* Cell 5: SEO & Visibility */}
+                {/* Cell 5: SEO & Visibility - PURPLE */}
                 <motion.div 
                   initial={{ opacity: 0, y: 35, scale: 0.75 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ type: "spring", stiffness: 220, damping: 16, delay: 0.8 }}
-                  whileHover={{ scale: 1.12, y: -6 }}
-                  className="flex flex-col items-center text-center space-y-2.5 px-2 sm:pl-3 last:border-0 cursor-pointer" 
+                  whileHover={{ scale: 1.08, y: -6 }}
+                  onClick={() => onNavigate('services', 'services-page-card-local-seo')}
+                  className="flex flex-col items-center text-center space-y-2.5 px-2 sm:pl-3 last:border-0 cursor-pointer group" 
                   id="feat-seo"
+                  title="Navigate to Local SEO & Visibility"
                 >
-                  <img 
-                    src="https://raw.githubusercontent.com/NoLabelSecurity/CONTENT/main/NoLabel-Solutions/icons/5.png"
-                    alt="Local SEO & Visibility"
-                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain filter drop-shadow-[0_4px_8px_rgba(0,217,255,0.2)]"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="text-[11px] font-mono text-gray-400 font-medium leading-tight">
+                  <div className="w-13 h-13 sm:w-16 sm:h-16 rounded-2xl bg-[#130817] border border-purple-500/50 flex items-center justify-center text-purple-400 shadow-[0_0_18px_rgba(168,85,247,0.25)] group-hover:shadow-[0_0_30px_rgba(168,85,247,0.55)] group-hover:border-purple-400 group-hover:bg-purple-500/15 transition-all duration-300 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
+                    <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 stroke-[1.8] group-hover:scale-110 transition-transform duration-300 relative z-10" />
+                  </div>
+                  <div className="text-[11px] font-mono text-gray-300 font-medium leading-tight group-hover:text-purple-400 transition-colors">
                     <span>Local SEO &</span> <br />
                     <span>Visibility</span>
                   </div>
@@ -294,7 +294,7 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
                 className="w-full relative max-w-lg md:max-w-xl lg:max-w-2xl px-2 h-[420px] sm:h-[520px] flex items-start"
               >
                 
-                {/* 1. Sleek MacBook mockup from repository */}
+                {/* 1. Sleek MacBook mockup */}
                 <motion.div 
                   initial={{ opacity: 0, y: -40, x: 30, scale: 0.88, rotate: 2 }}
                   animate={{ opacity: 1, y: 0, x: 0, scale: 1, rotate: 0 }}
@@ -876,9 +876,10 @@ export default function HomeView({ onNavigate, onSelectProject }: HomeViewProps)
             loop 
             muted 
             playsInline 
-            className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none z-0"
+            src="https://www.pexels.com/download/video/854545/"
+            className="absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none z-0"
           >
-            <source src="https://pixabay.com/videos/download/video-169445_medium.mp4" type="video/mp4" />
+            <source src="https://www.pexels.com/download/video/854545/" type="video/mp4" />
           </video>
 
           <div className="absolute top-0 left-1/4 w-72 h-72 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none z-0" />

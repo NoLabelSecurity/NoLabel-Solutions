@@ -10,13 +10,13 @@
 
 | Property | Value |
 |-----------|-------|
-| Total Development Hours | ~17 hours |
+| Total Development Hours | ~28.5 hours |
 | AI Contribution | 85% |
-| Total Code Files | 14 |
-| Total Code Lines | ~1650 |
+| Total Code Files | 28 |
+| Total Code Lines | ~3400 |
 | Productivity Rating | High |
 | Code Quality Score | Excellent |
-| Last Updated | 2026-07-21 |
+| Last Updated | 2026-08-03 |
 
 ---
 
@@ -93,13 +93,16 @@
 
 | File | LOC | Purpose |
 |------|-----|---------|
-| `/src/App.tsx` | ~450 | Layout controller & view state routing |
-| `/src/components/HomeView.tsx` | ~350 | Hero, interactive CLI simulator, statistics |
-| `/src/components/ProjectsView.tsx` | ~330 | Client portfolio card displays and lightbox modals |
-| `/src/components/ContactView.tsx` | ~250 | Quote form and price calculator |
-| `/src/components/ImagePlaceholder.tsx` | ~200 | Interactive mock operating browser framework |
-| `/src/components/ServicesView.tsx` | ~150 | Digital solutions layout |
-| `/src/data.ts` | ~100 | Content arrays |
+| `/src/components/HomeView.tsx` | ~960 | Hero, interactive CLI simulator, video showcase, statistics |
+| `/src/components/ServicesView.tsx` | ~850 | Digital solutions layout, subservices grid, 3D business card section |
+| `/src/components/ProjectsView.tsx` | ~600 | Client portfolio card displays and lightbox modals |
+| `/src/App.tsx` | ~580 | Layout controller & view state routing |
+| `/src/components/ContactView.tsx` | ~380 | Quote form and price calculator |
+| `/src/data.ts` | ~360 | Services, case studies, team, and testimonial content data |
+| `/src/components/AboutView.tsx` | ~190 | Agency core principles and founder team profiles |
+| `/src/components/Virtual3DCard.tsx` | ~145 | Interactive 3D drag-to-spin business card |
+| `/src/components/ImagePlaceholder.tsx` | ~130 | Interactive mock operating browser framework |
+| `/src/types.ts` | ~120 | Global TypeScript interfaces and data model definitions |
 
 </details>
 

@@ -18,7 +18,7 @@
 | Primary Database | None (Static data layers with client state) |
 | API Type | Direct UI data collection bindings |
 | Deployment Platform | Google Cloud Run Container |
-| Last Updated | 2026-07-21 |
+| Last Updated | 2026-08-05 |
 
 ---
 
@@ -70,32 +70,65 @@ Local UI Component State Updates
 ## Directory Tree
 
 ```text
-src/
-├── App.tsx             # Main entry coordinator, header navigation, layout router
-├── data.ts             # Primary static data store (services lists, project statistics, testimonials)
-├── types.ts            # Project-wide TypeScript interface definitions
-├── index.css           # Global stylesheets bringing in Tailwind CSS core variables
-├── main.tsx            # DOM node initialization
-└── components/         # Modular layout views
-    ├── HomeView.tsx         # Home landing experience with metrics and interactive terminal
-    ├── ServicesView.tsx     # Digital product offer grid
-    ├── ProjectsView.tsx     # Client contractor portfolios and case studies modal
-    ├── AboutView.tsx        # Agency values and member profiles
-    ├── ContactView.tsx      # Instant estimation tool and lead generation form
-    └── ImagePlaceholder.tsx # Highly functional simulated browser framing and visual drawings
+.
+├── .env.example              # Schema for environment variable declarations
+├── .gitignore                # Git repository exclusion rules
+├── README.md                 # Root workspace overview and setup guidelines
+├── bun.lock                  # Lockfile for Bun package runner
+├── index.html                # Entry HTML document with Open Graph and social meta tags
+├── metadata.json             # Applet metadata, frame permissions, and major capabilities
+├── package.json              # Project dependencies, build scripts, and package manifests
+├── tsconfig.json             # TypeScript compiler settings and path aliases
+├── vite.config.ts            # Vite development server and build configuration
+├── REPORTS/                  # Comprehensive project reports and documentation suite
+│   ├── ANALYTICS.md          # Development metrics, AI usage, and productivity statistics
+│   ├── CLIENT.md             # Client-facing progress and milestone summaries
+│   ├── DEVELOPMENT.md        # Session journal, prompt history, and changelogs
+│   ├── DOCUMENTATION.md      # Technical architecture, directory tree, and reference
+│   ├── FEATURES.md           # Feature tracker, completed work, and release roadmap
+│   ├── PROJECT.md            # Project dashboard, health, status, and deliverables
+│   ├── PROJECT_MEMORY.md     # Long-term design decisions and architectural memory
+│   ├── README.md             # Reports navigation and update workflow overview
+│   └── REPORTING_GUIDELINES.md # Standard reporting guidelines and operational standards
+├── media/                    # Static media assets directory
+│   └── .gitkeep              # Directory structure retention file
+├── PRODUCTION_STANDARDS/      # Operational standards and audit compliance reports
+│   ├── WEBSITE_PRODUCTION_STANDARDS.md # Website production standards specification
+│   ├── Project_Standards_Instructions.md # Primary standards instructions and navigation index
+│   ├── Project_Discovery_Report.md        # Technical stack and site capabilities discovery report
+│   ├── Deployment_Readiness.md            # Pre-flight build and security compliance report
+│   └── Project_Standards_Audit.md         # Comprehensive evaluation against Website Production Standards
+└── src/                      # Application source code
+    ├── App.tsx               # Primary layout manager, header navigation, and view router
+    ├── data.ts               # Primary static data store (services, case studies, team, testimonials)
+    ├── index.css             # Global Tailwind CSS v4 styling rules and custom directives
+    ├── main.tsx              # Application entry point and DOM root renderer
+    ├── types.ts              # Global TypeScript interfaces and data model types
+    └── components/           # Modular React view components
+        ├── AboutView.tsx       # Agency mission, values, principles, and team profiles view
+        ├── ContactView.tsx     # Interactive cost estimator and project inquiry form view
+        ├── HomeView.tsx        # Home landing view, terminal simulator, metrics, and hero mockups
+        ├── ImagePlaceholder.tsx # Simulated browser window frame and blueprint artwork generator
+        ├── LegalView.tsx       # Tabbed legal compliance portal (Privacy, Terms, Cookies, Accessibility)
+        ├── ProjectsView.tsx    # Case study portfolio grid and interactive project modal view
+        ├── ServicesView.tsx    # Services catalog, 3D business card, and feature blocks view
+        └── Virtual3DCard.tsx   # Interactive 3D drag-to-spin portrait business card component
 ```
 
 ---
 
 ### Directory Purpose
 
-| Folder | Description |
-|----------|-------------|
-| `src/` | Main source code directory. |
-| `src/components/` | Contains the isolated React sub-components and modular tab sections. |
-| `src/types.ts` | Governs clean data compliance across components. |
-| `src/data.ts` | Holds the content data layer to prevent layout file clutter. |
-| `public/` | Direct static assets folders. |
+| Folder / File | Description |
+|---------------|-------------|
+| Root (`/`) | Contains build configuration (`vite.config.ts`, `tsconfig.json`), package management (`package.json`, `bun.lock`), applet metadata (`metadata.json`), main HTML document (`index.html`), environment variable declaration (`.env.example`), and workspace README. |
+| `REPORTS/` | Living project documentation suite maintaining session histories, architecture, feature logs, and project metrics. |
+| `media/` | Directory for static media assets and imagery. |
+| `src/` | Main application source code directory. |
+| `src/components/` | Contains isolated React view components and interactive UI components. |
+| `src/types.ts` | Governs clean data compliance and TypeScript interfaces across components. |
+| `src/data.ts` | Holds structured content data layers (services, projects, testimonials, team members). |
+| `src/index.css` | Entry point for Tailwind CSS v4 styling rules and directives. |
 
 </details>
 

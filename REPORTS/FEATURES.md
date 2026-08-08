@@ -18,7 +18,7 @@
 | Bugs Open | 0 |
 | Bugs Resolved | 1 |
 | Technical Debt Items | 1 |
-| Last Updated | 2026-07-27 |
+| Last Updated | 2026-08-03 |
 
 ---
 
@@ -55,6 +55,7 @@
 
 | Feature | Completed | Version | Notes |
 |----------|-----------|---------|-------|
+| Services Web Design Video Mockups | 2026-07-30 | 1.0.0 | Integrated hero device mockups into the Website Design and Development service container with static positioning and live 6-second cross-fading web development video screens. |
 | About Core Makers Team Member | 2026-07-29 | 1.0.0 | Updated the first card in "about: core makers" with Brian Lorick, Owner & Lead Developer, featuring custom founder bio and 'B' avatar letter. |
 | About Core Principles Media Image | 2026-07-29 | 1.0.0 | Replaced the mock CAD/workspace element on the right of "About: Our Core Principles" with the official 1.png media asset framed in a hover-animated dark container. |
 | Hero Staggered Pop & Slide Animations | 2026-07-28 | 1.0.0 | Integrated spring pops, directional slide-ins, glowing text animations, horizontal line scale-expands, 5-cell icon spring cascade, and 3D mockup tilt pop entry animations in the Home Hero. |

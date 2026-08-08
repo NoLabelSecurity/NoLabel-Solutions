@@ -13,7 +13,7 @@
 | Project | No/Label Solutions Portal |
 | Client | brianlorick1988@gmail.com |
 | Started | 2026-07-16 |
-| Last Updated | 2026-07-24 |
+| Last Updated | 2026-08-03 |
 | Major Version | 1.0.0 |
 | Active Phase | Handover Complete |
 
@@ -92,6 +92,12 @@ To build an ultra-premium, highly distinctive developer portal showcasing tailor
 ### Open Graph Social Previews
 - **Decision**: Integrated Open Graph (`og:`) and Twitter card tags inside `index.html` referencing official social media graphic preview banners.
 - **Reason**: Guarantees that No/Label Solutions displays beautifully across multiple social and chat environments, expanding the digital brand surface.
+
+---
+
+### Services Web Design Device Mockups with Web Dev Video Screens
+- **Decision**: Re-created the hero section mockup composition (MacBook, iPhone, 3D Physical Cards) inside the right column of the "Website Design and Development" service card in `ServicesView.tsx`, rendered statically (no page-load bounce animations) with live 6-second cross-fading web development video screens inside both the laptop and phone displays.
+- **Reason**: Fulfills explicit client branding requests by providing visual symmetry with the Hero section while dynamically showcasing live web development processes (coding, UI design, responsive builds, cloud deployment) on device monitors.
 
 ---
 

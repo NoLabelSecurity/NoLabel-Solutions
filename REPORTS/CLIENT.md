@@ -16,7 +16,7 @@
 | Overall Progress | 100% |
 | Current Phase | Handover & Delivery Complete |
 | Estimated Completion | 2026-07-24 |
-| Last Updated | 2026-07-27 |
+| Last Updated | 2026-08-03 |
 | Project Status | 🟢 On Schedule |
 
 ---
@@ -27,6 +27,7 @@
 
 ### Recently Completed
 
+- ✅ **Services Web Design Video Mockups**: Embedded the hero section device mockups (MacBook, iPhone, 3D Physical Cards) into the right column of the "Website Design and Development" service block on the Services page. Features static placement (no page-load bounce animations) and live 6-second cross-fading web development video feeds playing inside the device screens with manual indicator controls.
 - ✅ **About Page Core Makers Team Member**: Updated the first team member card in "about: core makers" with Brian Lorick, Owner & Lead Developer, featuring his custom founder bio highlighting custom React applications, web architecture, interface engineering, and software ownership.
 - ✅ **About Page Core Principles Media Image**: Replaced the placeholder CAD/workspace wireframe layout on the right of "About: Our Core Principles" with the official media image asset (`1.png`), framed cleanly in a hover-animated dark container matching the site's dark aesthetic.
 - ✅ **Hero Staggered Pop & Slide Animations**: Integrated dynamic, staged entrance animations across all elements in the Hero section. Features spring pops for the brand logo badge, left-to-right directional slide-ins for the main headline, animated cyan glowing phrase highlights, smooth scale-expand line dividers, staggered spring icon pops for all 5 core services, location pill scale bounces, and 3D tilt-pop entry physics for the right-column MacBook, iPhone, and physical cards mockup collage.
